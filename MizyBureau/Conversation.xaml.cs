@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace MizyBureau
 {
     /// <summary>
-    /// Logique d'interaction pour Profile.xaml
+    /// Logique d'interaction pour Conversation.xaml
     /// </summary>
-    public partial class Profile : UserControl
+    public partial class Conversation : UserControl
     {
-        public Profile()
+        public Conversation()
         {
             InitializeComponent();
         }

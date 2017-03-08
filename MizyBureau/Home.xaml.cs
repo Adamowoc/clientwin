@@ -18,15 +18,14 @@ namespace MizyBureau
     /// Logique d'interaction pour Home.xaml
     /// </summary>
     public partial class Home : Window
-    {
-        /* private void Conv_Load(object sender, RoutedEventArgs e)
-         {
-             this.NavigationService.Navigate(new Uri("Conversations.xaml", UriKind.Relative));
-         }*/
+    {       
         public Home()
         {
             InitializeComponent();
+            // load userform (pages)
             _p = new Profile();
+            _c = new Conversation();
+            // set profile as default page
             this.Content = _p;
         }
 
@@ -37,10 +36,16 @@ namespace MizyBureau
 
         public void Load_Conversation()
         {
+            this.Content = _c;
+        }
+
+        public void Load_Blank()
+        {
             this.Content = null;
         }
 
         private Profile _p;
+        private Conversation _c;
     }
 }
 

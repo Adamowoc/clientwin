@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\Documents\git\client\MizyBureau\obj\Debug\
+C:\Users\curlie\clientwin\MizyBureau\obj\Debug\
 MizyBureau
 none
 false
 DEBUG;TRACE
-D:\Documents\git\client\MizyBureau\App.xaml
-5-1648301285
+C:\Users\curlie\clientwin\MizyBureau\App.xaml
+6-1500167073
 
-13-1630229478
-161856395370
-Connection.xaml;Home.xaml;Inscription.xaml;MainWindow.xaml;Profile.xaml;
+14-259309583
+16-849045112
+Connection.xaml;Conversation.xaml;Home.xaml;Inscription.xaml;MainWindow.xaml;Profile.xaml;
 
-True
+False
 

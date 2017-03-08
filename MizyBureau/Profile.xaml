@@ -12,9 +12,9 @@
             <RowDefinition Height="0*" />
         </Grid.RowDefinitions>
         <WrapPanel x:Name="Menu"  Margin="0,0,-0.4,768.8" Background="#FF050B0F">
-            <Button x:Name="Profile_button" Content="{StaticResource MyImageProfile}"  Height="100" Width="100"  Background="#FF050B0F" ToolTip="Profil" Click="My_Test"/>
-            <Button x:Name="Parameter_button" Content="{StaticResource MyImageParameter}" Height="100" Width="100"  Background="#FF050B0F" ToolTip="Paramètres"/>
-            <Button x:Name="Conversation_button" Content="{StaticResource MyImageParameter}"  Height="100" Width="100"  Background="#FF050B0F" ToolTip="Conversations"/>
+            <Button x:Name="Profile_button" Content="{StaticResource MyImageProfile}"  Height="100" Width="100"  Background="#FF050B0F" ToolTip="Conversations" Click="Go_To_Conversation"/>
+            <Button x:Name="Parameter_button" Content="{StaticResource MyImageParameter}" Height="100" Width="100"  Background="#FF050B0F" ToolTip="Profil" Click="Go_To_Profile"/>
+            <Button x:Name="Conversation_button" Content="{StaticResource MyImageParameter}"  Height="100" Width="100"  Background="#FF050B0F" ToolTip="Paramètres" Click="Go_To_Blank"/>
         </WrapPanel>
         <Canvas x:Name="Page_Profile" Background="#FF050B0F" Margin="0,101,-0.4,98.8">
             <Image x:Name="imgProfile" Source="profilepic.png" Width="304" Canvas.Left="54" Canvas.Top="39" Height="378" />
