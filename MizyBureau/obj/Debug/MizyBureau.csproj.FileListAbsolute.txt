@@ -81,9 +81,9 @@ D:\Documents\git\client\MizyBureau\obj\Debug\Profile.baml
 C:\Users\curlie\clientwin\MizyBureau\bin\Debug\MizyBureau.exe.config
 C:\Users\curlie\clientwin\MizyBureau\bin\Debug\MizyBureau.exe
 C:\Users\curlie\clientwin\MizyBureau\bin\Debug\MizyBureau.pdb
-C:\Users\curlie\clientwin\MizyBureau\bin\Debug\RestSharp.xml
 C:\Users\curlie\clientwin\MizyBureau\obj\Debug\MizyBureau.csprojResolveAssemblyReference.cache
 C:\Users\curlie\clientwin\MizyBureau\obj\Debug\Connection.g.cs
+C:\Users\curlie\clientwin\MizyBureau\obj\Debug\Conversation.g.cs
 C:\Users\curlie\clientwin\MizyBureau\obj\Debug\Home.g.cs
 C:\Users\curlie\clientwin\MizyBureau\obj\Debug\Inscription.g.cs
 C:\Users\curlie\clientwin\MizyBureau\obj\Debug\MainWindow.g.cs
@@ -93,6 +93,7 @@ C:\Users\curlie\clientwin\MizyBureau\obj\Debug\MizyBureau_MarkupCompile.cache
 C:\Users\curlie\clientwin\MizyBureau\obj\Debug\MizyBureau_MarkupCompile.lref
 C:\Users\curlie\clientwin\MizyBureau\obj\Debug\App.baml
 C:\Users\curlie\clientwin\MizyBureau\obj\Debug\Connection.baml
+C:\Users\curlie\clientwin\MizyBureau\obj\Debug\Conversation.baml
 C:\Users\curlie\clientwin\MizyBureau\obj\Debug\Home.baml
 C:\Users\curlie\clientwin\MizyBureau\obj\Debug\Inscription.baml
 C:\Users\curlie\clientwin\MizyBureau\obj\Debug\MainWindow.baml
