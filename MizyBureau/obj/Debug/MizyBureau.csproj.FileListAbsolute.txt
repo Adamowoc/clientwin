@@ -1,0 +1,80 @@
+d:\documents\visual studio 2015\Projects\MizyBureau\MizyBureau\bin\Debug\MizyBureau.exe.config
+d:\documents\visual studio 2015\Projects\MizyBureau\MizyBureau\bin\Debug\MizyBureau.exe
+d:\documents\visual studio 2015\Projects\MizyBureau\MizyBureau\bin\Debug\MizyBureau.pdb
+d:\documents\visual studio 2015\Projects\MizyBureau\MizyBureau\obj\Debug\MizyBureau.csprojResolveAssemblyReference.cache
+d:\documents\visual studio 2015\Projects\MizyBureau\MizyBureau\obj\Debug\MainWindow.g.cs
+d:\documents\visual studio 2015\Projects\MizyBureau\MizyBureau\obj\Debug\App.g.cs
+d:\documents\visual studio 2015\Projects\MizyBureau\MizyBureau\obj\Debug\MizyBureau_MarkupCompile.cache
+d:\documents\visual studio 2015\Projects\MizyBureau\MizyBureau\obj\Debug\MizyBureau_MarkupCompile.lref
+d:\documents\visual studio 2015\Projects\MizyBureau\MizyBureau\obj\Debug\MainWindow.baml
+d:\documents\visual studio 2015\Projects\MizyBureau\MizyBureau\obj\Debug\MizyBureau.g.resources
+d:\documents\visual studio 2015\Projects\MizyBureau\MizyBureau\obj\Debug\MizyBureau.Properties.Resources.resources
+d:\documents\visual studio 2015\Projects\MizyBureau\MizyBureau\obj\Debug\MizyBureau.csproj.GenerateResource.Cache
+d:\documents\visual studio 2015\Projects\MizyBureau\MizyBureau\obj\Debug\MizyBureau.exe
+d:\documents\visual studio 2015\Projects\MizyBureau\MizyBureau\obj\Debug\MizyBureau.pdb
+C:\Users\curlie\client-windows-desktop\MizyBureau\bin\Debug\MizyBureau.exe.config
+C:\Users\curlie\client-windows-desktop\MizyBureau\bin\Debug\MizyBureau.exe
+C:\Users\curlie\client-windows-desktop\MizyBureau\bin\Debug\MizyBureau.pdb
+C:\Users\curlie\client-windows-desktop\MizyBureau\obj\Debug\MizyBureau.csprojResolveAssemblyReference.cache
+C:\Users\curlie\client-windows-desktop\MizyBureau\obj\Debug\Inscription.g.cs
+C:\Users\curlie\client-windows-desktop\MizyBureau\obj\Debug\MainWindow.g.cs
+C:\Users\curlie\client-windows-desktop\MizyBureau\obj\Debug\App.g.cs
+C:\Users\curlie\client-windows-desktop\MizyBureau\obj\Debug\MizyBureau_MarkupCompile.cache
+C:\Users\curlie\client-windows-desktop\MizyBureau\obj\Debug\MizyBureau_MarkupCompile.lref
+C:\Users\curlie\client-windows-desktop\MizyBureau\obj\Debug\Inscription.baml
+C:\Users\curlie\client-windows-desktop\MizyBureau\obj\Debug\MainWindow.baml
+C:\Users\curlie\client-windows-desktop\MizyBureau\obj\Debug\MizyBureau.g.resources
+C:\Users\curlie\client-windows-desktop\MizyBureau\obj\Debug\MizyBureau.Properties.Resources.resources
+C:\Users\curlie\client-windows-desktop\MizyBureau\obj\Debug\MizyBureau.csproj.GenerateResource.Cache
+C:\Users\curlie\client-windows-desktop\MizyBureau\obj\Debug\MizyBureau.exe
+C:\Users\curlie\client-windows-desktop\MizyBureau\obj\Debug\MizyBureau.pdb
+C:\Users\curlie\client-windows-desktop\MizyBureau\obj\Debug\Connection.g.cs
+C:\Users\curlie\client-windows-desktop\MizyBureau\obj\Debug\Connection.baml
+C:\Users\curlie\client-windows-desktop\MizyBureau\obj\Debug\Home.g.cs
+C:\Users\curlie\client-windows-desktop\MizyBureau\obj\Debug\Home.baml
+D:\Documents\git\client\client-windows-desktop\MizyBureau\bin\Debug\MizyBureau.exe.config
+D:\Documents\git\client\client-windows-desktop\MizyBureau\obj\Debug\MizyBureau.exe
+D:\Documents\git\client\client-windows-desktop\MizyBureau\obj\Debug\MizyBureau.pdb
+D:\Documents\git\client\client-windows-desktop\MizyBureau\obj\Debug\MizyBureau.csprojResolveAssemblyReference.cache
+D:\Documents\git\client\client-windows-desktop\MizyBureau\obj\Debug\Connection.g.cs
+D:\Documents\git\client\client-windows-desktop\MizyBureau\obj\Debug\Home.g.cs
+D:\Documents\git\client\client-windows-desktop\MizyBureau\obj\Debug\Inscription.g.cs
+D:\Documents\git\client\client-windows-desktop\MizyBureau\obj\Debug\MainWindow.g.cs
+D:\Documents\git\client\client-windows-desktop\MizyBureau\obj\Debug\App.g.cs
+D:\Documents\git\client\client-windows-desktop\MizyBureau\obj\Debug\MizyBureau_MarkupCompile.cache
+D:\Documents\git\client\client-windows-desktop\MizyBureau\obj\Debug\MizyBureau_MarkupCompile.lref
+D:\Documents\git\client\client-windows-desktop\MizyBureau\bin\Debug\MizyBureau.exe
+D:\Documents\git\client\client-windows-desktop\MizyBureau\bin\Debug\MizyBureau.pdb
+D:\Documents\git\client\client-windows-desktop\MizyBureau\obj\Debug\Connection.baml
+D:\Documents\git\client\client-windows-desktop\MizyBureau\obj\Debug\Home.baml
+D:\Documents\git\client\client-windows-desktop\MizyBureau\obj\Debug\Inscription.baml
+D:\Documents\git\client\client-windows-desktop\MizyBureau\obj\Debug\MainWindow.baml
+D:\Documents\git\client\client-windows-desktop\MizyBureau\obj\Debug\MizyBureau.g.resources
+D:\Documents\git\client\client-windows-desktop\MizyBureau\obj\Debug\MizyBureau.Properties.Resources.resources
+D:\Documents\git\client\client-windows-desktop\MizyBureau\obj\Debug\MizyBureau.csproj.GenerateResource.Cache
+C:\Users\curlie\client-windows-desktop\MizyBureau\obj\Debug\App.baml
+D:\Documents\git\client\MizyBureau\bin\Debug\MizyBureau.exe.config
+D:\Documents\git\client\MizyBureau\obj\Debug\MizyBureau.exe
+D:\Documents\git\client\MizyBureau\obj\Debug\MizyBureau.pdb
+D:\Documents\git\client\MizyBureau\bin\Debug\MizyBureau.exe
+D:\Documents\git\client\MizyBureau\bin\Debug\MizyBureau.pdb
+D:\Documents\git\client\MizyBureau\obj\Debug\MizyBureau.csprojResolveAssemblyReference.cache
+D:\Documents\git\client\MizyBureau\obj\Debug\Connection.g.cs
+D:\Documents\git\client\MizyBureau\obj\Debug\Home.g.cs
+D:\Documents\git\client\MizyBureau\obj\Debug\Inscription.g.cs
+D:\Documents\git\client\MizyBureau\obj\Debug\MainWindow.g.cs
+D:\Documents\git\client\MizyBureau\obj\Debug\App.g.cs
+D:\Documents\git\client\MizyBureau\obj\Debug\MizyBureau_MarkupCompile.cache
+D:\Documents\git\client\MizyBureau\obj\Debug\MizyBureau_MarkupCompile.lref
+D:\Documents\git\client\MizyBureau\obj\Debug\App.baml
+D:\Documents\git\client\MizyBureau\obj\Debug\Connection.baml
+D:\Documents\git\client\MizyBureau\obj\Debug\Home.baml
+D:\Documents\git\client\MizyBureau\obj\Debug\Inscription.baml
+D:\Documents\git\client\MizyBureau\obj\Debug\MainWindow.baml
+D:\Documents\git\client\MizyBureau\obj\Debug\MizyBureau.g.resources
+D:\Documents\git\client\MizyBureau\obj\Debug\MizyBureau.Properties.Resources.resources
+D:\Documents\git\client\MizyBureau\obj\Debug\MizyBureau.csproj.GenerateResource.Cache
+D:\Documents\git\client\MizyBureau\bin\Debug\RestSharp.dll
+D:\Documents\git\client\MizyBureau\bin\Debug\RestSharp.xml
+D:\Documents\git\client\MizyBureau\obj\Debug\Profile.g.cs
+D:\Documents\git\client\MizyBureau\obj\Debug\Profile.baml
