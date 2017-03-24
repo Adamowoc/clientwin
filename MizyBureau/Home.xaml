@@ -4,6 +4,17 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MizyBureau"
-        mc:Ignorable="d"
-        Title="Mizy" Height="800" Width="1200">
+        mc:Ignorable="d">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <WrapPanel x:Name="Menu"  Background="#FF050B0F">
+            <Button x:Name="Profile_button" Content="{StaticResource MyImageProfile}"  Height="100" Width="100"  Background="#FF050B0F" ToolTip="Conversations" Click="Go_To_Conversation"/>
+            <Button x:Name="Parameter_button" Content="{StaticResource MyImageParameter}" Height="100" Width="100"  Background="#FF050B0F" ToolTip="Profil" Click="Go_To_Profile"/>
+            <Button x:Name="Conversation_button" Content="{StaticResource MyImageParameter}"  Height="100" Width="100"  Background="#FF050B0F" ToolTip="Paramètres" Click="Go_To_Blank"/>
+        </WrapPanel>
+        <ContentControl x:Name="contentControl" Grid.Row="1"/>
+    </Grid>
 </Window>

@@ -25,28 +25,6 @@ namespace MizyBureau
             InitializeComponent();
         }
 
-        private void Go_To_Conversation(object sender, RoutedEventArgs e)
-        {
-            Home parentWindow = (Home)Window.GetWindow(this);
-
-            parentWindow.Load_Conversation();
-            return;
-        }
-
-        private void Go_To_Profile(object sender, RoutedEventArgs e)
-        {
-            Home parentWindow = (Home)Window.GetWindow(this);
-
-            parentWindow.Load_Profile();
-            return;
-        }
-
-        private void Go_To_Blank(object sender, RoutedEventArgs e)
-        {
-            Home parentWindow = (Home)Window.GetWindow(this);
-
-            parentWindow.Load_Blank();
-            return;
-        }
+        
     }
 }

@@ -26,22 +26,23 @@ namespace MizyBureau
             _p = new Profile();
             _c = new Conversation();
             // set profile as default page
-            this.Content = _p;
+            this.contentControl.Content = _p;
         }
 
-        public void Load_Profile()
+
+        private void Go_To_Conversation(object sender, RoutedEventArgs e)
         {
-            this.Content = _p;
+            contentControl.Content = _c;
         }
 
-        public void Load_Conversation()
+        private void Go_To_Profile(object sender, RoutedEventArgs e)
         {
-            this.Content = _c;
+            this.contentControl.Content = _p;
         }
 
-        public void Load_Blank()
+        private void Go_To_Blank(object sender, RoutedEventArgs e)
         {
-            this.Content = null;
+            this.contentControl.Content = null;
         }
 
         private Profile _p;

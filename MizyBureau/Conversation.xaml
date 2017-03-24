@@ -11,12 +11,8 @@
             <RowDefinition Height="Auto" MinHeight="868.8" />
             <RowDefinition Height="0*" />
         </Grid.RowDefinitions>
-        <WrapPanel x:Name="Menu"  Margin="0,0,-0.4,768.8" Background="#FF050B0F">
-            <Button x:Name="Profile_button" Content="{StaticResource MyImageProfile}"  Height="100" Width="100"  Background="#FF050B0F" ToolTip="Conversations" Click="Go_To_Conversation"/>
-            <Button x:Name="Parameter_button" Content="{StaticResource MyImageParameter}" Height="100" Width="100"  Background="#FF050B0F" ToolTip="Profil" Click="Go_To_Profile"/>
-            <Button x:Name="Conversation_button" Content="{StaticResource MyImageParameter}"  Height="100" Width="100"  Background="#FF050B0F" ToolTip="Paramètres" Click="Go_To_Blank"/>
-        </WrapPanel>
-        <Canvas x:Name="Page_Profile" Background="#FF050B0F" Margin="0,101,-0.4,98.8" RenderTransformOrigin="0.646,0.559">
+
+        <Canvas x:Name="Page_Profile" Background="#FF050B0F" RenderTransformOrigin="0.646,0.559">
             <Image x:Name="imgFbLogo" Margin="0,0,0,0"  Source="facebook-logo.png" Height="50" Canvas.Top="37" Width="51" Canvas.Left="1073" RenderTransformOrigin="0.83,0.029" Panel.ZIndex="3" />
             <Image x:Name="imgFbLogo2" Margin="0,0,0,0"  Source="facebook-logo.png" Height="50" Canvas.Top="133" Width="55" Canvas.Left="1129" RenderTransformOrigin="0.83,0.029" Panel.ZIndex="3" />
             <Image x:Name="imgTwitter" HorizontalAlignment="Left" Height="50" Width="55" VerticalAlignment="Top" Source="twitter-logo.png" RenderTransformOrigin="0.531,0.698" Canvas.Left="1129" Canvas.Top="37" Panel.ZIndex="3"/>
