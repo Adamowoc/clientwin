@@ -140,35 +140,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="logo.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="profilepic.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="facebook-logo.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="hangout-logo.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="sms-logo.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="France-icon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="anniversary-icon.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Folder Include="images\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="linkedin-logo.png" />
-    <Resource Include="twitter-logo.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="fille-logo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

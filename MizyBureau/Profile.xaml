@@ -13,17 +13,17 @@
         </Grid.RowDefinitions>
 
         <Canvas x:Name="Page_Profile" Background="#FF050B0F">
-            <Image x:Name="imgProfile" Source="profilepic.png" Width="304" Canvas.Left="54" Canvas.Top="39" Height="378" />
+            <Image x:Name="imgProfile" Source="{StaticResource MyImagePhoto}" Width="304" Canvas.Left="54" Canvas.Top="39" Height="378" />
             <TextBlock x:Name="txtName" TextWrapping="Wrap" Text="John Doe" Foreground="#FF7FC5B8" FontSize="38" FontWeight="Bold" Width="246" Canvas.Left="410" Canvas.Top="39"/>
             <TextBlock x:Name="txtProfile" TextWrapping="Wrap" Foreground="#FF7FC5B8" FontSize="28" Width="394" Canvas.Left="410" Canvas.Top="107" Height="310"><Run Text="Phrase de profil. "/><Run Text="Lorem ipsum "/><Run Text="elit, sed do eiusmod tempor incididunt ut labore et dolore magna"/><Run Text="."/></TextBlock>
             <TextBlock x:Name="txtAccounts"  TextWrapping="Wrap" Foreground="#FF7FC5B8" FontSize="38" Text="Comptes liés " TextDecorations="{x:Null}" FontWeight="Bold" Canvas.Left="56" Canvas.Top="427"/>
-            <Image x:Name="imgFbLogo" Margin="0,0,0,0"  Source="facebook-logo.png" Height="128" Canvas.Top="477" Width="112" Canvas.Left="56" RenderTransformOrigin="0.83,0.029" />
-            <Image x:Name="imgHangoutLogo" HorizontalAlignment="Left" Height="93" Width="100" VerticalAlignment="Top" Source="hangout-logo.png" RenderTransformOrigin="0.531,0.698" Canvas.Left="184" Canvas.Top="499"/>
-            <Image x:Name="imgSmsLogo" HorizontalAlignment="Left" Height="44" Width="50" VerticalAlignment="Top" Source="sms-logo.png" RenderTransformOrigin="0.911,0.609" Canvas.Left="838" Canvas.Top="107"/>
+            <Image x:Name="imgFbLogo" Margin="0,0,0,0"  Source="{StaticResource MyImageFacebook}" Height="128" Canvas.Top="477" Width="112" Canvas.Left="56" RenderTransformOrigin="0.83,0.029" />
+            <Image x:Name="imgHangoutLogo" HorizontalAlignment="Left" Height="93" Width="100" VerticalAlignment="Top" Source="{StaticResource MyImageHangout}" RenderTransformOrigin="0.531,0.698" Canvas.Left="184" Canvas.Top="499"/>
+            <Image x:Name="imgSmsLogo" HorizontalAlignment="Left" Height="44" Width="50" VerticalAlignment="Top" Source="{StaticResource MyImageSMS}" RenderTransformOrigin="0.911,0.609" Canvas.Left="838" Canvas.Top="107"/>
             <TextBlock x:Name="txtHangoutName" TextWrapping="Wrap" Foreground="#FF7FC5B8" FontSize="28" Height="39" Width="273" HorizontalAlignment="Left" VerticalAlignment="Top" Text="john.doe@gmail.com" Canvas.Left="911" Canvas.Top="177"/>
             <TextBlock x:Name="txtSmsName" TextWrapping="Wrap" Foreground="#FF7FC5B8" FontSize="28" Height="31" Width="240" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="911" Canvas.Top="107"><Run Text="+33 6 66 66 66 66"/></TextBlock>
-            <Image x:Name="imgFrIcon" HorizontalAlignment="Left" Height="51" Width="50" VerticalAlignment="Top" Source="France-icon.png" RenderTransformOrigin="0.937,0.543" Canvas.Left="606" Canvas.Top="39"/>
-            <Image x:Name="imgAnnivIcon" HorizontalAlignment="Left" Height="58" Width="50" VerticalAlignment="Top" Source="anniversary-icon.png"  RenderTransformOrigin="0.937,0.543" Canvas.Left="838" Canvas.Top="238"/>
+            <Image x:Name="imgFrIcon" HorizontalAlignment="Left" Height="51" Width="50" VerticalAlignment="Top" Source="{StaticResource MyImageFrance}" RenderTransformOrigin="0.937,0.543" Canvas.Left="606" Canvas.Top="39"/>
+            <Image x:Name="imgAnnivIcon" HorizontalAlignment="Left" Height="58" Width="50" VerticalAlignment="Top" Source="{StaticResource MyImageAnniversary}"  RenderTransformOrigin="0.937,0.543" Canvas.Left="838" Canvas.Top="238"/>
             <TextBlock x:Name="txtAnniv" TextWrapping="Wrap" Foreground="#FF7FC5B8" FontSize="28" Height="31" Width="240" HorizontalAlignment="Left" VerticalAlignment="Top" Text="12 Janvier" Canvas.Left="911" Canvas.Top="252"/>
             <Button x:Name="buttonModify" Content="Modifier" VerticalAlignment="Bottom" Width="226" Background="{x:Null}" Foreground="#FF40A491" FontSize="28" Height="72" Canvas.Left="925" Canvas.Top="558" RenderTransformOrigin="-0.012,0.414" HorizontalAlignment="Right"/>
         </Canvas>

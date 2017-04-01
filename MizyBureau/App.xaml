@@ -4,9 +4,19 @@
              xmlns:local="clr-namespace:MizyBureau"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-        <Image x:Key="MyImageParameter" Source="logo.png"/>
-        <Image x:Key="MyImageProfile" Source="logo.png"/>
-
+        <BitmapImage x:Key="MyImageParameter" UriSource="/MizyBureau;component/images/setting-logo.png"/>
+        <BitmapImage x:Key="MyImageMizy" UriSource="images/logo.png"/>
+        <BitmapImage x:Key="MyImageAnniversary" UriSource="images/anniversary-icon.png"/>
+        <BitmapImage x:Key="MyImageConv" UriSource="images/conv-logo.png"/>
+        <BitmapImage x:Key="MyImageFacebook" UriSource="images/facebook-logo.png"/>
+        <BitmapImage x:Key="MyImageFille" UriSource="images/fille-logo.png"/>
+        <BitmapImage x:Key="MyImageFrance" UriSource="images/France-icon.png"/>
+        <BitmapImage x:Key="MyImageHangout" UriSource="images/hangout-logo.png"/>
+        <BitmapImage x:Key="MyImageLinkedin" UriSource="images/linkedin-logo.png"/>
+        <BitmapImage x:Key="MyImagePhoto" UriSource="images/profilepic.png"/>
+        <BitmapImage x:Key="MyImageSMS" UriSource="images/sms-logo.png"/>
+        <BitmapImage x:Key="MyImageTwitter" UriSource="images/twitter-logo.png"/>
+        <!--Image x:Key="MyImage" Source="images/.png"/-->
 
     </Application.Resources>
 </Application>

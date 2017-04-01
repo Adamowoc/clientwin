@@ -13,12 +13,12 @@
         </Grid.RowDefinitions>
 
         <Canvas x:Name="Page_Profile" Background="#FF050B0F" RenderTransformOrigin="0.646,0.559">
-            <Image x:Name="imgFbLogo" Margin="0,0,0,0"  Source="facebook-logo.png" Height="50" Canvas.Top="37" Width="51" Canvas.Left="1073" RenderTransformOrigin="0.83,0.029" Panel.ZIndex="3" />
-            <Image x:Name="imgFbLogo2" Margin="0,0,0,0"  Source="facebook-logo.png" Height="50" Canvas.Top="133" Width="55" Canvas.Left="1129" RenderTransformOrigin="0.83,0.029" Panel.ZIndex="3" />
-            <Image x:Name="imgTwitter" HorizontalAlignment="Left" Height="50" Width="55" VerticalAlignment="Top" Source="twitter-logo.png" RenderTransformOrigin="0.531,0.698" Canvas.Left="1129" Canvas.Top="37" Panel.ZIndex="3"/>
-            <Image x:Name="imgLinkedin" HorizontalAlignment="Left" Height="50" Width="55" VerticalAlignment="Top" Source="linkedin-logo.png" RenderTransformOrigin="0.531,0.698" Canvas.Left="1129" Canvas.Top="232" Panel.ZIndex="3"/>
-            <Image x:Name="imgTwitter2" HorizontalAlignment="Left" Height="50" Width="55" VerticalAlignment="Top" Source="twitter-logo.png" RenderTransformOrigin="0.531,0.698" Canvas.Left="1073" Canvas.Top="232" Panel.ZIndex="3"/>
-            <Image x:Name="imgfille" HorizontalAlignment="Left" Height="107" Width="120" VerticalAlignment="Top" Source="fille-logo.png" RenderTransformOrigin="0.531,0.698" Panel.ZIndex="3" Canvas.Left="10"/>
+            <Image x:Name="imgFbLogo" Margin="0,0,0,0"  Source="{StaticResource MyImageFacebook}" Height="50" Canvas.Top="37" Width="51" Canvas.Left="1073" RenderTransformOrigin="0.83,0.029" Panel.ZIndex="3" />
+            <Image x:Name="imgFbLogo2" Margin="0,0,0,0"  Source="{StaticResource MyImageFacebook}" Height="50" Canvas.Top="133" Width="55" Canvas.Left="1129" RenderTransformOrigin="0.83,0.029" Panel.ZIndex="3" />
+            <Image x:Name="imgTwitter" HorizontalAlignment="Left" Height="50" Width="55" VerticalAlignment="Top" Source="{StaticResource MyImageTwitter}" RenderTransformOrigin="0.531,0.698" Canvas.Left="1129" Canvas.Top="37" Panel.ZIndex="3"/>
+            <Image x:Name="imgLinkedin" HorizontalAlignment="Left" Height="50" Width="55" VerticalAlignment="Top" Source="{StaticResource MyImageLinkedin}" RenderTransformOrigin="0.531,0.698" Canvas.Left="1129" Canvas.Top="232" Panel.ZIndex="3"/>
+            <Image x:Name="imgTwitter2" HorizontalAlignment="Left" Height="50" Width="55" VerticalAlignment="Top" Source="{StaticResource MyImageTwitter}" RenderTransformOrigin="0.531,0.698" Canvas.Left="1073" Canvas.Top="232" Panel.ZIndex="3"/>
+            <Image x:Name="imgfille" HorizontalAlignment="Left" Height="107" Width="120" VerticalAlignment="Top" Source="{StaticResource MyImageFille}" RenderTransformOrigin="0.531,0.698" Panel.ZIndex="3" Canvas.Left="10"/>
             <Rectangle Fill="#2F3640" Height="100"  Width="1194" Panel.ZIndex="2"/>
             <Rectangle Fill="#050B0F" Height="100"  Canvas.Top="100" Width="1194"/>
             <Rectangle Fill="#2F3640" Height="100"  Canvas.Top="200" Width="1194"/>
