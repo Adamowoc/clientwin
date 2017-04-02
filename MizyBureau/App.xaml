@@ -4,17 +4,17 @@
              xmlns:local="clr-namespace:MizyBureau"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-        <BitmapImage x:Key="MyImageParameter" UriSource="/MizyBureau;component/images/setting-logo.png"/>
-        <BitmapImage x:Key="MyImageMizy" UriSource="images/logo.png"/>
-        <BitmapImage x:Key="MyImageAnniversary" UriSource="images/anniversary-icon.png"/>
-        <BitmapImage x:Key="MyImageConv" UriSource="images/conv-logo.png"/>
-        <BitmapImage x:Key="MyImageFacebook" UriSource="images/facebook-logo.png"/>
-        <BitmapImage x:Key="MyImageFille" UriSource="images/fille-logo.png"/>
-        <BitmapImage x:Key="MyImageFrance" UriSource="images/France-icon.png"/>
-        <BitmapImage x:Key="MyImageHangout" UriSource="images/hangout-logo.png"/>
-        <BitmapImage x:Key="MyImageLinkedin" UriSource="images/linkedin-logo.png"/>
-        <BitmapImage x:Key="MyImagePhoto" UriSource="images/profilepic.png"/>
-        <BitmapImage x:Key="MyImageSMS" UriSource="images/sms-logo.png"/>
+        <BitmapImage x:Key="MyImageParameter" UriSource="Images/setting-logo.png"/>
+        <BitmapImage x:Key="MyImageMizy" UriSource="Images/logo.png"/>
+        <BitmapImage x:Key="MyImageAnniversary" UriSource="Images/anniversary-icon.png"/>
+        <BitmapImage x:Key="MyImageConv" UriSource="Images/conv-logo.png"/>
+        <BitmapImage x:Key="MyImageFacebook" UriSource="Images/facebook-logo.png"/>
+        <BitmapImage x:Key="MyImageFille" UriSource="Images/fille-logo.png"/>
+        <BitmapImage x:Key="MyImageFrance" UriSource="Images/France-icon.png"/>
+        <BitmapImage x:Key="MyImageHangout" UriSource="Images/hangout-logo.png"/>
+        <BitmapImage x:Key="MyImageLinkedin" UriSource="Images/linkedin-logo.png"/>
+        <BitmapImage x:Key="MyImagePhoto" UriSource="Images/profilepic.png"/>
+        <BitmapImage x:Key="MyImageSMS" UriSource="Images/sms-logo.png"/>
         <BitmapImage x:Key="MyImageTwitter" UriSource="images/twitter-logo.png"/>
         <!--Image x:Key="MyImage" Source="images/.png"/-->
 
