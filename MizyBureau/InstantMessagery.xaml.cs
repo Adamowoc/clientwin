@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Data.SqlClient;
 
 namespace MizyBureau
 {
@@ -23,6 +24,17 @@ namespace MizyBureau
         public InstantMessagery()
         {
             InitializeComponent();
+
+           
+        }
+        private void Send_message(object sender, RoutedEventArgs e)
+        {
+            TextBlock new_message = new TextBlock();
+            new_message.Background = new SolidColorBrush(Color.FromArgb(0xFF, 0x05, 0x0B, 0x0F));
+            new_message.Foreground = Brushes.AntiqueWhite;
+            new_message.Text = My_message.Text;
+            My_message.Text = "";
+            Message_view.Children.Add(new_message);
         }
     }
 }

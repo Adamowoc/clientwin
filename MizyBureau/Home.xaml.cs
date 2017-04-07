@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Data.SqlClient;
 
 namespace MizyBureau
 {
@@ -27,8 +28,14 @@ namespace MizyBureau
             _c = new Conversation();
             // set profile as default page
             this.contentControl.Content = _p;
+            _conn = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\MizyDB.mdf;Integrated Security=True");
+            _conn.Open();
         }
 
+        ~Home()
+        {
+            _conn.Close();
+        }
 
         private void Go_To_Conversation(object sender, RoutedEventArgs e)
         {
@@ -42,11 +49,16 @@ namespace MizyBureau
 
         private void Go_To_Blank(object sender, RoutedEventArgs e)
         {
-            this.contentControl.Content = null;
+            if (_i == null)
+                _i = new InstantMessagery();
+            
+            this.contentControl.Content = _i;
         }
 
         private Profile _p;
         private Conversation _c;
+        private InstantMessagery _i;
+        public SqlConnection _conn;
     }
 }
 

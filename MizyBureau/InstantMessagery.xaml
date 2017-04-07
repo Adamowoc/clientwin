@@ -5,8 +5,18 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:MizyBureau"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
-    <Grid>
-            
+             d:DesignHeight="800" d:DesignWidth="800">
+    <Grid Background="#FF050B0F">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <ScrollViewer CanContentScroll="True" VerticalScrollBarVisibility="Auto" Margin="10,10,0,274" Grid.RowSpan="2">
+            <StackPanel x:Name="Message_view">
+                <TextBox Text="ceci est un test" Background="#FF050B0F" Foreground="AntiqueWhite"/>
+            </StackPanel>
+        </ScrollViewer>
+        <TextBox x:Name="My_message" AcceptsReturn="True" TextWrapping="Wrap" SpellCheck.IsEnabled="True" Language="fr" Margin="10,552,200,10" Background="#FF050B0F" Foreground="AntiqueWhite" Grid.Row="1"/>
+        <Button Margin="618,552,10,10" Content="Send" Background="#FF050B0F" Foreground="AntiqueWhite" Click="Send_message" Grid.Row="1"/>
     </Grid>
 </UserControl>
