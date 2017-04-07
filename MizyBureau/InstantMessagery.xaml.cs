@@ -21,12 +21,18 @@ namespace MizyBureau
     /// </summary>
     public partial class InstantMessagery : UserControl
     {
-        public InstantMessagery()
+        public InstantMessagery(int i, SqlConnection conn)
         {
             InitializeComponent();
-
-           
+            _conn = conn;
+            _userid = i;
         }
+
+        private void Construct_message_view()
+        {
+
+        }
+
         private void Send_message(object sender, RoutedEventArgs e)
         {
             TextBlock new_message = new TextBlock();
@@ -36,5 +42,8 @@ namespace MizyBureau
             My_message.Text = "";
             Message_view.Children.Add(new_message);
         }
+
+        private int _userid;
+        private SqlConnection _conn;
     }
 }

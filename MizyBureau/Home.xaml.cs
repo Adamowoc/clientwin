@@ -50,15 +50,16 @@ namespace MizyBureau
         private void Go_To_Blank(object sender, RoutedEventArgs e)
         {
             if (_i == null)
-                _i = new InstantMessagery();
+                _i = new InstantMessagery(1, _conn);
             
+
             this.contentControl.Content = _i;
         }
 
         private Profile _p;
         private Conversation _c;
         private InstantMessagery _i;
-        public SqlConnection _conn;
+        private SqlConnection _conn;
     }
 }
 
