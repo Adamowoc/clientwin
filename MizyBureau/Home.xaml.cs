@@ -32,12 +32,6 @@ namespace MizyBureau
             _conn.Open();
         }
 
-        ~Home()
-        {
-            if (_conn != null)
-                _conn.Close();
-        }
-
         private void Go_To_Conversation(object sender, RoutedEventArgs e)
         {
             contentControl.Content = _c;

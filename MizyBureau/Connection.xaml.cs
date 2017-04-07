@@ -51,6 +51,7 @@ namespace MizyBureau
             var error = response.ErrorException;
             var content = response.Content; // raw content as string
 
+            MessageBox.Show(content);
             Debug.Write(content);
             // if connection ok then
 
