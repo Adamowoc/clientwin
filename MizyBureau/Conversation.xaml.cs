@@ -33,6 +33,7 @@ namespace MizyBureau
             new_rec.Height = 100;
             new_rec.Width = 1200;
             new_rec.Margin = new Thickness(0, (nb_conv * 100), 0, 0);
+            new_rec.SetValue(Panel.ZIndexProperty, 2);
             //Conversation.Page_Profile.SetZIndex(new_rec, 10);
             if (nb_conv % 2 == 1)
                 new_rec.Fill = new SolidColorBrush(Color.FromRgb(5, 11, 15));
