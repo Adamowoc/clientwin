@@ -20,10 +20,26 @@ namespace MizyBureau
     /// </summary>
     public partial class Conversation : UserControl
     {
+        int nb_conv = 1;
+
         public Conversation()
         {
             InitializeComponent();
         }
-
+       
+        public void addConv(object sender, RoutedEventArgs e)
+        {
+            Rectangle new_rec = new Rectangle();
+            new_rec.Height = 100;
+            new_rec.Width = 1200;
+            new_rec.Margin = new Thickness(0, (nb_conv * 100), 0, 0);
+            //Conversation.Page_Profile.SetZIndex(new_rec, 10);
+            if (nb_conv % 2 == 1)
+                new_rec.Fill = new SolidColorBrush(Color.FromRgb(5, 11, 15));
+            else
+                new_rec.Fill = new SolidColorBrush(Color.FromRgb(47, 54, 64));
+            nb_conv++;
+            Page_Profile.Children.Add(new_rec);
+        }
     }
 }

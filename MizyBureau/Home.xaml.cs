@@ -34,7 +34,8 @@ namespace MizyBureau
 
         ~Home()
         {
-            _conn.Close();
+            if (_conn != null)
+                _conn.Close();
         }
 
         private void Go_To_Conversation(object sender, RoutedEventArgs e)
