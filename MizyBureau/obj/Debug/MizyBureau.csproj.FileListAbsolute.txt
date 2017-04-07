@@ -103,3 +103,8 @@ C:\Users\curlie\clientwin\MizyBureau\obj\Debug\MizyBureau.Properties.Resources.r
 C:\Users\curlie\clientwin\MizyBureau\obj\Debug\MizyBureau.csproj.GenerateResource.Cache
 C:\Users\curlie\clientwin\MizyBureau\obj\Debug\MizyBureau.exe
 C:\Users\curlie\clientwin\MizyBureau\obj\Debug\MizyBureau.pdb
+C:\Users\curlie\clientwin\MizyBureau\bin\Debug\MizyDB.mdf
+C:\Users\curlie\clientwin\MizyBureau\bin\Debug\MizyDB_log.ldf
+C:\Users\curlie\clientwin\MizyBureau\obj\Debug\InstantMessagery.g.cs
+C:\Users\curlie\clientwin\MizyBureau\obj\Debug\MizyBureau_Content.g.cs
+C:\Users\curlie\clientwin\MizyBureau\obj\Debug\InstantMessagery.baml
