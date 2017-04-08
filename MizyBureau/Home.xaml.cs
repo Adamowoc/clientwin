@@ -28,14 +28,7 @@ namespace MizyBureau
             _c = new Conversation();
             // set profile as default page
             this.contentControl.Content = _p;
-            _conn = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\MizyDB.mdf;Integrated Security=True");
-            _conn.Open();
-        }
-
-        ~Home()
-        {
-            if (_conn != null)
-                _conn.Close();
+            _sqlstringconnection = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\MizyDB.mdf;Integrated Security=True";
         }
 
         private void Go_To_Conversation(object sender, RoutedEventArgs e)
@@ -51,7 +44,7 @@ namespace MizyBureau
         private void Go_To_Blank(object sender, RoutedEventArgs e)
         {
             if (_i == null)
-                _i = new InstantMessagery(1, _conn);
+                _i = new InstantMessagery(1, _sqlstringconnection);
             
 
             this.contentControl.Content = _i;
@@ -60,7 +53,7 @@ namespace MizyBureau
         private Profile _p;
         private Conversation _c;
         private InstantMessagery _i;
-        private SqlConnection _conn;
+        private string  _sqlstringconnection;
     }
 }
 
