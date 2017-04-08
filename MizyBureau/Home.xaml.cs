@@ -28,12 +28,8 @@ namespace MizyBureau
             _c = new Conversation();
             // set profile as default page
             this.contentControl.Content = _p;
-<<<<<<< HEAD
             _sqlstringconnection = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\MizyDB.mdf;Integrated Security=True";
-=======
-            _conn = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\MizyDB.mdf;Integrated Security=True");
-            _conn.Open();
->>>>>>> master
+
         }
 
         private void Go_To_Conversation(object sender, RoutedEventArgs e)

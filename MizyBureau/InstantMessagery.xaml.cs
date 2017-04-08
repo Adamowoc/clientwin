@@ -75,8 +75,8 @@ namespace MizyBureau
                 {
                     comm.Connection = conn;
 
-                    comm.Parameters.AddWithValue("@val1", 1/*_userid*/);
-                    comm.Parameters.AddWithValue("@val2", "test"/*My_message.Text*/);
+                    comm.Parameters.AddWithValue("@val1", _userid);
+                    comm.Parameters.AddWithValue("@val2", My_message.Text);
                     comm.Parameters.AddWithValue("@val3", DateTime.Now);
                     comm.Parameters.AddWithValue("@val4", false);
                     comm.Parameters.AddWithValue("@val5", 1);
