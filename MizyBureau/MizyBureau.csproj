@@ -129,6 +129,11 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MizyLocalDBDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MizyLocalDBDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Profile.xaml.cs">
       <DependentUpon>Profile.xaml</DependentUpon>
     </Compile>
@@ -149,6 +154,17 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="MizyLocalDBDataSet.xsc">
+      <DependentUpon>MizyLocalDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="MizyLocalDBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MizyLocalDBDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MizyLocalDBDataSet.xss">
+      <DependentUpon>MizyLocalDBDataSet.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
