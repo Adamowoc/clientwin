@@ -138,8 +138,6 @@ D:\Documents\git\Github\4\clientwin\MizyBureau\obj\Debug\Profile.baml
 D:\Documents\git\Github\4\clientwin\MizyBureau\obj\Debug\MizyBureau.g.resources
 D:\Documents\git\Github\4\clientwin\MizyBureau\obj\Debug\MizyBureau.Properties.Resources.resources
 D:\Documents\git\Github\4\clientwin\MizyBureau\obj\Debug\MizyBureau.csproj.GenerateResource.Cache
-C:\Users\benjamin\clientwin\MizyBureau\bin\Debug\MizyLocalDB.mdf
-C:\Users\benjamin\clientwin\MizyBureau\bin\Debug\MizyLocalDB_log.ldf
 C:\Users\benjamin\clientwin\MizyBureau\bin\Debug\MizyBureau.exe.config
 C:\Users\benjamin\clientwin\MizyBureau\bin\Debug\MizyBureau.exe
 C:\Users\benjamin\clientwin\MizyBureau\bin\Debug\MizyBureau.pdb
@@ -168,3 +166,5 @@ C:\Users\benjamin\clientwin\MizyBureau\obj\Debug\MizyBureau.Properties.Resources
 C:\Users\benjamin\clientwin\MizyBureau\obj\Debug\MizyBureau.csproj.GenerateResource.Cache
 C:\Users\benjamin\clientwin\MizyBureau\obj\Debug\MizyBureau.exe
 C:\Users\benjamin\clientwin\MizyBureau\obj\Debug\MizyBureau.pdb
+C:\Users\benjamin\clientwin\MizyBureau\bin\Debug\MizyLocalDB.mdf
+C:\Users\benjamin\clientwin\MizyBureau\bin\Debug\MizyLocalDB_log.ldf

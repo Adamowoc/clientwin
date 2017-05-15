@@ -1,19 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using RestSharp;
 using System.Diagnostics;
+using System.Data.SqlClient;
 
 
 namespace MizyBureau
@@ -55,11 +46,46 @@ namespace MizyBureau
             Debug.Write(content);
             // if connection ok then
 
+            Get_localdb_user(boxIdentifiant.Text); // try to find user in localdb if can't create it (use to test the db will be remove for beta)
+
             Window w = Window.GetWindow(this); 
             Home home = new Home();
             App.Current.MainWindow = home;
             w.Close();
             home.Show();
+        }
+
+
+        private void Get_localdb_user(string email)
+        {
+
+            using (SqlConnection connection = new SqlConnection(Constants.LocalDB_connectionString))
+            {
+                connection.Open();
+                using (SqlCommand cmd1 = new SqlCommand("SELECT * FROM Utilisateur where Mail = '" + email + "'", connection))
+                {
+                    using (SqlDataReader reader = cmd1.ExecuteReader())
+                    {
+                        if (reader.HasRows)
+                        {
+                            Debug.Print("user mail : " + email + " find in db ");
+                        }
+                        else
+                        {
+                            reader.Close();
+                            using (SqlCommand cmd2 = new SqlCommand("INSERT INTO Utilisateur VALUES (@nom, @prenom, @mail)", connection))
+                            {
+                                cmd2.Parameters.AddWithValue("@nom", DBNull.Value);
+                                cmd2.Parameters.AddWithValue("@prenom", DBNull.Value);
+                                cmd2.Parameters.AddWithValue("@mail", email);
+                                
+                             int i = cmd2.ExecuteNonQuery();
+                             Debug.Print("add user mail : " + email + " to db " + "\nnb ligne affecté : " + i);
+                            }
+                        }
+                    }
+                }
+            }
         }
 
         public void Pseudo_GotFocus(object sender, RoutedEventArgs e)

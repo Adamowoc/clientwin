@@ -30,7 +30,7 @@ namespace MizyBureau {
         
         private _Conversation_Utilisateur_AmiDataTable _tableConversation_Utilisateur_Ami;
         
-        private TableDataTable tableTable;
+        private SocialDataTable tableSocial;
         
         private UtilisateurDataTable tableUtilisateur;
         
@@ -71,8 +71,8 @@ namespace MizyBureau {
                 if ((ds.Tables["Conversation_Utilisateur/Ami"] != null)) {
                     base.Tables.Add(new _Conversation_Utilisateur_AmiDataTable(ds.Tables["Conversation_Utilisateur/Ami"]));
                 }
-                if ((ds.Tables["Table"] != null)) {
-                    base.Tables.Add(new TableDataTable(ds.Tables["Table"]));
+                if ((ds.Tables["Social"] != null)) {
+                    base.Tables.Add(new SocialDataTable(ds.Tables["Social"]));
                 }
                 if ((ds.Tables["Utilisateur"] != null)) {
                     base.Tables.Add(new UtilisateurDataTable(ds.Tables["Utilisateur"]));
@@ -129,9 +129,9 @@ namespace MizyBureau {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public TableDataTable Table {
+        public SocialDataTable Social {
             get {
-                return this.tableTable;
+                return this.tableSocial;
             }
         }
         
@@ -221,8 +221,8 @@ namespace MizyBureau {
                 if ((ds.Tables["Conversation_Utilisateur/Ami"] != null)) {
                     base.Tables.Add(new _Conversation_Utilisateur_AmiDataTable(ds.Tables["Conversation_Utilisateur/Ami"]));
                 }
-                if ((ds.Tables["Table"] != null)) {
-                    base.Tables.Add(new TableDataTable(ds.Tables["Table"]));
+                if ((ds.Tables["Social"] != null)) {
+                    base.Tables.Add(new SocialDataTable(ds.Tables["Social"]));
                 }
                 if ((ds.Tables["Utilisateur"] != null)) {
                     base.Tables.Add(new UtilisateurDataTable(ds.Tables["Utilisateur"]));
@@ -278,10 +278,10 @@ namespace MizyBureau {
                     this._tableConversation_Utilisateur_Ami.InitVars();
                 }
             }
-            this.tableTable = ((TableDataTable)(base.Tables["Table"]));
+            this.tableSocial = ((SocialDataTable)(base.Tables["Social"]));
             if ((initTable == true)) {
-                if ((this.tableTable != null)) {
-                    this.tableTable.InitVars();
+                if ((this.tableSocial != null)) {
+                    this.tableSocial.InitVars();
                 }
             }
             this.tableUtilisateur = ((UtilisateurDataTable)(base.Tables["Utilisateur"]));
@@ -306,8 +306,8 @@ namespace MizyBureau {
             base.Tables.Add(this._tableConversation_Message);
             this._tableConversation_Utilisateur_Ami = new _Conversation_Utilisateur_AmiDataTable();
             base.Tables.Add(this._tableConversation_Utilisateur_Ami);
-            this.tableTable = new TableDataTable();
-            base.Tables.Add(this.tableTable);
+            this.tableSocial = new SocialDataTable();
+            base.Tables.Add(this.tableSocial);
             this.tableUtilisateur = new UtilisateurDataTable();
             base.Tables.Add(this.tableUtilisateur);
         }
@@ -332,7 +332,7 @@ namespace MizyBureau {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializeTable() {
+        private bool ShouldSerializeSocial() {
             return false;
         }
         
@@ -407,7 +407,7 @@ namespace MizyBureau {
         public delegate void _Conversation_Utilisateur_AmiRowChangeEventHandler(object sender, _Conversation_Utilisateur_AmiRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void TableRowChangeEventHandler(object sender, TableRowChangeEvent e);
+        public delegate void SocialRowChangeEventHandler(object sender, SocialRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void UtilisateurRowChangeEventHandler(object sender, UtilisateurRowChangeEvent e);
@@ -717,6 +717,8 @@ namespace MizyBureau {
             
             private global::System.Data.DataColumn columnIdSocial;
             
+            private global::System.Data.DataColumn columnDate;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public _Conversation_MessageDataTable() {
@@ -784,6 +786,14 @@ namespace MizyBureau {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DateColumn {
+                get {
+                    return this.columnDate;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -819,13 +829,14 @@ namespace MizyBureau {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public _Conversation_MessageRow Add_Conversation_MessageRow(int IdConversation, string Message, bool IsSend, int IdSocial) {
+            public _Conversation_MessageRow Add_Conversation_MessageRow(int IdConversation, string Message, bool IsSend, int IdSocial, System.DateTime Date) {
                 _Conversation_MessageRow row_Conversation_MessageRow = ((_Conversation_MessageRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         IdConversation,
                         Message,
                         IsSend,
-                        IdSocial};
+                        IdSocial,
+                        Date};
                 row_Conversation_MessageRow.ItemArray = columnValuesArray;
                 this.Rows.Add(row_Conversation_MessageRow);
                 return row_Conversation_MessageRow;
@@ -859,6 +870,7 @@ namespace MizyBureau {
                 this.columnMessage = base.Columns["Message"];
                 this.columnIsSend = base.Columns["IsSend"];
                 this.columnIdSocial = base.Columns["IdSocial"];
+                this.columnDate = base.Columns["Date"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -872,6 +884,8 @@ namespace MizyBureau {
                 base.Columns.Add(this.columnIsSend);
                 this.columnIdSocial = new global::System.Data.DataColumn("IdSocial", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnIdSocial);
+                this.columnDate = new global::System.Data.DataColumn("Date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDate);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnIdConversation}, true));
                 this.columnIdConversation.AllowDBNull = false;
@@ -880,6 +894,7 @@ namespace MizyBureau {
                 this.columnMessage.MaxLength = 500;
                 this.columnIsSend.AllowDBNull = false;
                 this.columnIdSocial.AllowDBNull = false;
+                this.columnDate.AllowDBNull = false;
                 this.ExtendedProperties.Add("Generator_TableVarName", "_tableConversation_Message");
                 this.ExtendedProperties.Add("Generator_UserTableName", "Conversation/Message");
             }
@@ -1303,7 +1318,7 @@ namespace MizyBureau {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class TableDataTable : global::System.Data.TypedTableBase<TableRow> {
+        public partial class SocialDataTable : global::System.Data.TypedTableBase<SocialRow> {
             
             private global::System.Data.DataColumn columnIdSocial;
             
@@ -1311,8 +1326,8 @@ namespace MizyBureau {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public TableDataTable() {
-                this.TableName = "Table";
+            public SocialDataTable() {
+                this.TableName = "Social";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -1320,7 +1335,7 @@ namespace MizyBureau {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal TableDataTable(global::System.Data.DataTable table) {
+            internal SocialDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -1337,7 +1352,7 @@ namespace MizyBureau {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected TableDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected SocialDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -1369,53 +1384,53 @@ namespace MizyBureau {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public TableRow this[int index] {
+            public SocialRow this[int index] {
                 get {
-                    return ((TableRow)(this.Rows[index]));
+                    return ((SocialRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event TableRowChangeEventHandler TableRowChanging;
+            public event SocialRowChangeEventHandler SocialRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event TableRowChangeEventHandler TableRowChanged;
+            public event SocialRowChangeEventHandler SocialRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event TableRowChangeEventHandler TableRowDeleting;
+            public event SocialRowChangeEventHandler SocialRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event TableRowChangeEventHandler TableRowDeleted;
+            public event SocialRowChangeEventHandler SocialRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddTableRow(TableRow row) {
+            public void AddSocialRow(SocialRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public TableRow AddTableRow(int IdSocial, string Nom) {
-                TableRow rowTableRow = ((TableRow)(this.NewRow()));
+            public SocialRow AddSocialRow(int IdSocial, string Nom) {
+                SocialRow rowSocialRow = ((SocialRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         IdSocial,
                         Nom};
-                rowTableRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowTableRow);
-                return rowTableRow;
+                rowSocialRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowSocialRow);
+                return rowSocialRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public TableRow FindByIdSocial(int IdSocial) {
-                return ((TableRow)(this.Rows.Find(new object[] {
+            public SocialRow FindByIdSocial(int IdSocial) {
+                return ((SocialRow)(this.Rows.Find(new object[] {
                             IdSocial})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                TableDataTable cln = ((TableDataTable)(base.Clone()));
+                SocialDataTable cln = ((SocialDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -1423,7 +1438,7 @@ namespace MizyBureau {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new TableDataTable();
+                return new SocialDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1446,39 +1461,32 @@ namespace MizyBureau {
                 this.columnIdSocial.Unique = true;
                 this.columnNom.AllowDBNull = false;
                 this.columnNom.MaxLength = 20;
-                this.ExtendedProperties.Add("Generator_RowClassName", "TableRow");
-                this.ExtendedProperties.Add("Generator_RowEvArgName", "TableRowChangeEvent");
-                this.ExtendedProperties.Add("Generator_RowEvHandlerName", "TableRowChangeEventHandler");
-                this.ExtendedProperties.Add("Generator_TableClassName", "TableDataTable");
-                this.ExtendedProperties.Add("Generator_TablePropName", "Table");
-                this.ExtendedProperties.Add("Generator_TableVarName", "tableTable");
-                this.ExtendedProperties.Add("Generator_UserTableName", "Table");
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public TableRow NewTableRow() {
-                return ((TableRow)(this.NewRow()));
+            public SocialRow NewSocialRow() {
+                return ((SocialRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new TableRow(builder);
+                return new SocialRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(TableRow);
+                return typeof(SocialRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.TableRowChanged != null)) {
-                    this.TableRowChanged(this, new TableRowChangeEvent(((TableRow)(e.Row)), e.Action));
+                if ((this.SocialRowChanged != null)) {
+                    this.SocialRowChanged(this, new SocialRowChangeEvent(((SocialRow)(e.Row)), e.Action));
                 }
             }
             
@@ -1486,8 +1494,8 @@ namespace MizyBureau {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.TableRowChanging != null)) {
-                    this.TableRowChanging(this, new TableRowChangeEvent(((TableRow)(e.Row)), e.Action));
+                if ((this.SocialRowChanging != null)) {
+                    this.SocialRowChanging(this, new SocialRowChangeEvent(((SocialRow)(e.Row)), e.Action));
                 }
             }
             
@@ -1495,8 +1503,8 @@ namespace MizyBureau {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.TableRowDeleted != null)) {
-                    this.TableRowDeleted(this, new TableRowChangeEvent(((TableRow)(e.Row)), e.Action));
+                if ((this.SocialRowDeleted != null)) {
+                    this.SocialRowDeleted(this, new SocialRowChangeEvent(((SocialRow)(e.Row)), e.Action));
                 }
             }
             
@@ -1504,14 +1512,14 @@ namespace MizyBureau {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.TableRowDeleting != null)) {
-                    this.TableRowDeleting(this, new TableRowChangeEvent(((TableRow)(e.Row)), e.Action));
+                if ((this.SocialRowDeleting != null)) {
+                    this.SocialRowDeleting(this, new SocialRowChangeEvent(((SocialRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemoveTableRow(TableRow row) {
+            public void RemoveSocialRow(SocialRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -1538,7 +1546,7 @@ namespace MizyBureau {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "TableDataTable";
+                attribute2.FixedValue = "SocialDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -1753,9 +1761,7 @@ namespace MizyBureau {
                                 this.columnIdUtilisateur}, true));
                 this.columnIdUtilisateur.AllowDBNull = false;
                 this.columnIdUtilisateur.Unique = true;
-                this.columnNom.AllowDBNull = false;
                 this.columnNom.MaxLength = 20;
-                this.columnPrenom.AllowDBNull = false;
                 this.columnPrenom.MaxLength = 20;
                 this.columnMail.AllowDBNull = false;
                 this.columnMail.MaxLength = 20;
@@ -1990,6 +1996,17 @@ namespace MizyBureau {
                     this[this._tableConversation_Message.IdSocialColumn] = value;
                 }
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime Date {
+                get {
+                    return ((global::System.DateTime)(this[this._tableConversation_Message.DateColumn]));
+                }
+                set {
+                    this[this._tableConversation_Message.DateColumn] = value;
+                }
+            }
         }
         
         /// <summary>
@@ -2043,25 +2060,25 @@ namespace MizyBureau {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class TableRow : global::System.Data.DataRow {
+        public partial class SocialRow : global::System.Data.DataRow {
             
-            private TableDataTable tableTable;
+            private SocialDataTable tableSocial;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal TableRow(global::System.Data.DataRowBuilder rb) : 
+            internal SocialRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableTable = ((TableDataTable)(this.Table));
+                this.tableSocial = ((SocialDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public int IdSocial {
                 get {
-                    return ((int)(this[this.tableTable.IdSocialColumn]));
+                    return ((int)(this[this.tableSocial.IdSocialColumn]));
                 }
                 set {
-                    this[this.tableTable.IdSocialColumn] = value;
+                    this[this.tableSocial.IdSocialColumn] = value;
                 }
             }
             
@@ -2069,10 +2086,10 @@ namespace MizyBureau {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string Nom {
                 get {
-                    return ((string)(this[this.tableTable.NomColumn]));
+                    return ((string)(this[this.tableSocial.NomColumn]));
                 }
                 set {
-                    this[this.tableTable.NomColumn] = value;
+                    this[this.tableSocial.NomColumn] = value;
                 }
             }
         }
@@ -2106,7 +2123,12 @@ namespace MizyBureau {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string Nom {
                 get {
-                    return ((string)(this[this.tableUtilisateur.NomColumn]));
+                    try {
+                        return ((string)(this[this.tableUtilisateur.NomColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("La valeur pour la colonne \'Nom\' dans la table \'Utilisateur\' est DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableUtilisateur.NomColumn] = value;
@@ -2117,7 +2139,12 @@ namespace MizyBureau {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string Prenom {
                 get {
-                    return ((string)(this[this.tableUtilisateur.PrenomColumn]));
+                    try {
+                        return ((string)(this[this.tableUtilisateur.PrenomColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("La valeur pour la colonne \'Prenom\' dans la table \'Utilisateur\' est DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableUtilisateur.PrenomColumn] = value;
@@ -2133,6 +2160,30 @@ namespace MizyBureau {
                 set {
                     this[this.tableUtilisateur.MailColumn] = value;
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsNomNull() {
+                return this.IsNull(this.tableUtilisateur.NomColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetNomNull() {
+                this[this.tableUtilisateur.NomColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsPrenomNull() {
+                return this.IsNull(this.tableUtilisateur.PrenomColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetPrenomNull() {
+                this[this.tableUtilisateur.PrenomColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -2242,22 +2293,22 @@ namespace MizyBureau {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class TableRowChangeEvent : global::System.EventArgs {
+        public class SocialRowChangeEvent : global::System.EventArgs {
             
-            private TableRow eventRow;
+            private SocialRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public TableRowChangeEvent(TableRow row, global::System.Data.DataRowAction action) {
+            public SocialRowChangeEvent(SocialRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public TableRow Row {
+            public SocialRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -2441,16 +2492,16 @@ namespace MizyBureau.MizyLocalDBDataSetTableAdapters {
                 "_Nom) AND ([Prenom] = @Original_Prenom))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IdAmi", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdAmi", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Nom", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nom", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Prenom", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Prenom", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Nom", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nom", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Prenom", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Prenom", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Ami] ([IdAmi], [Nom], [Prenom]) VALUES (@IdAmi, @Nom, @Prenom)" +
                 ";\r\nSELECT IdAmi, Nom, Prenom FROM Ami WHERE (IdAmi = @IdAmi)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdAmi", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdAmi", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nom", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nom", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Prenom", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Prenom", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nom", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nom", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Prenom", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Prenom", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
             this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[Ami] SET [IdAmi] = @IdAmi, [Nom] = @Nom, [Prenom] = @Prenom WHERE (" +
@@ -2458,11 +2509,11 @@ namespace MizyBureau.MizyLocalDBDataSetTableAdapters {
                 "l_Prenom));\r\nSELECT IdAmi, Nom, Prenom FROM Ami WHERE (IdAmi = @IdAmi)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdAmi", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdAmi", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nom", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nom", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Prenom", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Prenom", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nom", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nom", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Prenom", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Prenom", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IdAmi", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdAmi", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Nom", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nom", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Prenom", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Prenom", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Nom", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nom", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Prenom", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Prenom", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2784,39 +2835,44 @@ namespace MizyBureau.MizyLocalDBDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("Message", "Message");
             tableMapping.ColumnMappings.Add("IsSend", "IsSend");
             tableMapping.ColumnMappings.Add("IdSocial", "IdSocial");
+            tableMapping.ColumnMappings.Add("Date", "Date");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
             this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Conversation/Message] WHERE (([IdConversation] = @Original_IdC" +
                 "onversation) AND ([Message] = @Original_Message) AND ([IsSend] = @Original_IsSen" +
-                "d) AND ([IdSocial] = @Original_IdSocial))";
+                "d) AND ([IdSocial] = @Original_IdSocial) AND ([Date] = @Original_Date))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IdConversation", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdConversation", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Message", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Message", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Message", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Message", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IsSend", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IsSend", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IdSocial", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdSocial", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Date", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Conversation/Message] ([IdConversation], [Message], [IsSend], [IdSocial]) VALUES (@IdConversation, @Message, @IsSend, @IdSocial);
-SELECT IdConversation, Message, IsSend, IdSocial FROM [Conversation/Message] WHERE (IdConversation = @IdConversation)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Conversation/Message] ([IdConversation], [Message], [IsSend], [IdSocial], [Date]) VALUES (@IdConversation, @Message, @IsSend, @IdSocial, @Date);
+SELECT IdConversation, Message, IsSend, IdSocial, Date FROM [Conversation/Message] WHERE (IdConversation = @IdConversation)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdConversation", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdConversation", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Message", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Message", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Message", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Message", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsSend", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IsSend", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdSocial", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdSocial", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Date", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Conversation/Message] SET [IdConversation] = @IdConversation, [Message] = @Message, [IsSend] = @IsSend, [IdSocial] = @IdSocial WHERE (([IdConversation] = @Original_IdConversation) AND ([Message] = @Original_Message) AND ([IsSend] = @Original_IsSend) AND ([IdSocial] = @Original_IdSocial));
-SELECT IdConversation, Message, IsSend, IdSocial FROM [Conversation/Message] WHERE (IdConversation = @IdConversation)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Conversation/Message] SET [IdConversation] = @IdConversation, [Message] = @Message, [IsSend] = @IsSend, [IdSocial] = @IdSocial, [Date] = @Date WHERE (([IdConversation] = @Original_IdConversation) AND ([Message] = @Original_Message) AND ([IsSend] = @Original_IsSend) AND ([IdSocial] = @Original_IdSocial) AND ([Date] = @Original_Date));
+SELECT IdConversation, Message, IsSend, IdSocial, Date FROM [Conversation/Message] WHERE (IdConversation = @IdConversation)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdConversation", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdConversation", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Message", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Message", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Message", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Message", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsSend", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IsSend", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdSocial", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdSocial", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Date", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IdConversation", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdConversation", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Message", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Message", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Message", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Message", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IsSend", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IsSend", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IdSocial", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdSocial", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Date", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2832,7 +2888,8 @@ SELECT IdConversation, Message, IsSend, IdSocial FROM [Conversation/Message] WHE
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT IdConversation, Message, IsSend, IdSocial FROM dbo.[Conversation/Message]";
+            this._commandCollection[0].CommandText = "SELECT IdConversation, Message, IsSend, IdSocial, Date FROM dbo.[Conversation/Mes" +
+                "sage]";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -2893,7 +2950,7 @@ SELECT IdConversation, Message, IsSend, IdSocial FROM [Conversation/Message] WHE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_IdConversation, string Original_Message, bool Original_IsSend, int Original_IdSocial) {
+        public virtual int Delete(int Original_IdConversation, string Original_Message, bool Original_IsSend, int Original_IdSocial, System.DateTime Original_Date) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_IdConversation));
             if ((Original_Message == null)) {
                 throw new global::System.ArgumentNullException("Original_Message");
@@ -2903,6 +2960,7 @@ SELECT IdConversation, Message, IsSend, IdSocial FROM [Conversation/Message] WHE
             }
             this.Adapter.DeleteCommand.Parameters[2].Value = ((bool)(Original_IsSend));
             this.Adapter.DeleteCommand.Parameters[3].Value = ((int)(Original_IdSocial));
+            this.Adapter.DeleteCommand.Parameters[4].Value = ((System.DateTime)(Original_Date));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -2923,7 +2981,7 @@ SELECT IdConversation, Message, IsSend, IdSocial FROM [Conversation/Message] WHE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int IdConversation, string Message, bool IsSend, int IdSocial) {
+        public virtual int Insert(int IdConversation, string Message, bool IsSend, int IdSocial, System.DateTime Date) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((int)(IdConversation));
             if ((Message == null)) {
                 throw new global::System.ArgumentNullException("Message");
@@ -2933,6 +2991,7 @@ SELECT IdConversation, Message, IsSend, IdSocial FROM [Conversation/Message] WHE
             }
             this.Adapter.InsertCommand.Parameters[2].Value = ((bool)(IsSend));
             this.Adapter.InsertCommand.Parameters[3].Value = ((int)(IdSocial));
+            this.Adapter.InsertCommand.Parameters[4].Value = ((System.DateTime)(Date));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -2953,7 +3012,7 @@ SELECT IdConversation, Message, IsSend, IdSocial FROM [Conversation/Message] WHE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int IdConversation, string Message, bool IsSend, int IdSocial, int Original_IdConversation, string Original_Message, bool Original_IsSend, int Original_IdSocial) {
+        public virtual int Update(int IdConversation, string Message, bool IsSend, int IdSocial, System.DateTime Date, int Original_IdConversation, string Original_Message, bool Original_IsSend, int Original_IdSocial, System.DateTime Original_Date) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(IdConversation));
             if ((Message == null)) {
                 throw new global::System.ArgumentNullException("Message");
@@ -2963,15 +3022,17 @@ SELECT IdConversation, Message, IsSend, IdSocial FROM [Conversation/Message] WHE
             }
             this.Adapter.UpdateCommand.Parameters[2].Value = ((bool)(IsSend));
             this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(IdSocial));
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_IdConversation));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((System.DateTime)(Date));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_IdConversation));
             if ((Original_Message == null)) {
                 throw new global::System.ArgumentNullException("Original_Message");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Original_Message));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_Message));
             }
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((bool)(Original_IsSend));
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_IdSocial));
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((bool)(Original_IsSend));
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_IdSocial));
+            this.Adapter.UpdateCommand.Parameters[9].Value = ((System.DateTime)(Original_Date));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -2992,8 +3053,8 @@ SELECT IdConversation, Message, IsSend, IdSocial FROM [Conversation/Message] WHE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Message, bool IsSend, int IdSocial, int Original_IdConversation, string Original_Message, bool Original_IsSend, int Original_IdSocial) {
-            return this.Update(Original_IdConversation, Message, IsSend, IdSocial, Original_IdConversation, Original_Message, Original_IsSend, Original_IdSocial);
+        public virtual int Update(string Message, bool IsSend, int IdSocial, System.DateTime Date, int Original_IdConversation, string Original_Message, bool Original_IsSend, int Original_IdSocial, System.DateTime Original_Date) {
+            return this.Update(Original_IdConversation, Message, IsSend, IdSocial, Date, Original_IdConversation, Original_Message, Original_IsSend, Original_IdSocial, Original_Date);
         }
     }
     
@@ -3316,7 +3377,7 @@ SELECT IdUtilisateur, idConversation, IdAmi FROM [Conversation_Utilisateur/Ami] 
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class TableTableAdapter : global::System.ComponentModel.Component {
+    public partial class SocialTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -3330,7 +3391,7 @@ SELECT IdUtilisateur, idConversation, IdAmi FROM [Conversation_Utilisateur/Ami] 
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public TableTableAdapter() {
+        public SocialTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -3427,34 +3488,34 @@ SELECT IdUtilisateur, idConversation, IdAmi FROM [Conversation_Utilisateur/Ami] 
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "Table";
+            tableMapping.DataSetTable = "Social";
             tableMapping.ColumnMappings.Add("IdSocial", "IdSocial");
             tableMapping.ColumnMappings.Add("Nom", "Nom");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Table] WHERE (([IdSocial] = @Original_IdSocial) AND ([Nom] = @" +
-                "Original_Nom))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Social] WHERE (([IdSocial] = @Original_IdSocial) AND ([Nom] = " +
+                "@Original_Nom))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IdSocial", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdSocial", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Nom", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nom", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Nom", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nom", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Table] ([IdSocial], [Nom]) VALUES (@IdSocial, @Nom);\r\nSELECT I" +
-                "dSocial, Nom FROM [Table] WHERE (IdSocial = @IdSocial)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Social] ([IdSocial], [Nom]) VALUES (@IdSocial, @Nom);\r\nSELECT " +
+                "IdSocial, Nom FROM Social WHERE (IdSocial = @IdSocial)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdSocial", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdSocial", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nom", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nom", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nom", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nom", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[Table] SET [IdSocial] = @IdSocial, [Nom] = @Nom WHERE (([IdSocial] " +
-                "= @Original_IdSocial) AND ([Nom] = @Original_Nom));\r\nSELECT IdSocial, Nom FROM [" +
-                "Table] WHERE (IdSocial = @IdSocial)";
+            this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[Social] SET [IdSocial] = @IdSocial, [Nom] = @Nom WHERE (([IdSocial]" +
+                " = @Original_IdSocial) AND ([Nom] = @Original_Nom));\r\nSELECT IdSocial, Nom FROM " +
+                "Social WHERE (IdSocial = @IdSocial)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdSocial", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdSocial", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nom", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nom", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nom", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nom", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IdSocial", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdSocial", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Nom", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nom", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Nom", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nom", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3470,7 +3531,7 @@ SELECT IdUtilisateur, idConversation, IdAmi FROM [Conversation_Utilisateur/Ami] 
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT IdSocial, Nom FROM dbo.[Table]";
+            this._commandCollection[0].CommandText = "SELECT IdSocial, Nom FROM dbo.Social";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -3478,7 +3539,7 @@ SELECT IdUtilisateur, idConversation, IdAmi FROM [Conversation_Utilisateur/Ami] 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(MizyLocalDBDataSet.TableDataTable dataTable) {
+        public virtual int Fill(MizyLocalDBDataSet.SocialDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -3491,9 +3552,9 @@ SELECT IdUtilisateur, idConversation, IdAmi FROM [Conversation_Utilisateur/Ami] 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual MizyLocalDBDataSet.TableDataTable GetData() {
+        public virtual MizyLocalDBDataSet.SocialDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            MizyLocalDBDataSet.TableDataTable dataTable = new MizyLocalDBDataSet.TableDataTable();
+            MizyLocalDBDataSet.SocialDataTable dataTable = new MizyLocalDBDataSet.SocialDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -3501,7 +3562,7 @@ SELECT IdUtilisateur, idConversation, IdAmi FROM [Conversation_Utilisateur/Ami] 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(MizyLocalDBDataSet.TableDataTable dataTable) {
+        public virtual int Update(MizyLocalDBDataSet.SocialDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
@@ -3509,7 +3570,7 @@ SELECT IdUtilisateur, idConversation, IdAmi FROM [Conversation_Utilisateur/Ami] 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int Update(MizyLocalDBDataSet dataSet) {
-            return this.Adapter.Update(dataSet, "Table");
+            return this.Adapter.Update(dataSet, "Social");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3755,14 +3816,14 @@ SELECT IdUtilisateur, idConversation, IdAmi FROM [Conversation_Utilisateur/Ami] 
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Utilisateur] WHERE (([IdUtilisateur] = @Original_IdUtilisateur" +
-                ") AND ([Nom] = @Original_Nom) AND ([Prenom] = @Original_Prenom) AND ([Mail] = @O" +
-                "riginal_Mail))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Utilisateur] WHERE (([IdUtilisateur] = @Original_IdUtilisateur) AND ((@IsNull_Nom = 1 AND [Nom] IS NULL) OR ([Nom] = @Original_Nom)) AND ((@IsNull_Prenom = 1 AND [Prenom] IS NULL) OR ([Prenom] = @Original_Prenom)) AND ([Mail] = @Original_Mail))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IdUtilisateur", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdUtilisateur", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Nom", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nom", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Prenom", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Prenom", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Mail", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Mail", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Nom", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nom", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Nom", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nom", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Prenom", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Prenom", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Prenom", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Prenom", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Mail", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Mail", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Utilisateur] ([IdUtilisateur], [Nom], [Prenom], [Mail]) VALUES" +
@@ -3770,22 +3831,24 @@ SELECT IdUtilisateur, idConversation, IdAmi FROM [Conversation_Utilisateur/Ami] 
                 "l FROM Utilisateur WHERE (IdUtilisateur = @IdUtilisateur)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdUtilisateur", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdUtilisateur", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nom", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nom", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Prenom", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Prenom", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Mail", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Mail", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nom", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nom", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Prenom", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Prenom", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Mail", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Mail", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Utilisateur] SET [IdUtilisateur] = @IdUtilisateur, [Nom] = @Nom, [Prenom] = @Prenom, [Mail] = @Mail WHERE (([IdUtilisateur] = @Original_IdUtilisateur) AND ([Nom] = @Original_Nom) AND ([Prenom] = @Original_Prenom) AND ([Mail] = @Original_Mail));
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Utilisateur] SET [IdUtilisateur] = @IdUtilisateur, [Nom] = @Nom, [Prenom] = @Prenom, [Mail] = @Mail WHERE (([IdUtilisateur] = @Original_IdUtilisateur) AND ((@IsNull_Nom = 1 AND [Nom] IS NULL) OR ([Nom] = @Original_Nom)) AND ((@IsNull_Prenom = 1 AND [Prenom] IS NULL) OR ([Prenom] = @Original_Prenom)) AND ([Mail] = @Original_Mail));
 SELECT IdUtilisateur, Nom, Prenom, Mail FROM Utilisateur WHERE (IdUtilisateur = @IdUtilisateur)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdUtilisateur", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdUtilisateur", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nom", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nom", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Prenom", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Prenom", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Mail", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Mail", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nom", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nom", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Prenom", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Prenom", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Mail", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Mail", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IdUtilisateur", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdUtilisateur", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Nom", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nom", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Prenom", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Prenom", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Mail", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Mail", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Nom", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nom", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Nom", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nom", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Prenom", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Prenom", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Prenom", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Prenom", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Mail", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Mail", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3865,22 +3928,26 @@ SELECT IdUtilisateur, Nom, Prenom, Mail FROM Utilisateur WHERE (IdUtilisateur = 
         public virtual int Delete(int Original_IdUtilisateur, string Original_Nom, string Original_Prenom, string Original_Mail) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_IdUtilisateur));
             if ((Original_Nom == null)) {
-                throw new global::System.ArgumentNullException("Original_Nom");
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_Nom));
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_Nom));
             }
             if ((Original_Prenom == null)) {
-                throw new global::System.ArgumentNullException("Original_Prenom");
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_Prenom));
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_Prenom));
             }
             if ((Original_Mail == null)) {
                 throw new global::System.ArgumentNullException("Original_Mail");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(Original_Mail));
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((string)(Original_Mail));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -3905,13 +3972,13 @@ SELECT IdUtilisateur, Nom, Prenom, Mail FROM Utilisateur WHERE (IdUtilisateur = 
         public virtual int Insert(int IdUtilisateur, string Nom, string Prenom, string Mail) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((int)(IdUtilisateur));
             if ((Nom == null)) {
-                throw new global::System.ArgumentNullException("Nom");
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Nom));
             }
             if ((Prenom == null)) {
-                throw new global::System.ArgumentNullException("Prenom");
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Prenom));
@@ -3945,13 +4012,13 @@ SELECT IdUtilisateur, Nom, Prenom, Mail FROM Utilisateur WHERE (IdUtilisateur = 
         public virtual int Update(int IdUtilisateur, string Nom, string Prenom, string Mail, int Original_IdUtilisateur, string Original_Nom, string Original_Prenom, string Original_Mail) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(IdUtilisateur));
             if ((Nom == null)) {
-                throw new global::System.ArgumentNullException("Nom");
+                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Nom));
             }
             if ((Prenom == null)) {
-                throw new global::System.ArgumentNullException("Prenom");
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Prenom));
@@ -3964,22 +4031,26 @@ SELECT IdUtilisateur, Nom, Prenom, Mail FROM Utilisateur WHERE (IdUtilisateur = 
             }
             this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_IdUtilisateur));
             if ((Original_Nom == null)) {
-                throw new global::System.ArgumentNullException("Original_Nom");
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Original_Nom));
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_Nom));
             }
             if ((Original_Prenom == null)) {
-                throw new global::System.ArgumentNullException("Original_Prenom");
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_Prenom));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_Prenom));
             }
             if ((Original_Mail == null)) {
                 throw new global::System.ArgumentNullException("Original_Mail");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_Mail));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_Mail));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -4024,7 +4095,7 @@ SELECT IdUtilisateur, Nom, Prenom, Mail FROM Utilisateur WHERE (IdUtilisateur = 
         
         private Conversation_Utilisateur_AmiTableAdapter _conversation_Utilisateur_AmiTableAdapter;
         
-        private TableTableAdapter _tableTableAdapter;
+        private SocialTableAdapter _socialTableAdapter;
         
         private UtilisateurTableAdapter _utilisateurTableAdapter;
         
@@ -4090,12 +4161,12 @@ SELECT IdUtilisateur, Nom, Prenom, Mail FROM Utilisateur WHERE (IdUtilisateur = 
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public TableTableAdapter TableTableAdapter {
+        public SocialTableAdapter SocialTableAdapter {
             get {
-                return this._tableTableAdapter;
+                return this._socialTableAdapter;
             }
             set {
-                this._tableTableAdapter = value;
+                this._socialTableAdapter = value;
             }
         }
         
@@ -4144,9 +4215,9 @@ SELECT IdUtilisateur, Nom, Prenom, Mail FROM Utilisateur WHERE (IdUtilisateur = 
                             && (this._conversation_Utilisateur_AmiTableAdapter.Connection != null))) {
                     return this._conversation_Utilisateur_AmiTableAdapter.Connection;
                 }
-                if (((this._tableTableAdapter != null) 
-                            && (this._tableTableAdapter.Connection != null))) {
-                    return this._tableTableAdapter.Connection;
+                if (((this._socialTableAdapter != null) 
+                            && (this._socialTableAdapter.Connection != null))) {
+                    return this._socialTableAdapter.Connection;
                 }
                 if (((this._utilisateurTableAdapter != null) 
                             && (this._utilisateurTableAdapter.Connection != null))) {
@@ -4174,7 +4245,7 @@ SELECT IdUtilisateur, Nom, Prenom, Mail FROM Utilisateur WHERE (IdUtilisateur = 
                 if ((this._conversation_Utilisateur_AmiTableAdapter != null)) {
                     count = (count + 1);
                 }
-                if ((this._tableTableAdapter != null)) {
+                if ((this._socialTableAdapter != null)) {
                     count = (count + 1);
                 }
                 if ((this._utilisateurTableAdapter != null)) {
@@ -4218,12 +4289,12 @@ SELECT IdUtilisateur, Nom, Prenom, Mail FROM Utilisateur WHERE (IdUtilisateur = 
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._tableTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Table.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._socialTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Social.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._tableTableAdapter.Update(updatedRows));
+                    result = (result + this._socialTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -4270,11 +4341,11 @@ SELECT IdUtilisateur, Nom, Prenom, Mail FROM Utilisateur WHERE (IdUtilisateur = 
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._tableTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Table.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._socialTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Social.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._tableTableAdapter.Update(addedRows));
+                    result = (result + this._socialTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -4304,11 +4375,11 @@ SELECT IdUtilisateur, Nom, Prenom, Mail FROM Utilisateur WHERE (IdUtilisateur = 
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._tableTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Table.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._socialTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Social.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._tableTableAdapter.Update(deletedRows));
+                    result = (result + this._socialTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -4390,8 +4461,8 @@ SELECT IdUtilisateur, Nom, Prenom, Mail FROM Utilisateur WHERE (IdUtilisateur = 
                 throw new global::System.ArgumentException("Tous les TableAdapters managés par un TableAdapterManager doivent utiliser la mêm" +
                         "e chaîne de connexion.");
             }
-            if (((this._tableTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._tableTableAdapter.Connection) == false))) {
+            if (((this._socialTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._socialTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("Tous les TableAdapters managés par un TableAdapterManager doivent utiliser la mêm" +
                         "e chaîne de connexion.");
             }
@@ -4461,13 +4532,13 @@ SELECT IdUtilisateur, Nom, Prenom, Mail FROM Utilisateur WHERE (IdUtilisateur = 
                         adaptersWithAcceptChangesDuringUpdate.Add(this._conversation_Utilisateur_AmiTableAdapter.Adapter);
                     }
                 }
-                if ((this._tableTableAdapter != null)) {
-                    revertConnections.Add(this._tableTableAdapter, this._tableTableAdapter.Connection);
-                    this._tableTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._tableTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._tableTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._tableTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._tableTableAdapter.Adapter);
+                if ((this._socialTableAdapter != null)) {
+                    revertConnections.Add(this._socialTableAdapter, this._socialTableAdapter.Connection);
+                    this._socialTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._socialTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._socialTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._socialTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._socialTableAdapter.Adapter);
                     }
                 }
                 if ((this._utilisateurTableAdapter != null)) {
@@ -4549,9 +4620,9 @@ SELECT IdUtilisateur, Nom, Prenom, Mail FROM Utilisateur WHERE (IdUtilisateur = 
                     this._conversation_Utilisateur_AmiTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._conversation_Utilisateur_AmiTableAdapter]));
                     this._conversation_Utilisateur_AmiTableAdapter.Transaction = null;
                 }
-                if ((this._tableTableAdapter != null)) {
-                    this._tableTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._tableTableAdapter]));
-                    this._tableTableAdapter.Transaction = null;
+                if ((this._socialTableAdapter != null)) {
+                    this._socialTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._socialTableAdapter]));
+                    this._socialTableAdapter.Transaction = null;
                 }
                 if ((this._utilisateurTableAdapter != null)) {
                     this._utilisateurTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._utilisateurTableAdapter]));
