@@ -46,19 +46,18 @@ namespace MizyBureau
             Debug.Write(content);
             // if connection ok then
 
-            Get_localdb_user(boxIdentifiant.Text); // try to find user in localdb if can't create it (use to test the db will be remove for beta)
-
-            Window w = Window.GetWindow(this); 
-            Home home = new Home();
+            User u = Get_localdb_user(boxIdentifiant.Text); // try to find user in localdb if can't create it (use to test the db will be remove for beta)
+            Window w = Window.GetWindow(this);
+            Home home = new Home(u);
             App.Current.MainWindow = home;
             w.Close();
             home.Show();
         }
 
 
-        private void Get_localdb_user(string email)
+        private User Get_localdb_user(string email)
         {
-
+            User u = null;
             using (SqlConnection connection = new SqlConnection(Constants.LocalDB_connectionString))
             {
                 connection.Open();
@@ -68,6 +67,7 @@ namespace MizyBureau
                     {
                         if (reader.HasRows)
                         {
+                            u = new User(reader.GetString(3), reader.GetInt32(0));
                             Debug.Print("user mail : " + email + " find in db ");
                         }
                         else
@@ -78,14 +78,17 @@ namespace MizyBureau
                                 cmd2.Parameters.AddWithValue("@nom", DBNull.Value);
                                 cmd2.Parameters.AddWithValue("@prenom", DBNull.Value);
                                 cmd2.Parameters.AddWithValue("@mail", email);
-                                
-                             int i = cmd2.ExecuteNonQuery();
-                             Debug.Print("add user mail : " + email + " to db " + "\nnb ligne affecté : " + i);
+
+                                int i = cmd2.ExecuteNonQuery();
+                                Debug.Print("add user mail : " + email + " to db " + "\nnb ligne affecté : " + i);
                             }
                         }
                     }
                 }
             }
+            if (u == null)
+                u = Get_localdb_user(email);
+            return u;
         }
 
         public void Pseudo_GotFocus(object sender, RoutedEventArgs e)

@@ -20,16 +20,16 @@ namespace MizyBureau
     /// </summary>
     public partial class Home : Window
     {       
-        public Home()
+        public Home(User u)
         {
             InitializeComponent();
             // load userform (pages)
             _p = new Profile();
-            _c = new Conversation();
+            _c = new Conversation(u);
             // set profile as default page
             this.contentControl.Content = _p;
             _sqlstringconnection = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\MizyDB.mdf;Integrated Security=True";
-
+            Accout_Email.Text +=  "\n" + u.GetEmail();
         }
 
         private void Go_To_Conversation(object sender, RoutedEventArgs e)

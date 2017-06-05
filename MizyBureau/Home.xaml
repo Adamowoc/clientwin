@@ -27,6 +27,7 @@
                     <ImageBrush ImageSource="{StaticResource MyImageParameter}" />
                 </Button.Background>
             </Button>
+            <TextBlock x:Name="Accout_Email" TextWrapping="Wrap" Foreground="#FF7FC5B8" FontSize="28" Text="Compte :"/>
         </WrapPanel>
         <ContentControl x:Name="contentControl" Grid.Row="1"/>
     </Grid>
