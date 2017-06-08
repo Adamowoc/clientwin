@@ -21,16 +21,19 @@ namespace MizyBureau
 
     public struct T_Conversation
     {
-        public T_Conversation(int nb, int idC, int idF) : this()
+        public T_Conversation(string name, int nb, int idC, int idF) : this()
         {
             _nb_Conversation = nb;
             _IdConversation = idC;
             _IdFriend = idF;
+            _isShow = false;
         }
 
-        int _nb_Conversation { get; set; }
-        int _IdConversation { get; set; }
-        int _IdFriend { get; set; }
+        public string _name { get; set; }
+        public int _nb_Conversation { get; set; }
+        public int _IdConversation { get; set; }
+        public int _IdFriend { get; set; }
+        public bool _isShow { get; set; }
     }
 
     /// <summary>
@@ -67,29 +70,49 @@ namespace MizyBureau
             using (SqlConnection connection = new SqlConnection(Constants.LocalDB_connectionString))
             {
                 connection.Open();
-                using (SqlCommand cmd1 = new SqlCommand("SELECT * FROM Conversation_Utilisateur/Ami where IdUtilisateur = '" + u.GetId() + "'", connection))
+                using (SqlCommand cmd1 = new SqlCommand("SELECT * FROM Ami where IdAmi = '" + idFriend + "'", connection))
                 {
                     using (SqlDataReader reader = cmd1.ExecuteReader())
                     {
                         while (reader.Read())
                         {
-                            AddConvSQL(reader.GetInt32(1), reader.GetInt32(2));
-                            _nb_conv++;
+                            // add into conv list friend name, id friend, id conv et nb_conv;
+                            // show conv
                         }
                     }
                 }
             }
         }
 
+        private void ShowConv(T_Conversation conv) // add a conv to xaml (get placement of conv with conv.nb_conv)
+        {
+            if (conv._isShow == false)
+            {
+                conv._isShow = true;
+                //display conv
+            }
+        }
+
         private void addConv(object sender, RoutedEventArgs e)
         {
-            setRectangle();
+
+            /*setRectangle();
             setProfileImg("/Images/fille-logo.png");
             setNameText(NewFriend.Text);
-            setAppImg("/Images/linkedin-logo.png");
+            setAppImg("/Images/linkedin-logo.png");*/
 
+            // get name friend from textbox
+            // if friend name in list conv 
+            //do nothing
+            // else 
+            //add textbox name to friend
+            //get new friend id
+            //add to conv a conv with userid and the newfriendid
+            //get new conv id
+            //add conv to conv list
             _nb_conv++;
-        }
+            //show new conv
+        } // tips ou un truc bien a faire : creer une classe db_request et ajouter les fonction de get, set, add, delete de la db dedans)
 
         private void setAppImg(string path)
         {
