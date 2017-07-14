@@ -7,21 +7,30 @@ using System.Diagnostics;
 using System.Data.SqlClient;
 
 
+
+
 namespace MizyBureau
 {
+
     /// <summary>
     /// Logique d'interaction pour Connection.xaml
     /// </summary>
     public partial class Connection : Page
     {
-        public Connection()
+        private SocketClient _socketClient;
+
+        public Connection(SocketClient sc)
         {
             InitializeComponent();
+            _socketClient = sc;
+            if (_socketClient._isStateOk == false)
+               System.Windows.Application.Current.Shutdown();
         }
 
         private void Inscription_Load(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new Uri("Inscription.xaml", UriKind.Relative));
+            this.NavigationService.Navigate(new Inscription(_socketClient));
+            return;
         }
 
         private void Home_Load(object sender, RoutedEventArgs e)
@@ -32,21 +41,12 @@ namespace MizyBureau
                 return;
             }
 
-            var client = new RestClient("https://dev.api.mizy.io/");
-            var request = new RestRequest("auth/login", Method.POST);
-
-            request.RequestFormat = RestSharp.DataFormat.Json;
-            request.AddBody(new { email = boxIdentifiant.Text, password = pboxPwd.Password.ToString() });
-            
-            IRestResponse response = client.Execute(request); // execute the request
-            var error = response.ErrorException;
-            var content = response.Content; // raw content as string
-
-            MessageBox.Show(content);
-            Debug.Write(content);
-            // if connection ok then
-
-            User u = Get_localdb_user(boxIdentifiant.Text); // try to find user in localdb if can't create it (use to test the db will be remove for beta)
+            User u = Get_user(boxIdentifiant.Text, pboxPwd.Password.ToString());
+            if (u == null)
+            {
+                this.NavigationService.Navigate(new Inscription(_socketClient));
+                return;
+            }
             Window w = Window.GetWindow(this);
             Home home = new Home(u);
             App.Current.MainWindow = home;
@@ -55,39 +55,13 @@ namespace MizyBureau
         }
 
 
-        private User Get_localdb_user(string email)
+        private User Get_user(string email, string pwd)
         {
             User u = null;
-            using (SqlConnection connection = new SqlConnection(Constants.LocalDB_connectionString))
+            if (_socketClient.Login(email, pwd) == true)
             {
-                connection.Open();
-                using (SqlCommand cmd1 = new SqlCommand("SELECT * FROM Utilisateur where Mail = '" + email + "'", connection))
-                {
-                    using (SqlDataReader reader = cmd1.ExecuteReader())
-                    {
-                        if (reader.HasRows)
-                        {
-                            u = new User(reader.GetString(3), reader.GetInt32(0));
-                            Debug.Print("user mail : " + email + " find in db ");
-                        }
-                        else
-                        {
-                            reader.Close();
-                            using (SqlCommand cmd2 = new SqlCommand("INSERT INTO Utilisateur VALUES (@nom, @prenom, @mail)", connection))
-                            {
-                                cmd2.Parameters.AddWithValue("@nom", DBNull.Value);
-                                cmd2.Parameters.AddWithValue("@prenom", DBNull.Value);
-                                cmd2.Parameters.AddWithValue("@mail", email);
-
-                                int i = cmd2.ExecuteNonQuery();
-                                Debug.Print("add user mail : " + email + " to db " + "\nnb ligne affecté : " + i);
-                            }
-                        }
-                    }
-                }
+                u = new User(email, 0);
             }
-            if (u == null)
-                u = Get_localdb_user(email);
             return u;
         }
 

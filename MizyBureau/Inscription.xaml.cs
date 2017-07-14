@@ -23,14 +23,19 @@ namespace MizyBureau
     /// </summary>
     public partial class Inscription : Page
     {
-        public Inscription()
+        SocketClient _socketClient;
+
+        public Inscription(SocketClient sc)
         {
             InitializeComponent();
+            _socketClient = sc;
+            if (_socketClient._isStateOk == false)
+                System.Windows.Application.Current.Shutdown();
         }
 
         private void Connection_Load(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new Uri("Connection.xaml", UriKind.Relative));
+            this.NavigationService.Navigate(new Connection(new SocketClient()));
         }
 
         public void Id_GotFocus(object sender, RoutedEventArgs e)
@@ -69,19 +74,15 @@ namespace MizyBureau
                 MessageBox.Show(Msg_error);
                 return;
             }
-            var client = new RestClient("https://dev.api.mizy.io/");
-            var request = new RestRequest("user/register", Method.POST);
-
-            request.RequestFormat = RestSharp.DataFormat.Json;
-            request.AddBody(new { email = boxEmail.Text });
-
-            IRestResponse response = client.Execute(request); // execute the request
-            var content = response.Content; // raw content as string
-
-            //Debug.Write(content);
-
-            this.NavigationService.Navigate(new Uri("Connection.xaml", UriKind.Relative));
-            
+            if (_socketClient.Register(boxEmail.Text, pboxPwd.Password.ToString()) == true)
+            {
+                MessageBox.Show("Inscription reussite");
+                this.NavigationService.Navigate(new Connection(new SocketClient()));
+            }
+            else
+            {
+                MessageBox.Show("Compte deja existant");
+            }
         }
 
         private bool Is_data_ok()

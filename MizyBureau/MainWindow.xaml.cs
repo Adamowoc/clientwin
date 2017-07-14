@@ -23,7 +23,7 @@ namespace MizyBureau
         public MainWindow()
         {
             InitializeComponent();
-            _NavigationFrame.Navigate(new Connection());
+            _NavigationFrame.Navigate(new Connection(new SocketClient()));
         }
     }
 }

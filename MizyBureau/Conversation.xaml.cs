@@ -48,10 +48,11 @@ namespace MizyBureau
         {
             InitializeComponent();
             _user = u;
+            _conversations = new List<T_Conversation>();
             using (SqlConnection connection = new SqlConnection(Constants.LocalDB_connectionString))
             {
                 connection.Open();
-                using (SqlCommand cmd1 = new SqlCommand("SELECT * FROM Conversation_Utilisateur/Ami where IdUtilisateur = '" + _user.GetId() +"'", connection))
+                using (SqlCommand cmd1 = new SqlCommand(@"SELECT * FROM ConversationUtilisateurAmi where IdUtilisateur = '" + _user.GetId() + "'", connection))
                 {
                     using (SqlDataReader reader = cmd1.ExecuteReader())
                     {
@@ -76,12 +77,12 @@ namespace MizyBureau
                     {
                         while (reader.Read())
                         {
-                            // add into conv list friend name, id friend, id conv et nb_conv;
-                            // show conv
+
                         }
                     }
                 }
             }
+            Show_Conversation();
         }
 
         private void ShowConv(T_Conversation conv) // add a conv to xaml (get placement of conv with conv.nb_conv)
@@ -89,7 +90,10 @@ namespace MizyBureau
             if (conv._isShow == false)
             {
                 conv._isShow = true;
-                //display conv
+                setRectangle(conv._nb_Conversation);
+                setProfileImg("/Images/fille-logo.png", conv._nb_Conversation);
+                setNameText(conv._name, conv._nb_Conversation);
+                setAppImg("/Images/linkedin-logo.png", conv._nb_Conversation);
             }
         }
 
@@ -114,13 +118,13 @@ namespace MizyBureau
             //show new conv
         } // tips ou un truc bien a faire : creer une classe db_request et ajouter les fonction de get, set, add, delete de la db dedans)
 
-        private void setAppImg(string path)
+        private void setAppImg(string path, int nb)
         {
             System.Uri imguri = new Uri(path, UriKind.Relative);
             BitmapImage ni = new BitmapImage(imguri);
             Image img = new Image();
             img.Source = ni;
-            img.Margin = new Thickness(1129, (_nb_conv * 100) + 37, 0, 0);
+            img.Margin = new Thickness(1129, (nb * 100) + 37, 0, 0);
             img.Height = 50;
             img.SetValue(Panel.ZIndexProperty, 3);
 
@@ -128,11 +132,11 @@ namespace MizyBureau
         }
 
 
-        private void setNameText(string name)
+        private void setNameText(string name, int nb)
         {
             TextBlock new_txt = new TextBlock();
 
-            new_txt.Margin = new Thickness(130, (_nb_conv * 100) + 10, 0, 0);
+            new_txt.Margin = new Thickness(130, (nb * 100) + 10, 0, 0);
             new_txt.SetValue(Panel.ZIndexProperty, 3);
             new_txt.Text = name;
             new_txt.Foreground = new SolidColorBrush(Color.FromRgb(64, 164, 145));
@@ -140,13 +144,13 @@ namespace MizyBureau
             Page_Profile.Children.Add(new_txt);
         }
 
-        private void setProfileImg(string path)
+        private void setProfileImg(string path, int nb)
         {
             System.Uri imguri = new Uri(path, UriKind.Relative);
             BitmapImage ni = new BitmapImage(imguri);
             Image img = new Image();
             img.Source = ni;
-            img.Margin = new Thickness(3, (_nb_conv * 100), 0, 0);
+            img.Margin = new Thickness(3, (nb * 100), 0, 0);
             img.Height = 107;
             img.Width = 120;
             img.SetValue(Panel.ZIndexProperty, 3);
@@ -154,15 +158,15 @@ namespace MizyBureau
             Page_Profile.Children.Add(img);
         }
 
-        public void setRectangle()
+        public void setRectangle(int nb)
         {
             Rectangle new_rec = new Rectangle();
 
             new_rec.Height = 100;
             new_rec.Width = 1200;
-            new_rec.Margin = new Thickness(0, (_nb_conv * 100), 0, 0);
+            new_rec.Margin = new Thickness(0, (nb * 100), 0, 0);
             new_rec.SetValue(Panel.ZIndexProperty, 2);
-            if (_nb_conv % 2 == 1)
+            if (nb % 2 == 1)
                 new_rec.Fill = new SolidColorBrush(Color.FromRgb(5, 11, 15));
             else
                 new_rec.Fill = new SolidColorBrush(Color.FromRgb(47, 54, 64));
@@ -170,11 +174,23 @@ namespace MizyBureau
             Page_Profile.Children.Add(new_rec);
         }
 
+
         public void NewFriend_Focus(object sender, RoutedEventArgs e)
         {
             TextBox tb = (TextBox)sender;
             tb.Text = string.Empty;
             tb.GotFocus -= NewFriend_Focus;
+        }
+
+        public void Show_Conversation()
+        {
+            foreach (var conv in _conversations)
+            {
+                setRectangle(conv._nb_Conversation);
+                setProfileImg("/Images/fille-logo.png", conv._nb_Conversation);
+                setNameText(conv._name, conv._nb_Conversation);
+                setAppImg("/Images/linkedin-logo.png", conv._nb_Conversation);
+            }
         }
     }
 }
