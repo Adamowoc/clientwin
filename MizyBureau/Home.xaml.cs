@@ -26,8 +26,9 @@ namespace MizyBureau
             // load userform (pages)
             _p = new Profile();
             _c = new Conversation(u);
+            _l = new Linking();
             // set profile as default page
-            this.contentControl.Content = _p;
+            this.contentControl.Content = _l;
             _sqlstringconnection = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\MizyDB.mdf;Integrated Security=True";
             Accout_Email.Text +=  "\n" + u.GetEmail();
         }
@@ -51,6 +52,7 @@ namespace MizyBureau
             this.contentControl.Content = _i;
         }
 
+        private Linking _l;
         private Profile _p;
         private Conversation _c;
         private InstantMessagery _i;
