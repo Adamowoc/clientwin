@@ -26,19 +26,45 @@ namespace MizyBureau
     /// </summary>
         public partial class Linking : UserControl
         {
-            public Linking()
-            {
-                InitializeComponent();
-            }
+        private SocketClient _socketClient;
+        public Linking(SocketClient sc)
+        {
+            InitializeComponent();
+            _socketClient = sc;
+            if (_socketClient._isStateOk == false)
+                System.Windows.Application.Current.Shutdown();
+        }
 
-            private void connexion_twitter(object sender, RoutedEventArgs e)
+        private void connexion_twitter(object sender, RoutedEventArgs e)
+        {
+            User u = Get_link(boxIdTwi.Text, pboxPwdTwi.Password.ToString(), "twitter");
+            if (u == null)
             {
+                MessageBox.Show("Le mot de passe ou l'identifiant est incorrect.");
+                    return;
+            }
+        }
+
+
+        private User Get_link(string email, string pwd, string channel)
+        {
+            User u = null;
+            if (_socketClient.Linking(email, pwd, channel) == true)
+            {
+                MessageBox.Show("Vous êtes maintenant connecté à " + @channel + " !");
+            }
+            return u;
+        }
+
+        private void connexion_facebook(object sender, RoutedEventArgs e)
+        {
+            User u = Get_link(boxIdTwi.Text, pboxPwdTwi.Password.ToString(), "facebook");
+            if (u == null)
+            {
+                MessageBox.Show("Le mot de passe ou l'identifiant est incorrect.");
                 return;
             }
-            private void connexion_facebook(object sender, RoutedEventArgs e)
-            {
-                return;
-            }
+        }
         public void Pseudo_GotFocus(object sender, RoutedEventArgs e)
         {
             TextBox tb = (TextBox)sender;
@@ -52,5 +78,6 @@ namespace MizyBureau
             tb.Password = string.Empty;
             tb.GotFocus -= Pwd_GotFocus;
         }
+
     }
 }

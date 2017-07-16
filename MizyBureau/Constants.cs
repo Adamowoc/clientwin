@@ -73,6 +73,25 @@ namespace MizyBureau
             return false;
         }
 
+        public bool Linking(string channel, string user, string password)
+        {
+            try
+            {
+                string str = "{ \"function\": \"loginAPI\", \"parameters\": {\"channel\":\"" + @channel + "\", \"user\":\"" + @user + "\", \"password\":\"" + @password + "\"} }\r\n";
+                byte[] byData = System.Text.Encoding.UTF8.GetBytes(str);
+                Socket.Send(byData);
+                int k = Socket.Receive(byData);
+                string strReceived = Encoding.UTF8.GetString(byData);
+                if (strReceived.Contains("\"response\" : \"OK\""))
+                    return true;
+            }
+            catch (Exception e)
+            {
+            }
+            return false;
+        }
+
+
         ~SocketClient()
         {
             Socket.Close();

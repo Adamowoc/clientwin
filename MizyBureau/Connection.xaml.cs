@@ -48,7 +48,7 @@ namespace MizyBureau
                 return;
             }
             Window w = Window.GetWindow(this);
-            Home home = new Home(u);
+            Home home = new Home(u, _socketClient);
             App.Current.MainWindow = home;
             w.Close();
             home.Show();

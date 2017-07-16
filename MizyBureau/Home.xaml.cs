@@ -20,13 +20,13 @@ namespace MizyBureau
     /// </summary>
     public partial class Home : Window
     {       
-        public Home(User u)
+        public Home(User u, SocketClient _socketClient)
         {
             InitializeComponent();
             // load userform (pages)
             _p = new Profile();
             _c = new Conversation(u);
-            _l = new Linking();
+            _l = new Linking(_socketClient);
             // set profile as default page
             this.contentControl.Content = _l;
             _sqlstringconnection = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\MizyDB.mdf;Integrated Security=True";
