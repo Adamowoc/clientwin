@@ -50,6 +50,17 @@ namespace MizyBureau
             }
         }
 
+      private void validate_twitter(object sender, RoutedEventArgs e)
+        {
+     /*       if (Validate_twitter_PIN(boxPINTwi.Text) == false)
+            {
+                MessageBox.Show("Le code PIN est incorrect.");
+            }
+            else
+            {
+                //OK
+            }
+       */ }
 
         private void connexion_facebook(object sender, RoutedEventArgs e)
         {
