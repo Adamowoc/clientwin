@@ -132,8 +132,21 @@ namespace MizyBureau
             return false;
         }
 
-        public bool Validate_twitter_PIN(string pin)
+        public bool Validate_twitter_PIN(string pin, string user)
         {
+            try
+            {
+                string str = "{ \"function\": \"getTokenFromPin\", \"parameters\": {\"pin\":\"" + @pin + "\", \"user\":\"" + @user + "\"} }\r\n";
+                byte[] byData = System.Text.Encoding.UTF8.GetBytes(str);
+                Socket.Send(byData);
+                int k = Socket.Receive(byData);
+                string strReceived = Encoding.UTF8.GetString(byData);
+                if (strReceived.Contains("\"response\" : \"OK\""))
+                    return true;
+            }
+            catch (Exception e)
+            {
+            }
             return false;
         }
 

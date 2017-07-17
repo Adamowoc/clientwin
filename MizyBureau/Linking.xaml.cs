@@ -56,13 +56,13 @@ namespace MizyBureau
 
       private void validate_twitter(object sender, RoutedEventArgs e)
         {
-            if (_socketClient.Validate_twitter_PIN(boxPINTwi.Text) == false)
+            if (_socketClient.Validate_twitter_PIN(boxPINTwi.Text, _user._email) == false)
             {
                 MessageBox.Show("Le code PIN est incorrect.");
             }
             else
             {
-                //OK
+                MessageBox.Show("Vous êtes maintenant connecté à Twitter !");
             }
         }
 
