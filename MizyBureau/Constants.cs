@@ -5,8 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Net.Sockets;
 using System.Net;
-using Newtonsoft.Json.Linq;
-using Newtonsoft.Json;
 using System.Windows;
 
 namespace MizyBureau
@@ -107,17 +105,24 @@ namespace MizyBureau
                 string str = "{ \"function\": \"getUrlOAuth\", \"parameters\": {\"user\":\"" + @mail + "\"} }\r\n";
                 byte[] byData = System.Text.Encoding.UTF8.GetBytes(str);
                 Socket.Send(byData);
-                int bytesRead;
                 string strReceived = "";
-                while ((bytesRead = Socket.Receive(byData)) > 0)
+                int i = 0;
+                while (i++ < 20)
                 {
+                    Socket.Receive(byData);
                     strReceived = strReceived + Encoding.UTF8.GetString(byData);
+                    if (strReceived.Contains("\r") == true)
+                    {
+                        strReceived = strReceived.Substring(0, strReceived.IndexOf("\r")-3);
+                        goto endwhile;
+                    }
                     // process bytesRead from buffer
                 }
+                endwhile:
                 if (strReceived.Contains("\"response\" : \"OK\""))
                 {
-                   int a = strReceived.IndexOf("\"url\" : \"") + 10;
-                    url = strReceived.Substring(a, strReceived.Length - a - 1);
+                   int a = strReceived.IndexOf("\"url\" : \"") + 9;
+                    url = strReceived.Substring(a, strReceived.Length - a);
                     return true;
                 }
             }
