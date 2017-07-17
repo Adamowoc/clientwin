@@ -265,3 +265,5 @@ D:\Documents\git\git\clientwinew\clientwin\MizyBureau\obj\Debug\MizyBureau.exe
 D:\Documents\git\git\clientwinew\clientwin\MizyBureau\obj\Debug\MizyBureau.pdb
 D:\Documents\git\git\clientwinew\clientwin\MizyBureau\bin\Debug\Newtonsoft.Json.dll
 D:\Documents\git\git\clientwinew\clientwin\MizyBureau\bin\Debug\Newtonsoft.Json.xml
+C:\Users\benjamin\Documents\clientwin\MizyBureau\bin\Debug\Newtonsoft.Json.dll
+C:\Users\benjamin\Documents\clientwin\MizyBureau\bin\Debug\Newtonsoft.Json.xml

@@ -109,13 +109,10 @@ namespace MizyBureau
                 Socket.Send(byData);
                 int k = Socket.Receive(byData);
                 string strReceived = Encoding.UTF8.GetString(byData);
-                MessageBox.Show(strReceived);
                 if (strReceived.Contains("\"response\" : \"OK\""))
                 {
-                    var data = (JObject)JsonConvert.DeserializeObject(strReceived);
-                   // MessageBox.Show(strReceived);
-                    url = data["url"].Value<string>();
-                    //MessageBox.Show(url);
+                   int a = strReceived.IndexOf("\"url\" : \"") + 9;
+                    url = strReceived.Substring(a, strReceived.Length - a);
                     return true;
                 }
             }
