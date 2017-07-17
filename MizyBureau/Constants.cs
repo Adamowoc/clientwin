@@ -132,6 +132,11 @@ namespace MizyBureau
             return false;
         }
 
+        public bool Validate_twitter_PIN(string pin)
+        {
+            return false;
+        }
+
         ~SocketClient()
         {
             Socket.Close();
