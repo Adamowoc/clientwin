@@ -39,14 +39,15 @@ namespace MizyBureau
 
       private void connexion_twitter(object sender, RoutedEventArgs e)
         {
-           /*   if (Get_link(boxIdTwi.Text, pboxPwdTwi.Password.ToString(), "twitter") == false)
+            string url = "void";
+            if (_socketClient.Linking_twitter(ref url, _user._email) == false)
             {
                 MessageBox.Show("Link Twitter fail");
             }
             else
             {
-                _user._isTwitter = true;
-            }*/
+                //next call
+            }
         }
 
 

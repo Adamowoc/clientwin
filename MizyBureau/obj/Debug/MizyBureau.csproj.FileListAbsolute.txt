@@ -237,7 +237,6 @@ D:\Documents\git\git\clientwinew\clientwin\MizyBureau\bin\Debug\MizyLocalDB_log.
 D:\Documents\git\git\clientwinew\clientwin\MizyBureau\bin\Debug\MizyBureau.exe.config
 D:\Documents\git\git\clientwinew\clientwin\MizyBureau\bin\Debug\MizyBureau.exe
 D:\Documents\git\git\clientwinew\clientwin\MizyBureau\bin\Debug\MizyBureau.pdb
-D:\Documents\git\git\clientwinew\clientwin\MizyBureau\obj\Debug\MizyBureau.csprojResolveAssemblyReference.cache
 D:\Documents\git\git\clientwinew\clientwin\MizyBureau\obj\Debug\Connection.g.cs
 D:\Documents\git\git\clientwinew\clientwin\MizyBureau\obj\Debug\Linking.g.cs
 D:\Documents\git\git\clientwinew\clientwin\MizyBureau\obj\Debug\Conversation.g.cs
@@ -264,3 +263,5 @@ D:\Documents\git\git\clientwinew\clientwin\MizyBureau\obj\Debug\MizyBureau.Prope
 D:\Documents\git\git\clientwinew\clientwin\MizyBureau\obj\Debug\MizyBureau.csproj.GenerateResource.Cache
 D:\Documents\git\git\clientwinew\clientwin\MizyBureau\obj\Debug\MizyBureau.exe
 D:\Documents\git\git\clientwinew\clientwin\MizyBureau\obj\Debug\MizyBureau.pdb
+D:\Documents\git\git\clientwinew\clientwin\MizyBureau\bin\Debug\Newtonsoft.Json.dll
+D:\Documents\git\git\clientwinew\clientwin\MizyBureau\bin\Debug\Newtonsoft.Json.xml

@@ -5,6 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Net.Sockets;
 using System.Net;
+using Newtonsoft.Json.Linq;
+using Newtonsoft.Json;
+using System.Windows;
 
 namespace MizyBureau
 {
@@ -97,6 +100,30 @@ namespace MizyBureau
             return false;
         }
 
+        public bool Linking_twitter(ref string url, string mail)
+        {
+            try
+            {
+                string str = "{ \"function\": \"getUrlOAuth\", \"parameters\": {\"user\":\"" + @mail + "\"} }\r\n";
+                byte[] byData = System.Text.Encoding.UTF8.GetBytes(str);
+                Socket.Send(byData);
+                int k = Socket.Receive(byData);
+                string strReceived = Encoding.UTF8.GetString(byData);
+                MessageBox.Show(strReceived);
+                if (strReceived.Contains("\"response\" : \"OK\""))
+                {
+                    var data = (JObject)JsonConvert.DeserializeObject(strReceived);
+                   // MessageBox.Show(strReceived);
+                    url = data["url"].Value<string>();
+                    //MessageBox.Show(url);
+                    return true;
+                }
+            }
+            catch (Exception e)
+            {
+            }
+            return false;
+        }
 
         ~SocketClient()
         {
