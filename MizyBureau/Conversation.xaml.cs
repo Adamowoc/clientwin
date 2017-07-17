@@ -42,47 +42,14 @@ namespace MizyBureau
     public partial class Conversation : UserControl
     {
         int _nb_conv = 1;
-        User _user;
         List<T_Conversation> _conversations;
-        public Conversation(User u)
+        SocketClient _socketClient;
+
+        public Conversation(SocketClient sc)
         {
             InitializeComponent();
-            _user = u;
             _conversations = new List<T_Conversation>();
-            using (SqlConnection connection = new SqlConnection(Constants.LocalDB_connectionString))
-            {
-                connection.Open();
-                using (SqlCommand cmd1 = new SqlCommand(@"SELECT * FROM ConversationUtilisateurAmi where IdUtilisateur = '" + _user.GetId() + "'", connection))
-                {
-                    using (SqlDataReader reader = cmd1.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            AddConvSQL(reader.GetInt32(1), reader.GetInt32(2));
-                            _nb_conv++;
-                        }
-                    }
-                }
-            }
-        }
-
-        private void AddConvSQL(int idConversqtion, int idFriend)
-        {
-            using (SqlConnection connection = new SqlConnection(Constants.LocalDB_connectionString))
-            {
-                connection.Open();
-                using (SqlCommand cmd1 = new SqlCommand("SELECT * FROM Ami where IdAmi = '" + idFriend + "'", connection))
-                {
-                    using (SqlDataReader reader = cmd1.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-
-                        }
-                    }
-                }
-            }
-            Show_Conversation();
+            _socketClient = sc;
         }
 
         private void ShowConv(T_Conversation conv) // add a conv to xaml (get placement of conv with conv.nb_conv)

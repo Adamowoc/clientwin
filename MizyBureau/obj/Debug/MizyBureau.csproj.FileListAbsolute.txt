@@ -230,3 +230,5 @@ D:\Documents\git\git\clientwin\MizyBureau\obj\Debug\MizyBureau.pdb
 D:\Documents\git\git\clientwin\MizyBureau\obj\Debug\Linking.g.cs
 D:\Documents\git\git\clientwin\MizyBureau\obj\Debug\Linking.baml
 D:\Documents\git\git\clientwin\MizyBureau\obj\Debug\MizyBureau.csprojResolveAssemblyReference.cache
+C:\Users\benjamin\Documents\clientwin\MizyBureau\obj\Debug\Linking.g.cs
+C:\Users\benjamin\Documents\clientwin\MizyBureau\obj\Debug\Linking.baml

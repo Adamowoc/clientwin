@@ -8,24 +8,15 @@ namespace MizyBureau
 {
     public class User
     {
-        public User(string email, int id)
+        public User(string email, bool twitter = false, bool facebook = false)
         {
             _email = email;
-            _id = id;
+            _isTwitter = twitter;
+            _isFacebook = facebook;
         }
 
-        public string GetEmail()
-        {
-            return _email;
-        }
-
-        public int GetId()
-        {
-            return _id;
-        }
-
-        private string      _email;
-        private int         _id;
-        private List<User>  _friends;
+        public string _email { get; set; }
+        public bool _isFacebook { get; set; }
+        public bool _isTwitter { get; set; }
     }
 }

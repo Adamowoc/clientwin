@@ -37,7 +37,7 @@ namespace MizyBureau
             _isStateOk = true;
         }
 
-        public bool Login(string email, string password)
+        public bool Login(string email, string password, ref bool twitter, ref bool facebook)
         {
             try
             {
@@ -47,7 +47,13 @@ namespace MizyBureau
                 int k = Socket.Receive(byData);
                 string strReceived = Encoding.UTF8.GetString(byData);
                 if (strReceived.Contains("\"response\" : \"OK\""))
+                {
+                    if (strReceived.Contains("\"twitter\" : \"True\""))
+                        twitter = true;
+                    if (strReceived.Contains("\"facebook\" : \"True\""))
+                        facebook = true;
                     return true;
+                }
             }
             catch (Exception e)
             {

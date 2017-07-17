@@ -19,44 +19,46 @@ namespace MizyBureau
     /// Logique d'interaction pour Home.xaml
     /// </summary>
     public partial class Home : Window
-    {       
+    {
+        private User _user;
+
         public Home(User u, SocketClient _socketClient)
         {
             InitializeComponent();
+            _user = u;
             // load userform (pages)
             _p = new Profile();
-            _c = new Conversation(u);
-            _l = new Linking(_socketClient);
-            // set profile as default page
-            this.contentControl.Content = _l;
-            _sqlstringconnection = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\MizyDB.mdf;Integrated Security=True";
-            Accout_Email.Text +=  "\n" + u.GetEmail();
+            _c = new Conversation(_socketClient);
+            _l = new Linking(_socketClient, ref _user);
+            if (_user._isFacebook == false || _user._isTwitter == false)
+                this.contentControl.Content = _l;   
+            else
+                this.contentControl.Content = _p;
+            Accout_Email.Text =  "Compte : " + _user._email + " | twitter : " + _user._isTwitter + " | facebook : " + _user._isFacebook;
         }
 
         private void Go_To_Conversation(object sender, RoutedEventArgs e)
         {
             contentControl.Content = _c;
+            Accout_Email.Text = "Compte : " + _user._email + " | twitter : " + _user._isTwitter + " | facebook : " + _user._isFacebook;
         }
 
         private void Go_To_Profile(object sender, RoutedEventArgs e)
         {
             this.contentControl.Content = _p;
+            Accout_Email.Text =  "Compte : " + _user._email + " | twitter : " + _user._isTwitter + " | facebook : " + _user._isFacebook;
         }
 
         private void Go_To_Blank(object sender, RoutedEventArgs e)
         {
-            if (_i == null)
-                _i = new InstantMessagery(1, _sqlstringconnection);
-            
-
-            this.contentControl.Content = _i;
+            this.contentControl.Content = _l;
+            Accout_Email.Text =  "Compte : " + _user._email + " | twitter : " + _user._isTwitter + " | facebook : " + _user._isFacebook;
         }
 
         private Linking _l;
         private Profile _p;
         private Conversation _c;
         private InstantMessagery _i;
-        private string  _sqlstringconnection;
     }
 }
 

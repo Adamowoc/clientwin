@@ -24,47 +24,54 @@ namespace MizyBureau
     /// <summary>
     /// Logique d'interaction pour Linking.xaml
     /// </summary>
-        public partial class Linking : UserControl
-        {
+    public partial class Linking : UserControl
+    {
         private SocketClient _socketClient;
-        public Linking(SocketClient sc)
+        private User _user;
+        public Linking(SocketClient sc, ref User user)
         {
             InitializeComponent();
             _socketClient = sc;
+            _user = user;
             if (_socketClient._isStateOk == false)
                 System.Windows.Application.Current.Shutdown();
         }
 
         private void connexion_twitter(object sender, RoutedEventArgs e)
         {
-            User u = Get_link(boxIdTwi.Text, pboxPwdTwi.Password.ToString(), "twitter");
-            if (u == null)
+            if (Get_link(boxIdTwi.Text, pboxPwdTwi.Password.ToString(), "twitter") == false)
             {
-                MessageBox.Show("Le mot de passe ou l'identifiant est incorrect.");
-                    return;
+                MessageBox.Show("Link Twitter fail");
+            }
+            else
+            {
+                _user._isTwitter = true;
             }
         }
 
-
-        private User Get_link(string email, string pwd, string channel)
-        {
-            User u = null;
-            if (_socketClient.Linking(email, pwd, channel) == true)
-            {
-                MessageBox.Show("Vous êtes maintenant connecté à " + @channel + " !");
-            }
-            return u;
-        }
 
         private void connexion_facebook(object sender, RoutedEventArgs e)
         {
-            User u = Get_link(boxIdTwi.Text, pboxPwdTwi.Password.ToString(), "facebook");
-            if (u == null)
+            if (Get_link(boxIdTwi.Text, pboxPwdTwi.Password.ToString(), "facebook") == false)
             {
                 MessageBox.Show("Le mot de passe ou l'identifiant est incorrect.");
-                return;
+            }
+            else
+            {
+                _user._isFacebook = true;
             }
         }
+
+        private bool Get_link(string email, string pwd, string channel)
+        {
+            if (_socketClient.Linking(email, pwd, channel) == true)
+            {
+                MessageBox.Show("Vous êtes maintenant connecté à " + @channel + " !");
+                return true;
+            }
+            return false;
+        }
+
         public void Pseudo_GotFocus(object sender, RoutedEventArgs e)
         {
             TextBox tb = (TextBox)sender;

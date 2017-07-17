@@ -58,9 +58,11 @@ namespace MizyBureau
         private User Get_user(string email, string pwd)
         {
             User u = null;
-            if (_socketClient.Login(email, pwd) == true)
+            bool twitter = false;
+            bool facebook = false;
+            if (_socketClient.Login(email, pwd, ref twitter, ref facebook ) == true)
             {
-                u = new User(email, 0);
+                u = new User(email, twitter, facebook);
             }
             return u;
         }
