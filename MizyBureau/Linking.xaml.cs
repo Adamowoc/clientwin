@@ -37,22 +37,22 @@ namespace MizyBureau
                 System.Windows.Application.Current.Shutdown();
         }
 
-        private void connexion_twitter(object sender, RoutedEventArgs e)
+      private void connexion_twitter(object sender, RoutedEventArgs e)
         {
-            if (Get_link(boxIdTwi.Text, pboxPwdTwi.Password.ToString(), "twitter") == false)
+           /*   if (Get_link(boxIdTwi.Text, pboxPwdTwi.Password.ToString(), "twitter") == false)
             {
                 MessageBox.Show("Link Twitter fail");
             }
             else
             {
                 _user._isTwitter = true;
-            }
+            }*/
         }
 
 
         private void connexion_facebook(object sender, RoutedEventArgs e)
         {
-            if (Get_link(boxIdTwi.Text, pboxPwdTwi.Password.ToString(), "facebook") == false)
+            if (Get_link_fb(boxIdTwi.Text, pboxPwdTwi.Password.ToString(), "facebook") == false)
             {
                 MessageBox.Show("Le mot de passe ou l'identifiant est incorrect.");
             }
@@ -62,9 +62,9 @@ namespace MizyBureau
             }
         }
 
-        private bool Get_link(string email, string pwd, string channel)
+        private bool Get_link_fb(string email, string pwd, string channel)
         {
-            if (_socketClient.Linking(email, pwd, channel) == true)
+            if (_socketClient.Linking_fb(_user._email, email, pwd) == true)
             {
                 MessageBox.Show("Vous êtes maintenant connecté à " + @channel + " !");
                 return true;

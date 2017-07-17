@@ -79,11 +79,11 @@ namespace MizyBureau
             return false;
         }
 
-        public bool Linking(string channel, string user, string password)
+        public bool Linking_fb(string user, string mail, string password)
         {
             try
             {
-                string str = "{ \"function\": \"loginAPI\", \"parameters\": {\"channel\":\"" + @channel + "\", \"user\":\"" + @user + "\", \"password\":\"" + @password + "\"} }\r\n";
+                string str = "{ \"function\": \"addFacebookCredentials\", \"parameters\": {\"facebook_email\":\"" + @mail + "\", \"facebook_password\":\"" + @password + "\", \"user\":\"" + @user + "\"} }\r\n";
                 byte[] byData = System.Text.Encoding.UTF8.GetBytes(str);
                 Socket.Send(byData);
                 int k = Socket.Receive(byData);
