@@ -15,6 +15,8 @@ using System.Windows.Shapes;
 using System.Data.SqlClient;
 using System.Diagnostics;
 
+using System.Diagnostics;
+using System.Windows.Navigation;
 
 namespace MizyBureau
 {
@@ -46,13 +48,15 @@ namespace MizyBureau
             }
             else
             {
-                //next call
+                txtUrl.Text = url;
+                System.Uri uri = new System.Uri(url);
+                hyper.NavigateUri = uri;
             }
         }
 
       private void validate_twitter(object sender, RoutedEventArgs e)
         {
-            if (Validate_twitter_PIN(boxPINTwi.Text) == false)
+            if (_socketClient.Validate_twitter_PIN(boxPINTwi.Text) == false)
             {
                 MessageBox.Show("Le code PIN est incorrect.");
             }
@@ -97,6 +101,10 @@ namespace MizyBureau
             tb.Password = string.Empty;
             tb.GotFocus -= Pwd_GotFocus;
         }
-
+        private void Hyperlink_RequestNavigate(object sender, RequestNavigateEventArgs e)
+        {
+            Process.Start(new ProcessStartInfo(e.Uri.AbsoluteUri));
+            e.Handled = true;
+        }
     }
 }
