@@ -53,7 +53,7 @@ namespace MizyBureau
 
         private void connexion_facebook(object sender, RoutedEventArgs e)
         {
-            if (Get_link_fb(boxIdTwi.Text, pboxPwdTwi.Password.ToString(), "facebook") == false)
+            if (Get_link_fb(boxIdFB.Text, pboxPwdFb.Password.ToString(), "facebook") == false)
             {
                 MessageBox.Show("Le mot de passe ou l'identifiant est incorrect.");
             }

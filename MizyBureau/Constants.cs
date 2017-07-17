@@ -107,12 +107,17 @@ namespace MizyBureau
                 string str = "{ \"function\": \"getUrlOAuth\", \"parameters\": {\"user\":\"" + @mail + "\"} }\r\n";
                 byte[] byData = System.Text.Encoding.UTF8.GetBytes(str);
                 Socket.Send(byData);
-                int k = Socket.Receive(byData);
-                string strReceived = Encoding.UTF8.GetString(byData);
+                int bytesRead;
+                string strReceived = "";
+                while ((bytesRead = Socket.Receive(byData)) > 0)
+                {
+                    strReceived = strReceived + Encoding.UTF8.GetString(byData);
+                    // process bytesRead from buffer
+                }
                 if (strReceived.Contains("\"response\" : \"OK\""))
                 {
-                   int a = strReceived.IndexOf("\"url\" : \"") + 9;
-                    url = strReceived.Substring(a, strReceived.Length - a);
+                   int a = strReceived.IndexOf("\"url\" : \"") + 10;
+                    url = strReceived.Substring(a, strReceived.Length - a - 1);
                     return true;
                 }
             }
