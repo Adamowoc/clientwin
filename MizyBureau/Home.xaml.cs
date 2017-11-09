@@ -55,7 +55,6 @@ namespace MizyBureau
         private void Go_To_Conversation(object sender, RoutedEventArgs e)
         {
             contentControl.Content = _c;
-            //_c.APICall();
             Accout_Email.Text = "Compte : " + _user._email + " | twitter : " + _user._isTwitter + " | facebook : " + _user._isFacebook;
         }
 
