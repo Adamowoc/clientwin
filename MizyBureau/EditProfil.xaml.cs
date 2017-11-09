@@ -16,14 +16,13 @@ using System.Windows.Shapes;
 namespace MizyBureau
 {
     /// <summary>
-    /// Logique d'interaction pour EditProfil.xaml
+    /// Interaction logic for EditProfil.xaml
     /// </summary>
-    public partial class EditProfil : Page
+    public partial class EditProfil : UserControl
     {
         public EditProfil()
         {
             InitializeComponent();
         }
-
     }
 }
