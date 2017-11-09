@@ -25,5 +25,9 @@ namespace MizyBureau
             InitializeComponent();
         }
 
+        private void buttonModify_Click(object sender, RoutedEventArgs e)
+        {
+            Home.instance.Go_to_Edit_Profile();
+        }
     }
 }

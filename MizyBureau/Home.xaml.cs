@@ -40,6 +40,7 @@ namespace MizyBureau
             _c = new Conversation();
             _l = new Linking(ref _user);
             _i = new InstantMessagery();
+            _e = new EditProfil();
 
             if (_user._isFacebook == false || _user._isTwitter == false)
                 this.contentControl.Content = _l;
@@ -78,10 +79,17 @@ namespace MizyBureau
             Accout_Email.Text = "Compte : " + _user._email + " | twitter : " + _user._isTwitter + " | facebook : " + _user._isFacebook;
         }
 
+        public void Go_to_Edit_Profile()
+        {
+            this.contentControl.Content = _e;
+            Accout_Email.Text = "Compte : " + _user._email + " | twitter : " + _user._isTwitter + " | facebook : " + _user._isFacebook;
+        }
+
         private Linking _l;
         private Profile _p;
         private Conversation _c;
         private InstantMessagery _i;
+        private EditProfil _e;
     }
 }
 

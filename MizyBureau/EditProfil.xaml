@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="MizyBureau.Profile"
+﻿<UserControl x:Class="MizyBureau.EditProfil"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -6,13 +6,13 @@
              xmlns:local="clr-namespace:MizyBureau"
              mc:Ignorable="d" 
              d:DesignHeight="800" d:DesignWidth="1200">
-    <Grid x:Name="My_profile">
+    <Grid x:Name="My_EditProfil">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" MinHeight="868.8" />
             <RowDefinition Height="0*" />
         </Grid.RowDefinitions>
 
-        <Canvas x:Name="Page_Profile" Background="#FF050B0F">
+        <Canvas x:Name="Page_EditProfil" Background="#FF050B0F">
             <TextBlock x:Name="txtNameTitle" TextWrapping="Wrap" Foreground="#abcdea" FontSize="28" Height="44" Width="88" HorizontalAlignment="Left" VerticalAlignment="Top" Text="Nom" Canvas.Left="190" Canvas.Top="185"/>
             <TextBlock x:Name="txtProfileTitle" TextWrapping="Wrap" Foreground="#abcdea" FontSize="28" Height="92" Width="118" HorizontalAlignment="Left" VerticalAlignment="Top" Text="Phrase de profil" Canvas.Left="190" Canvas.Top="247"/>
             <TextBox x:Name="boxName" HorizontalAlignment="Center" Height="44" TextWrapping="Wrap" VerticalAlignment="Center" Width="631" Background="{x:Null}" Foreground="#FF40A491" Grid.RowSpan="9" FontSize="24" Text="John Doe" SelectionBrush="#FF40A491" Canvas.Left="319" Canvas.Top="185" />
