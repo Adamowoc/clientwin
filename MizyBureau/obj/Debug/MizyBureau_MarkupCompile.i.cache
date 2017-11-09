@@ -4,28 +4,16 @@
 winexe
 C#
 .cs
-<<<<<<< Updated upstream
-C:\Users\Manon\Pictures\School\EIP\GITHUB\Client web\Nouveau dossier\clientwin\MizyBureau\obj\Debug\
-=======
 C:\Users\benjamin\Documents\clientwin\MizyBureau\obj\Debug\
->>>>>>> Stashed changes
 MizyBureau
 none
 false
 DEBUG;TRACE
-<<<<<<< Updated upstream
-C:\Users\Manon\Pictures\School\EIP\GITHUB\Client web\Nouveau dossier\clientwin\MizyBureau\App.xaml
-8657709790
-2-1440917456
-221804463481
-17-734355884
-=======
 C:\Users\benjamin\Documents\clientwin\MizyBureau\App.xaml
 8657709790
-
-21-73290600
-71989250289
->>>>>>> Stashed changes
+2-1440917456
+221055975787
+17-255541630
 Connection.xaml;Linking.xaml;Conversation.xaml;Home.xaml;Inscription.xaml;InstantMessagery.xaml;MainWindow.xaml;Profile.xaml;
 
 True

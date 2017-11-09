@@ -50,6 +50,10 @@ namespace MizyBureau
             _conversations = new List<T_Conversation>();
         }
 
+        private void GoToMessagerie(object sender, RoutedEventArgs e)
+        {
+            Home.instance.Go_To_Messagerie();
+        }
 
         private void ShowConv(T_Conversation conv) // add a conv to xaml (get placement of conv with conv.nb_conv)
         {

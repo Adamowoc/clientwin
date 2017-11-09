@@ -26,15 +26,10 @@ namespace MizyBureau
 
         private User _user;
 
-        public Home(User u, SocketClient _socketClient)
-        {
-            InitializeComponent();
-           
-        }
-
         public Home()
         {
             InitializeComponent();
+            instance = this;
         }
 
         public void SetHomeWithUser()
@@ -44,6 +39,8 @@ namespace MizyBureau
             _p = new Profile();
             _c = new Conversation();
             _l = new Linking(ref _user);
+            _i = new InstantMessagery();
+
             if (_user._isFacebook == false || _user._isTwitter == false)
                 this.contentControl.Content = _l;
             else
@@ -68,6 +65,12 @@ namespace MizyBureau
         {
             this.contentControl.Content = _l;
             Accout_Email.Text =  "Compte : " + _user._email + " | twitter : " + _user._isTwitter + " | facebook : " + _user._isFacebook;
+        }
+
+        public void Go_To_Messagerie()
+        {
+            this.contentControl.Content = _i;
+            Accout_Email.Text = "Compte : " + _user._email + " | twitter : " + _user._isTwitter + " | facebook : " + _user._isFacebook;
         }
 
         private Linking _l;

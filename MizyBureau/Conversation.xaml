@@ -16,6 +16,8 @@
             <Image x:Name="imgFbLogo" Margin="0,0,0,0"  Source="{StaticResource MyImageFacebook}" Height="50" Canvas.Top="37" Width="51" Canvas.Left="1073" RenderTransformOrigin="0.83,0.029" Panel.ZIndex="3" />
             <Image x:Name="imgTwitter" HorizontalAlignment="Left" Height="50" Width="55" VerticalAlignment="Top" Source="{StaticResource MyImageTwitter}" RenderTransformOrigin="0.531,0.698" Canvas.Left="1129" Canvas.Top="37" Panel.ZIndex="3"/>
             <Image x:Name="imgfille" HorizontalAlignment="Left" Height="107" Width="120" VerticalAlignment="Top" Source="{StaticResource MyImageFille}" RenderTransformOrigin="0.531,0.698" Panel.ZIndex="3" Canvas.Left="10"/>
+            <Button x:Name="Show" Content="Show" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120" Background="{x:Null}" Foreground="#FF40A491" FontSize="16" Click="GoToMessagerie" Canvas.Left="907" Canvas.Top="43" Panel.ZIndex="3"/>
+
             <Rectangle Fill="#2F3640" Height="100"  Width="1194" Panel.ZIndex="2"/>
             <TextBlock x:Name="txtUser" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Ellena Almart" VerticalAlignment="Center" Foreground="#40A491" FontSize="40" Height="58" Canvas.Left="130" Canvas.Top="10" Panel.ZIndex="3" Width="381"/>
         </Canvas>

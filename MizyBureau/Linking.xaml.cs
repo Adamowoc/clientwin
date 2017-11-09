@@ -33,7 +33,7 @@ namespace MizyBureau
 
       private void connexion_twitter(object sender, RoutedEventArgs e)
         {
-            string url = "void";
+           // string url = "void";
             //if (_socketClient.Linking_twitter(ref url, _user._email) == false)
             //{
              //   MessageBox.Show("Link Twitter fail");

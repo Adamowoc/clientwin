@@ -374,3 +374,6 @@ C:\Users\benjamin\Documents\clientwin\MizyBureau\bin\Debug\System.Net.Http.Primi
 C:\Users\benjamin\Documents\clientwin\MizyBureau\bin\Debug\System.Net.Http.Extensions.xml
 C:\Users\benjamin\Documents\clientwin\MizyBureau\bin\Debug\System.Net.Http.Primitives.xml
 >>>>>>> Stashed changes
+C:\Users\benjamin\Documents\clientwin\MizyBureau\bin\Debug\MizyLocalDB.mdf
+C:\Users\benjamin\Documents\clientwin\MizyBureau\bin\Debug\MizyLocalDB_log.ldf
+C:\Users\benjamin\Documents\clientwin\MizyBureau\obj\Debug\MizyBureau_Content.g.cs
