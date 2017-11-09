@@ -5,8 +5,20 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:MizyBureau"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
+             d:DesignHeight="800" d:DesignWidth="1200">
     <Grid>
-            
+        <Canvas x:Name="Page_EditProfile" Background="#FF050B0F">
+            <TextBlock x:Name="txtNameTitle" TextWrapping="Wrap" Foreground="#abcdea" FontSize="28" Height="44" Width="88" HorizontalAlignment="Left" VerticalAlignment="Top" Text="Nom" Canvas.Left="190" Canvas.Top="185"/>
+            <TextBlock x:Name="txtProfileTitle" TextWrapping="Wrap" Foreground="#abcdea" FontSize="28" Height="92" Width="118" HorizontalAlignment="Left" VerticalAlignment="Top" Text="Phrase de profil" Canvas.Left="190" Canvas.Top="247"/>
+            <TextBox x:Name="boxName" HorizontalAlignment="Center" Height="44" TextWrapping="Wrap" VerticalAlignment="Center" Width="631" Background="{x:Null}" Foreground="#FF40A491" Grid.RowSpan="9" FontSize="24" Text="John Doe" SelectionBrush="#FF40A491" Canvas.Left="319" Canvas.Top="185" />
+            <TextBox x:Name="boxProfile" HorizontalAlignment="Center" Height="88" TextWrapping="Wrap" VerticalAlignment="Center" Width="631" Background="{x:Null}" Foreground="#FF40A491" Grid.RowSpan="9" FontSize="24" Text="Lorem Ipsum elit, sed do eiusmod tempor incididunt ut labore et dolore magna" SelectionBrush="#FF40A491" Canvas.Left="319" Canvas.Top="251" />
+            <Image x:Name="imgSmsLogo" HorizontalAlignment="Left" Height="48" Width="88" VerticalAlignment="Top" Source="{StaticResource MyImageSMS}" RenderTransformOrigin="0.911,0.609" Canvas.Left="190" Canvas.Top="374"/>
+            <Image x:Name="imgMailLogo" HorizontalAlignment="Left" Height="47" Width="88" VerticalAlignment="Top" Source="{StaticResource MyImageMail}" RenderTransformOrigin="0.911,0.609" Canvas.Left="190" Canvas.Top="442"/>
+            <TextBox x:Name="boxNum" HorizontalAlignment="Center" Height="44" TextWrapping="Wrap" VerticalAlignment="Center" Width="631" Background="{x:Null}" Foreground="#FF40A491" Grid.RowSpan="9" FontSize="24" Text="+33 6 66 66 66 66" SelectionBrush="#FF40A491" Canvas.Left="319" Canvas.Top="374" />
+            <TextBox x:Name="boxMail" HorizontalAlignment="Center" Height="44" TextWrapping="Wrap" VerticalAlignment="Center" Width="631" Background="{x:Null}" Foreground="#FF40A491" Grid.RowSpan="9" FontSize="24" Text="john.doe@gmail.com" SelectionBrush="#FF40A491" Canvas.Left="319" Canvas.Top="445" />
+            <TextBox x:Name="boxAniv" HorizontalAlignment="Center" Height="44" TextWrapping="Wrap" VerticalAlignment="Center" Width="631" Background="{x:Null}" Foreground="#FF40A491" Grid.RowSpan="9" FontSize="24" Text="12 Janvier" SelectionBrush="#FF40A491" Canvas.Left="319" Canvas.Top="514" />
+            <Image x:Name="imgAnnivIcon" HorizontalAlignment="Left" Height="62" Width="88" VerticalAlignment="Top" Source="{StaticResource MyImageAnniversary}"  RenderTransformOrigin="0.937,0.543" Canvas.Left="190" Canvas.Top="494"/>
+            <Button x:Name="buttonValidate" Content="Valider" VerticalAlignment="Bottom" Width="226" Background="{x:Null}" Foreground="#FF40A491" FontSize="28" Height="72" Canvas.Left="924" Canvas.Top="674" RenderTransformOrigin="-0.012,0.414" HorizontalAlignment="Right"/>
+        </Canvas>
     </Grid>
 </UserControl>

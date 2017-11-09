@@ -79,6 +79,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="EditProfil.xaml.cs">
+      <DependentUpon>EditProfil.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Linking.xaml.cs">
       <DependentUpon>Linking.xaml</DependentUpon>
     </Compile>
@@ -89,6 +92,10 @@
     <Page Include="Connection.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EditProfil.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Linking.xaml">
       <Generator>MSBuild:Compile</Generator>
