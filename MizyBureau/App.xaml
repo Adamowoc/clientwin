@@ -19,6 +19,7 @@
         <BitmapImage x:Key="MyImageMail" UriSource="images/mail-icon.png"/>
         <BitmapImage x:Key="MyImageProfil" UriSource="images/profil-icon.png"/>
         <BitmapImage x:Key="MyImageMess" UriSource="images/message-icon.png"/>
+        <BitmapImage x:Key="MyImageShutDown" UriSource="images/shutdown-logo.png"/>
         <!--Image x:Key="MyImage" Source="images/.png"/-->
 
     </Application.Resources>

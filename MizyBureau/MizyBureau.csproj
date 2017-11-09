@@ -82,7 +82,7 @@
     <Compile Include="Linking.xaml.cs">
       <DependentUpon>Linking.xaml</DependentUpon>
     </Compile>
-    <Compile Include="RequestDBLocal.cs" />
+    <Compile Include="Script\RequestDBLocal.cs" />
     <Compile Include="Script\PageManager.cs" />
     <Compile Include="Script\UserManager.cs" />
     <Compile Include="User.cs" />
@@ -121,7 +121,7 @@
     <Compile Include="Connection.xaml.cs">
       <DependentUpon>Connection.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Constants.cs" />
+    <Compile Include="Script\Constants.cs" />
     <Compile Include="Conversation.xaml.cs">
       <DependentUpon>Conversation.xaml</DependentUpon>
     </Compile>
@@ -144,11 +144,6 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MizyLocalDBDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>MizyLocalDBDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Profile.xaml.cs">
       <DependentUpon>Profile.xaml</DependentUpon>
     </Compile>
@@ -169,17 +164,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="MizyLocalDBDataSet.xsc">
-      <DependentUpon>MizyLocalDBDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="MizyLocalDBDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>MizyLocalDBDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="MizyLocalDBDataSet.xss">
-      <DependentUpon>MizyLocalDBDataSet.xsd</DependentUpon>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -227,13 +211,7 @@
     <Resource Include="Images\profil-icon.png" />
     <Resource Include="Images\message-icon.png" />
     <Resource Include="Images\mail-icon.png" />
-    <Content Include="MizyLocalDB.mdf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="MizyLocalDB_log.ldf">
-      <DependentUpon>MizyLocalDB.mdf</DependentUpon>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    <Resource Include="Images\shutdown-logo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

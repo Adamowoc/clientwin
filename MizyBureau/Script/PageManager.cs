@@ -54,6 +54,7 @@ namespace MizyBureau.Script
                 case ListWindows.HOME:
                     if (ActiveWindows != ListWindows.HOME)
                     {
+                        ActiveWindows = ListWindows.HOME;
                         MainWindow.instance.Hide();
                         HomePage.Show();                        
                     }
@@ -61,6 +62,7 @@ namespace MizyBureau.Script
                 case ListWindows.MAIN:
                     if (ActiveWindows != ListWindows.MAIN)
                     {
+                        ActiveWindows = ListWindows.MAIN;
                         HomePage.Hide();
                         MainWindow.instance.Show();
                     }

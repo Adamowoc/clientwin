@@ -27,6 +27,12 @@
                     <ImageBrush ImageSource="{StaticResource MyImageParameter}" />
                 </Button.Background>
             </Button>
+
+            <Button x:Name="Exit_button" Height="82" Width="87"  ToolTip="Deconnection" Click="Exitt" >
+                <Button.Background>
+                    <ImageBrush ImageSource="{StaticResource MyImageShutDown}" />
+                </Button.Background>
+            </Button>
             <TextBlock x:Name="Accout_Email" TextWrapping="Wrap" Foreground="#FF7FC5B8" FontSize="28" Text=""/>
         </WrapPanel>
         <ContentControl x:Name="contentControl" Grid.Row="1"/>
