@@ -15,55 +15,48 @@ using System.Windows.Shapes;
 using System.Data.SqlClient;
 using System.Diagnostics;
 
-using System.Diagnostics;
-using System.Windows.Navigation;
 
 namespace MizyBureau
 {
-
-   
-
     /// <summary>
     /// Logique d'interaction pour Linking.xaml
     /// </summary>
     public partial class Linking : UserControl
     {
-        private SocketClient _socketClient;
         private User _user;
-        public Linking(SocketClient sc, ref User user)
+
+        public Linking(ref User user)
         {
             InitializeComponent();
-            _socketClient = sc;
             _user = user;
-            if (_socketClient._isStateOk == false)
-                System.Windows.Application.Current.Shutdown();
         }
 
       private void connexion_twitter(object sender, RoutedEventArgs e)
         {
             string url = "void";
-            if (_socketClient.Linking_twitter(ref url, _user._email) == false)
-            {
-                MessageBox.Show("Link Twitter fail");
-            }
-            else
-            {
-                txtUrl.Text = url;
-                System.Uri uri = new System.Uri(url);
-                hyper.NavigateUri = uri;
-            }
+            //if (_socketClient.Linking_twitter(ref url, _user._email) == false)
+            //{
+             //   MessageBox.Show("Link Twitter fail");
+            //}
+            //else
+            //{
+              //  txtUrl.Text = url;
+                //System.Uri uri = new System.Uri(url);
+                //hyper.NavigateUri = uri;
+            //}
         }
 
       private void validate_twitter(object sender, RoutedEventArgs e)
         {
-            if (_socketClient.Validate_twitter_PIN(boxPINTwi.Text, _user._email) == false)
-            {
-                MessageBox.Show("Le code PIN est incorrect.");
-            }
-            else
-            {
-                MessageBox.Show("Vous êtes maintenant connecté à Twitter !");
-            }
+            //if (_socketClient.Validate_twitter_PIN(boxPINTwi.Text, _user._email) == false)
+            //{
+            //    MessageBox.Show("Le code PIN est incorrect.");
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Vous êtes maintenant connecté à Twitter !");
+            //    _user._isTwitter = true;
+            //}
         }
 
         private void connexion_facebook(object sender, RoutedEventArgs e)
@@ -80,11 +73,11 @@ namespace MizyBureau
 
         private bool Get_link_fb(string email, string pwd, string channel)
         {
-            if (_socketClient.Linking_fb(_user._email, email, pwd) == true)
-            {
-                MessageBox.Show("Vous êtes maintenant connecté à " + @channel + " !");
-                return true;
-            }
+            //if (_socketClient.Linking_fb(_user._email, email, pwd) == true)
+            //{
+            //    MessageBox.Show("Vous êtes maintenant connecté à " + @channel + " !");
+            //    return true;
+            //}
             return false;
         }
 

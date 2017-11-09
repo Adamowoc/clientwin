@@ -17,6 +17,10 @@ namespace MizyBureau
     public class SocketClient
     {
         private Socket Socket;
+        public string _handleFacebook;
+        public string _handleTwitter;
+        public string _token1;
+        public string _token2;
 
         public bool _isStateOk { get; set; }
         public SocketClient()
@@ -38,6 +42,22 @@ namespace MizyBureau
             _isStateOk = true;
         }
 
+
+        public bool Get_Handle()
+        {
+            return false;
+        }
+
+        public bool Get_Conversations()
+        {
+            return false;
+        }
+
+        public bool Get_Conversation()
+        {
+            return false;
+        }
+
         public bool Login(string email, string password, ref bool twitter, ref bool facebook)
         {
             try
@@ -49,9 +69,9 @@ namespace MizyBureau
                 string strReceived = Encoding.UTF8.GetString(byData);
                 if (strReceived.Contains("\"response\" : \"OK\""))
                 {
-                    if (strReceived.Contains("\"twitter\" : \"True\""))
+                    if (strReceived.Contains("\"twitter\" : True"))
                         twitter = true;
-                    if (strReceived.Contains("\"facebook\" : \"True\""))
+                    if (strReceived.Contains("\"facebook\" : True"))
                         facebook = true;
                     return true;
                 }
@@ -90,7 +110,9 @@ namespace MizyBureau
                 int k = Socket.Receive(byData);
                 string strReceived = Encoding.UTF8.GetString(byData);
                 if (strReceived.Contains("\"response\" : \"OK\""))
+                {
                     return true;
+                }
             }
             catch (Exception e)
             {
@@ -152,6 +174,28 @@ namespace MizyBureau
 
         ~SocketClient()
         {
+
+            string toto = "facebook";
+            string toto2 = "twitter";
+            try
+            {
+                string str = "{ \"function\": \"logoutAPI\", \"parameters\": {\"channel\":\"" + @toto + "\", \"handle\":\"" + @_handleFacebook + "\"} }\r\n";
+                byte[] byData = System.Text.Encoding.UTF8.GetBytes(str);
+                Socket.Send(byData);
+            }
+            catch (Exception e)
+            {
+            }
+            try
+            {
+                string str2 = "{ \"function\": \"logoutAPI\", \"parameters\": {\"channel\":\"" + @toto2 + "\", \"handle\":\"" + @_handleTwitter + "\"} }\r\n";
+                byte[] byData2 = System.Text.Encoding.UTF8.GetBytes(str2);
+                Socket.Send(byData2);
+            }
+            catch (Exception e)
+            {
+            }
+
             Socket.Close();
         }
 

@@ -43,14 +43,13 @@ namespace MizyBureau
     {
         int _nb_conv = 1;
         List<T_Conversation> _conversations;
-        SocketClient _socketClient;
 
-        public Conversation(SocketClient sc)
+        public Conversation()
         {
             InitializeComponent();
             _conversations = new List<T_Conversation>();
-            _socketClient = sc;
         }
+
 
         private void ShowConv(T_Conversation conv) // add a conv to xaml (get placement of conv with conv.nb_conv)
         {
@@ -63,6 +62,7 @@ namespace MizyBureau
                 setAppImg("/Images/linkedin-logo.png", conv._nb_Conversation);
             }
         }
+
 
         private void addConv(object sender, RoutedEventArgs e)
         {

@@ -23,19 +23,14 @@ namespace MizyBureau
     /// </summary>
     public partial class Inscription : Page
     {
-        SocketClient _socketClient;
-
-        public Inscription(SocketClient sc)
+        public Inscription()
         {
             InitializeComponent();
-            _socketClient = sc;
-            if (_socketClient._isStateOk == false)
-                System.Windows.Application.Current.Shutdown();
         }
 
         private void Connection_Load(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new Connection(new SocketClient()));
+            Script.PageManager.instance.ChangePage(Script.PageManager.ListPage.CONNECTION);
         }
 
         public void Id_GotFocus(object sender, RoutedEventArgs e)
@@ -74,15 +69,17 @@ namespace MizyBureau
                 MessageBox.Show(Msg_error);
                 return;
             }
-            if (_socketClient.Register(boxEmail.Text, pboxPwd.Password.ToString()) == true)
-            {
-                MessageBox.Show("Inscription reussite");
-                this.NavigationService.Navigate(new Connection(new SocketClient()));
-            }
-            else
-            {
-                MessageBox.Show("Compte deja existant");
-            }
+
+            //if (_socketClient.Register(boxEmail.Text, pboxPwd.Password.ToString()) == true)
+            //{
+            //    MessageBox.Show("Inscription reussite");
+            //    this.NavigationService.Navigate(new Connection(new SocketClient()));
+            //}
+
+            //else
+            //{
+            //    MessageBox.Show("Compte deja existant");
+            //}
         }
 
         private bool Is_data_ok()
@@ -104,6 +101,7 @@ namespace MizyBureau
                 Msg_error = "Timeout mail";
                 return false;
             }
+
             if (pboxPwd.Password.Equals(pboxPwd2.Password, StringComparison.Ordinal) == false)
             {
                 Msg_error = "mot de passe non identique";

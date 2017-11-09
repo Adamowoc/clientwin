@@ -20,26 +20,42 @@ namespace MizyBureau
     /// </summary>
     public partial class Home : Window
     {
+        public static Home instance;
+
+        public bool IsActivated = false;
+
         private User _user;
 
         public Home(User u, SocketClient _socketClient)
         {
             InitializeComponent();
-            _user = u;
+           
+        }
+
+        public Home()
+        {
+            InitializeComponent();
+        }
+
+        public void SetHomeWithUser()
+        {
+            _user = Script.UserManager.instance.ActualUser;
             // load userform (pages)
             _p = new Profile();
-            _c = new Conversation(_socketClient);
-            _l = new Linking(_socketClient, ref _user);
+            _c = new Conversation();
+            _l = new Linking(ref _user);
             if (_user._isFacebook == false || _user._isTwitter == false)
-                this.contentControl.Content = _l;   
+                this.contentControl.Content = _l;
             else
                 this.contentControl.Content = _p;
-            Accout_Email.Text =  "Compte : " + _user._email + " | twitter : " + _user._isTwitter + " | facebook : " + _user._isFacebook;
+            Accout_Email.Text = "Compte : " + _user._email + " | twitter : " + _user._isTwitter + " | facebook : " + _user._isFacebook;
         }
+
 
         private void Go_To_Conversation(object sender, RoutedEventArgs e)
         {
             contentControl.Content = _c;
+            //_c.APICall();
             Accout_Email.Text = "Compte : " + _user._email + " | twitter : " + _user._isTwitter + " | facebook : " + _user._isFacebook;
         }
 

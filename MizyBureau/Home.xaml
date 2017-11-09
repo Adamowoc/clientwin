@@ -11,23 +11,23 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <WrapPanel x:Name="Menu"  Background="#21252b">
-            <Button x:Name="Profile_button"  Height="82" Width="83"  ToolTip="Conversations" Click="Go_To_Conversation">
+        <WrapPanel x:Name="Menu"  Background="#FF050B0F">
+            <Button x:Name="Profile_button"  Height="100" Width="100"  ToolTip="Conversations" Click="Go_To_Conversation">
                 <Button.Background>
-                    <ImageBrush ImageSource="{StaticResource MyImageMess}" />
+                    <ImageBrush ImageSource="{StaticResource MyImageMizy}" />
                 </Button.Background>
             </Button>
-            <Button x:Name="Parameter_button" Height="82" Width="82" ToolTip="Profil" Click="Go_To_Profile">
+            <Button x:Name="Parameter_button" Height="100" Width="100" ToolTip="Profil" Click="Go_To_Profile">
                 <Button.Background>
-                    <ImageBrush ImageSource="{StaticResource MyImageProfil}" />
+                    <ImageBrush ImageSource="{StaticResource MyImageMizy}" />
                 </Button.Background>
             </Button>
-            <Button x:Name="Conversation_button" Height="82" Width="87"  ToolTip="Paramètres" Click="Go_To_Blank">
+            <Button x:Name="Conversation_button" Height="100" Width="100"  ToolTip="Paramètres" Click="Go_To_Blank">
                 <Button.Background>
                     <ImageBrush ImageSource="{StaticResource MyImageParameter}" />
                 </Button.Background>
             </Button>
-            <TextBlock x:Name="Accout_Email" TextWrapping="Wrap" Foreground="#FF7FC5B8" FontSize="28" Text=""/>
+            <TextBlock x:Name="Accout_Email" TextWrapping="Wrap" Foreground="#FF7FC5B8" FontSize="28" Text="Compte :"/>
         </WrapPanel>
         <ContentControl x:Name="contentControl" Grid.Row="1"/>
     </Grid>

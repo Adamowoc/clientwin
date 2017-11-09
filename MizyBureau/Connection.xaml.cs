@@ -11,39 +11,52 @@ using System.Data.SqlClient;
 
 namespace MizyBureau
 {
-
     /// <summary>
     /// Logique d'interaction pour Connection.xaml
     /// </summary>
     public partial class Connection : Page
     {
-        private SocketClient _socketClient;
-
-        public Connection(SocketClient sc)
+        public Connection()
         {
             InitializeComponent();
-            _socketClient = sc;
-            if (_socketClient._isStateOk == false)
-               System.Windows.Application.Current.Shutdown();
         }
 
         private void Inscription_Load(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new Inscription(_socketClient));
-            return;
+            Script.PageManager.instance.ChangePage(Script.PageManager.ListPage.INSCRIPTION);
         }
 
-       private void Home_Load(object sender, RoutedEventArgs e)
+        private void Home_Load(object sender, RoutedEventArgs e)
         {
-            Window w = Window.GetWindow(this);
-            User t = new User("toto", true, true);
-            SocketClient s = new SocketClient();
-            s._isStateOk = true;
-            Home home = new Home(t, s);
+            if (boxIdentifiant.Text == "Identifiant" || pboxPwd.Password.ToString() == "Password")
+            {
+                MessageBox.Show("Veuillez entrer votre email et mot de passe.");
+                return;
+            }
 
-            App.Current.MainWindow = home;
-            w.Close();
-            home.Show();
+            User u = Get_user(boxIdentifiant.Text, pboxPwd.Password.ToString());
+            if (u == null)
+            {
+                Script.PageManager.instance.ChangePage(Script.PageManager.ListPage.INSCRIPTION);
+                return;
+            }
+
+            User toto = new User("toto", true, true);  /// waiting for a true server
+
+            Script.UserManager.instance.ActualUser = toto;
+            Script.PageManager.instance.HomePage.SetHomeWithUser();
+            Script.PageManager.instance.ChangePage(Script.PageManager.ListPage.HOME);
+            return;
+
+            //Window w = Window.GetWindow(this);
+            //User t = new User("toto", true, true);
+            //SocketClient s = new SocketClient();
+            //s._isStateOk = true;
+            //Home home = new Home(u);
+
+            //App.Current.MainWindow = home;
+            //w.Close();
+            //home.Show();
         }
 
 
@@ -52,10 +65,10 @@ namespace MizyBureau
             User u = null;
             bool twitter = false;
             bool facebook = false;
-            if (_socketClient.Login(email, pwd, ref twitter, ref facebook ) == true)
-            {
+            //if (_socketClient.Login(email, pwd, ref twitter, ref facebook ) == true)
+            //{
                 u = new User(email, twitter, facebook);
-            }
+            //}
             return u;
         }
 
