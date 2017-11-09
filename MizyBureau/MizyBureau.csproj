@@ -221,6 +221,10 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Images\parametre-icon.png" />
+    <Resource Include="Images\profil-icon.png" />
+    <Resource Include="Images\message-icon.png" />
+    <Resource Include="Images\mail-icon.png" />
     <Content Include="MizyLocalDB.mdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

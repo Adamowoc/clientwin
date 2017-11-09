@@ -33,22 +33,14 @@ namespace MizyBureau
             return;
         }
 
-        private void Home_Load(object sender, RoutedEventArgs e)
+       private void Home_Load(object sender, RoutedEventArgs e)
         {
-            if (boxIdentifiant.Text == "Identifiant" || pboxPwd.Password.ToString() == "Password")
-            {
-                MessageBox.Show("Veuillez entrer votre email et mot de passe.");
-                return;
-            }
-
-            User u = Get_user(boxIdentifiant.Text, pboxPwd.Password.ToString());
-            if (u == null)
-            {
-                this.NavigationService.Navigate(new Inscription(_socketClient));
-                return;
-            }
             Window w = Window.GetWindow(this);
-            Home home = new Home(u, _socketClient);
+            User t = new User("toto", true, true);
+            SocketClient s = new SocketClient();
+            s._isStateOk = true;
+            Home home = new Home(t, s);
+
             App.Current.MainWindow = home;
             w.Close();
             home.Show();

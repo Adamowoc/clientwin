@@ -18,8 +18,6 @@
             <Image x:Name="imgfille" HorizontalAlignment="Left" Height="107" Width="120" VerticalAlignment="Top" Source="{StaticResource MyImageFille}" RenderTransformOrigin="0.531,0.698" Panel.ZIndex="3" Canvas.Left="10"/>
             <Rectangle Fill="#2F3640" Height="100"  Width="1194" Panel.ZIndex="2"/>
             <TextBlock x:Name="txtUser" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Ellena Almart" VerticalAlignment="Center" Foreground="#40A491" FontSize="40" Height="58" Canvas.Left="130" Canvas.Top="10" Panel.ZIndex="3" Width="381"/>
-            <TextBox x:Name="NewFriend" Canvas.Left="950" Canvas.Top="537" Width="75" Panel.ZIndex="3" Text="nouvel ami" GotFocus="NewFriend_Focus"/>
-            <Button x:Name="button_new" Content="New" Canvas.Left="1087" Canvas.Top="537" Width="75" Panel.ZIndex="3" Click="addConv"/>
         </Canvas>
     </Grid>
 </UserControl>
