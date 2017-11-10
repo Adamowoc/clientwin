@@ -20,6 +20,8 @@
 
             <Rectangle Fill="#2F3640" Height="100"  Width="1194" Panel.ZIndex="2"/>
             <TextBlock x:Name="txtUser" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Ellena Almart" VerticalAlignment="Center" Foreground="#40A491" FontSize="40" Height="58" Canvas.Left="130" Canvas.Top="10" Panel.ZIndex="3" Width="381"/>
+            <Button x:Name="add" Content="Add" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120" Background="{x:Null}" Foreground="#FF40A491" FontSize="16" Click="addConv" Canvas.Left="1004" Canvas.Top="640" Panel.ZIndex="3"/>
+
         </Canvas>
     </Grid>
 </UserControl>
