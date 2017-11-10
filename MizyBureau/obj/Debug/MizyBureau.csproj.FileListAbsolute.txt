@@ -411,3 +411,5 @@ C:\Users\Manon\Pictures\School\EIP\GITHUB\prout\clientwin\MizyBureau\obj\Debug\M
 C:\Users\Manon\Pictures\School\EIP\GITHUB\prout\clientwin\MizyBureau\obj\Debug\MizyBureau.csproj.CoreCompileInputs.cache
 C:\Users\Manon\Pictures\School\EIP\GITHUB\prout\clientwin\MizyBureau\obj\Debug\MizyBureau.exe
 C:\Users\Manon\Pictures\School\EIP\GITHUB\prout\clientwin\MizyBureau\obj\Debug\MizyBureau.pdb
+C:\Users\benjamin\Documents\clientwin\MizyBureau\obj\Debug\EditProfil.g.cs
+C:\Users\benjamin\Documents\clientwin\MizyBureau\obj\Debug\EditProfil.baml

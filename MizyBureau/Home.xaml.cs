@@ -73,9 +73,9 @@ namespace MizyBureau
             Script.PageManager.instance.ChangePage(Script.PageManager.ListPage.CONNECTION);
         }
 
-        public void Go_To_Messagerie()
+        public void Go_To_Messagerie(InstantMessagery i)
         {
-            this.contentControl.Content = _i;
+            this.contentControl.Content = i;
             Accout_Email.Text = "Compte : " + _user._email + " | twitter : " + _user._isTwitter + " | facebook : " + _user._isFacebook;
         }
 

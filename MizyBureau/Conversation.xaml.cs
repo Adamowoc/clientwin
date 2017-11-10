@@ -44,15 +44,19 @@ namespace MizyBureau
         int _nb_conv = 1;
         List<T_Conversation> _conversations;
 
+        List<InstantMessagery> _im;
+
         public Conversation()
         {
             InitializeComponent();
+            _im = new List<InstantMessagery>();
+            _im.Add(new InstantMessagery());
             _conversations = new List<T_Conversation>();
         }
 
         private void GoToMessagerie(object sender, RoutedEventArgs e)
         {
-            Home.instance.Go_To_Messagerie();
+            Home.instance.Go_To_Messagerie(_im[_nb_conv-1]);
         }
 
         private void ShowConv(T_Conversation conv) // add a conv to xaml (get placement of conv with conv.nb_conv)
@@ -70,12 +74,17 @@ namespace MizyBureau
 
         private void addConv(object sender, RoutedEventArgs e)
         {
-
-            /*setRectangle();
-            setProfileImg("/Images/fille-logo.png");
-            setNameText(NewFriend.Text);
-            setAppImg("/Images/linkedin-logo.png");*/
-
+            _im.Add(new InstantMessagery());
+            setRectangle(_nb_conv);
+            setProfileImg("/Images/fille-logo.png", _nb_conv);
+            setNameText("toto", _nb_conv);
+            if (_nb_conv / 3 == 1)
+                setAppImg("/Images/linkedin-logo.png", _nb_conv);
+            else if (_nb_conv / 3 == 2)
+                setAppImg("/Images/twitter-logo.png", _nb_conv);
+            else
+                setAppImg("/Images/hangout-logo.png", _nb_conv);
+            
             // get name friend from textbox
             // if friend name in list conv 
             //do nothing
@@ -99,7 +108,16 @@ namespace MizyBureau
             img.Height = 50;
             img.SetValue(Panel.ZIndexProperty, 3);
 
+            Button b = new Button();
+            b.Content = "show";
+            b.SetValue(Panel.ZIndexProperty, 3);
+            b.Foreground = new SolidColorBrush(Color.FromRgb(64, 164, 145));
+            b.FontSize = 20;
+            b.Click += new RoutedEventHandler(GoToMessagerie);
+            b.Margin = new Thickness(1000, (nb * 100) + 37, 0, 0);
+
             Page_Profile.Children.Add(img);
+            Page_Profile.Children.Add(b);
         }
 
 
