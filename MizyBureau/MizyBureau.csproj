@@ -86,6 +86,7 @@
       <DependentUpon>Linking.xaml</DependentUpon>
     </Compile>
     <Compile Include="Script\Contact.cs" />
+    <Compile Include="Script\HTTPClient.cs" />
     <Compile Include="Script\RequestDBLocal.cs" />
     <Compile Include="Script\PageManager.cs" />
     <Compile Include="Script\UserManager.cs" />

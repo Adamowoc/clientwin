@@ -20,7 +20,7 @@
 
             <Rectangle Fill="#2F3640" Height="100"  Width="1194" Panel.ZIndex="2"/>
             <TextBlock x:Name="txtUser" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Ellena Almart" VerticalAlignment="Center" Foreground="#40A491" FontSize="40" Height="58" Canvas.Left="130" Canvas.Top="10" Panel.ZIndex="3" Width="381"/>
-            <TextBox x:Name="boxIdentifiant" HorizontalAlignment="Center" Height="26" TextWrapping="Wrap" VerticalAlignment="Center" Width="220" Background="{x:Null}" Foreground="#FF40A491" Grid.RowSpan="9" FontSize="16" Text="User" SelectionBrush="#FF40A491" GotFocus="Pseudo_GotFocus" Canvas.Left="751" Canvas.Top="640"/>
+            <TextBox x:Name="boxIdentifiant" HorizontalAlignment="Center" Height="26" TextWrapping="Wrap" VerticalAlignment="Center" Width="220" Background="{x:Null}" Foreground="#FF40A491" Grid.RowSpan="9" FontSize="16" Text="User" SelectionBrush="#FF40A491" GotFocus="Peudo_GotFocus" Canvas.Left="751" Canvas.Top="640"/>
             <Button x:Name="add" Content="Add" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120" Background="{x:Null}" Foreground="#FF40A491" FontSize="16" Click="addConv" Canvas.Left="1004" Canvas.Top="640" Panel.ZIndex="3"/>
 
         </Canvas>

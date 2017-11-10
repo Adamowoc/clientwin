@@ -74,13 +74,19 @@ namespace MizyBureau
 
         private void addConv(object sender, RoutedEventArgs e)
         {
+            if (boxIdentifiant.Text == string.Empty || _nb_conv == 6)
+                return;
+
             _im.Add(new InstantMessagery());
             setRectangle(_nb_conv);
             setProfileImg("/Images/fille-logo.png", _nb_conv);
-            setNameText("toto", _nb_conv);
-            if (_nb_conv / 3 == 1)
+            setNameText(boxIdentifiant.Text, _nb_conv);
+
+            int i = _nb_conv % 3;
+
+            if (i == 0)
                 setAppImg("/Images/linkedin-logo.png", _nb_conv);
-            else if (_nb_conv / 3 == 2)
+            else if (i == 1)
                 setAppImg("/Images/twitter-logo.png", _nb_conv);
             else
                 setAppImg("/Images/hangout-logo.png", _nb_conv);
@@ -180,6 +186,13 @@ namespace MizyBureau
                 setNameText(conv._name, conv._nb_Conversation);
                 setAppImg("/Images/linkedin-logo.png", conv._nb_Conversation);
             }
+        }
+
+        public void Peudo_GotFocus(object sender, RoutedEventArgs e)
+        {
+            TextBox tb = (TextBox)sender;
+            tb.Text = string.Empty;
+            tb.GotFocus -= Peudo_GotFocus;
         }
     }
 }
