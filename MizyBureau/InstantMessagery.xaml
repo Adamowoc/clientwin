@@ -18,5 +18,8 @@
         </ScrollViewer>
         <TextBox x:Name="My_message" AcceptsReturn="True" TextWrapping="Wrap" SpellCheck.IsEnabled="True" Language="fr" Margin="10,552,200,10" Background="#FF050B0F" Foreground="AntiqueWhite" Grid.Row="1"/>
         <Button Margin="618,552,10,10" Content="Send" Background="#FF050B0F" Foreground="AntiqueWhite" Click="Send_message" Grid.Row="1"/>
-    </Grid>
+        <Image x:Name="imgFbLogo" HorizontalAlignment="Right"  Source="{StaticResource MyImageFacebook}" Canvas.Top="477" Canvas.Left="56" RenderTransformOrigin="0.83,0.029" Margin="0,34,0,0" Width="47" Grid.RowSpan="2" VerticalAlignment="Top" />
+        <Image x:Name="imgHangoutLogo" HorizontalAlignment="Right" Height="53" Width="52" VerticalAlignment="Top" Source="{StaticResource MyImageTwitter}" RenderTransformOrigin="7.024,0.933" Canvas.Left="184" Canvas.Top="499" Margin="0,81,0,0" Grid.RowSpan="2"/>
+        <Image x:Name="imgSmsLogo" HorizontalAlignment="Right" Height="44" Width="50" VerticalAlignment="Top" Source="{StaticResource MyImageSMS}" RenderTransformOrigin="0.911,0.609" Canvas.Left="838" Canvas.Top="107" Margin="0,134,0,0" Grid.Row="1"/>
+</Grid>
 </UserControl>
