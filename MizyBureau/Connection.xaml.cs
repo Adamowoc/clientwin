@@ -35,18 +35,24 @@ namespace MizyBureau
             }
 
             User u = Get_user(boxIdentifiant.Text, pboxPwd.Password.ToString());
+
             if (u == null)
             {
                 Script.PageManager.instance.ChangePage(Script.PageManager.ListPage.INSCRIPTION);
                 return;
             }
 
-            User toto = new User("toto", true, true);  /// waiting for a true server
+
+            //if ((User u = HTTPClient.instance.GetUser()) != null)
+            //Script.UserManager.instance.ActualUser = u
+            User toto = new User(boxIdentifiant.Text, true, true);  /// waiting for a true server
 
             Script.UserManager.instance.ActualUser = toto;
             Script.PageManager.instance.HomePage.SetHomeWithUser();
             Script.PageManager.instance.ChangePage(Script.PageManager.ListPage.HOME);
             return;
+
+
 
             //Window w = Window.GetWindow(this);
             //User t = new User("toto", true, true);
