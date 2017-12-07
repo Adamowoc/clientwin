@@ -34,50 +34,18 @@ namespace MizyBureau
                 return;
             }
 
-<<<<<<< HEAD
             User toto = new User(boxIdentifiant.Text, true, true, pboxPwd.Password);
 
             var tutu = await Script.OverHttpClient.instance.CreateSendItemAsync(new Script.SendUser(toto));
             if (tutu == null)
-=======
-            User u = Get_user(boxIdentifiant.Text, pboxPwd.Password.ToString());
-
-            if (u == null)
->>>>>>> master
             {
                 MessageBox.Show("User incorrect.");
                 return;
             }
-
-<<<<<<< HEAD
-=======
-
-            //if ((User u = HTTPClient.instance.GetUser()) != null)
-            //Script.UserManager.instance.ActualUser = u
-            User toto = new User(boxIdentifiant.Text, true, true);  /// waiting for a true server
-
->>>>>>> master
             Script.UserManager.instance.ActualUser = toto;
             Script.PageManager.instance.HomePage.SetHomeWithUser();
             Script.PageManager.instance.ChangePage(Script.PageManager.ListPage.HOME);
-            return;
-<<<<<<< HEAD
-=======
-
-
-
-            //Window w = Window.GetWindow(this);
-            //User t = new User("toto", true, true);
-            //SocketClient s = new SocketClient();
-            //s._isStateOk = true;
-            //Home home = new Home(u);
-
-            //App.Current.MainWindow = home;
-            //w.Close();
-            //home.Show();
->>>>>>> master
         }
-
 
         public void Pseudo_GotFocus(object sender, RoutedEventArgs e)
         {
