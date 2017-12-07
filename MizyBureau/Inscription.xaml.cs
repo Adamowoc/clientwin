@@ -70,16 +70,6 @@ namespace MizyBureau
                 return;
             }
 
-            //if (_socketClient.Register(boxEmail.Text, pboxPwd.Password.ToString()) == true)
-            //{
-            //    MessageBox.Show("Inscription reussite");
-            //    this.NavigationService.Navigate(new Connection(new SocketClient()));
-            //}
-
-            //else
-            //{
-            //    MessageBox.Show("Compte deja existant");
-            //}
         }
 
         private bool Is_data_ok()

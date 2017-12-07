@@ -62,7 +62,7 @@ namespace MizyBureau.Script
 
         public bool ShowDebug = true;
 
-        public async Task<HttpContent> CreateSendItemAsync<T>(T SendItem) where T : SendItem
+        public async Task<string> CreateSendItemAsync<T>(T SendItem) where T : SendItem
         {
             HttpResponseMessage response = await client.PostAsync(SendItem.Url, new StringContent(SendItem.Json, Encoding.UTF8, "application/json"));
 
@@ -70,7 +70,6 @@ namespace MizyBureau.Script
             {
                 Console.WriteLine($"Json: {SendItem.Json}");
                 Console.WriteLine($"response: {response}");
-                Console.WriteLine($"responseContent: {response.Headers}");
             }
 
             try
@@ -84,7 +83,7 @@ namespace MizyBureau.Script
 
             // return URI of the created resource.
             //return response.Headers.Location;
-            return response.Content;
+            return await response.Content.ReadAsStringAsync();
         }
 
         static async Task<SendItem> GetSendItemAsync(string path)

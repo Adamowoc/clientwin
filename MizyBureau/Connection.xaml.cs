@@ -5,7 +5,7 @@ using System.Windows.Media;
 using RestSharp;
 using System.Diagnostics;
 using System.Data.SqlClient;
-
+using Newtonsoft.Json;
 
 
 
@@ -36,12 +36,19 @@ namespace MizyBureau
 
             User toto = new User(boxIdentifiant.Text, true, true, pboxPwd.Password);
 
-            var tutu = await Script.OverHttpClient.instance.CreateSendItemAsync(new Script.SendUser(toto));
-            if (tutu == null)
+            string response = await Script.OverHttpClient.instance.CreateSendItemAsync(new Script.SendUser(toto));
+            if (string.IsNullOrEmpty(response))
             {
                 MessageBox.Show("User incorrect.");
                 return;
             }
+
+            dynamic test = JsonConvert.DeserializeObject(response);
+            toto._token = test.auth.token;
+            toto._lastname = test.user.lastname;
+            toto._firstname = test.user.firstname;
+
+
             Script.UserManager.instance.ActualUser = toto;
             Script.PageManager.instance.HomePage.SetHomeWithUser();
             Script.PageManager.instance.ChangePage(Script.PageManager.ListPage.HOME);
