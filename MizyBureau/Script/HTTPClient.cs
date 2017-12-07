@@ -80,11 +80,6 @@ namespace MizyBureau.Script
                 return response.StatusCode;
             }
 
-            static void Main()
-            {
-                RunAsync().Wait();
-            }
-
             static async Task RunAsync()
             {
                 client.BaseAddress = new Uri("http://localhost:55268/");
