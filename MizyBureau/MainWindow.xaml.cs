@@ -31,6 +31,7 @@ namespace MizyBureau
             Script.PageManager toto = new Script.PageManager();
             Script.PageManager.instance.ChangePage(Script.PageManager.ListPage.CONNECTION);
             Script.UserManager titi = new Script.UserManager();
+            Script.OverHttpClient o = new Script.OverHttpClient();
         }
     }
 }

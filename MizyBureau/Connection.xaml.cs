@@ -26,57 +26,29 @@ namespace MizyBureau
             Script.PageManager.instance.ChangePage(Script.PageManager.ListPage.INSCRIPTION);
         }
 
-        private void Home_Load(object sender, RoutedEventArgs e)
+        private async void Home_LoadAsync(object sender, RoutedEventArgs e)
         {
-            if (boxIdentifiant.Text == "Identifiant" || pboxPwd.Password.ToString() == "Password")
+            if (boxIdentifiant.Text == "Identifiant" || pboxPwd.Password == "Password")
             {
                 MessageBox.Show("Veuillez entrer votre email et mot de passe.");
                 return;
             }
 
-            User u = Get_user(boxIdentifiant.Text, pboxPwd.Password.ToString());
+            User toto = new User(boxIdentifiant.Text, true, true, pboxPwd.Password);
 
-            if (u == null)
+            var tutu = await Script.OverHttpClient.instance.CreateSendItemAsync(new Script.SendUser(toto));
+            if (tutu == null)
             {
-                Script.PageManager.instance.ChangePage(Script.PageManager.ListPage.INSCRIPTION);
+                MessageBox.Show("User incorrect.");
                 return;
             }
-
-
-            //if ((User u = HTTPClient.instance.GetUser()) != null)
-            //Script.UserManager.instance.ActualUser = u
-            User toto = new User(boxIdentifiant.Text, true, true);  /// waiting for a true server
 
             Script.UserManager.instance.ActualUser = toto;
             Script.PageManager.instance.HomePage.SetHomeWithUser();
             Script.PageManager.instance.ChangePage(Script.PageManager.ListPage.HOME);
             return;
-
-
-
-            //Window w = Window.GetWindow(this);
-            //User t = new User("toto", true, true);
-            //SocketClient s = new SocketClient();
-            //s._isStateOk = true;
-            //Home home = new Home(u);
-
-            //App.Current.MainWindow = home;
-            //w.Close();
-            //home.Show();
         }
 
-
-        private User Get_user(string email, string pwd)
-        {
-            User u = null;
-            bool twitter = false;
-            bool facebook = false;
-            //if (_socketClient.Login(email, pwd, ref twitter, ref facebook ) == true)
-            //{
-                u = new User(email, twitter, facebook);
-            //}
-            return u;
-        }
 
         public void Pseudo_GotFocus(object sender, RoutedEventArgs e)
         {
