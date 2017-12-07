@@ -79,6 +79,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AddContact.xaml.cs">
+      <DependentUpon>AddContact.xaml</DependentUpon>
+    </Compile>
     <Compile Include="EditProfil.xaml.cs">
       <DependentUpon>EditProfil.xaml</DependentUpon>
     </Compile>
@@ -91,6 +94,10 @@
     <Compile Include="Script\PageManager.cs" />
     <Compile Include="Script\UserManager.cs" />
     <Compile Include="User.cs" />
+    <Page Include="AddContact.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Connection.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -221,6 +228,10 @@
     <Resource Include="Images\message-icon.png" />
     <Resource Include="Images\mail-icon.png" />
     <Resource Include="Images\shutdown-logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\discord-logo.png" />
+    <Resource Include="Images\slack-logo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -20,6 +20,8 @@
         <BitmapImage x:Key="MyImageProfil" UriSource="images/profil-icon.png"/>
         <BitmapImage x:Key="MyImageMess" UriSource="images/message-icon.png"/>
         <BitmapImage x:Key="MyImageShutDown" UriSource="images/shutdown-logo.png"/>
+        <BitmapImage x:Key="MyImageDiscord" UriSource="images/discord-logo.png"/>
+        <BitmapImage x:Key="MyImageSlack" UriSource="images/slack-logo.png"/>
         <!--Image x:Key="MyImage" Source="images/.png"/-->
 
     </Application.Resources>
