@@ -24,6 +24,24 @@ namespace MizyBureau
         {
             InitializeComponent();
         }
-        
+
+        public void OnLoadEditProfil()
+        {
+            User u = Home.instance.GetUser();
+
+            boxName.Text = u._firstname;
+            boxLastName.Text = u._lastname;
+            boxMail.Text = u._email;
+        }
+
+        public void OnClickValidate(object sender, RoutedEventArgs e)
+        {
+            User u = Home.instance.GetUser();
+
+            u._firstname = boxName.Text;
+            u._lastname = boxLastName.Text;
+            u._email = boxMail.Text;
+            Home.instance.Go_To_Profile();
+        }
     }
 }

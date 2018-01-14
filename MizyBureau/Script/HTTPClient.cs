@@ -8,6 +8,7 @@ using Newtonsoft.Json;
 namespace MizyBureau.Script
 {
     using System;
+    using System.Diagnostics;
     using System.IO;
     using System.Net;
     using System.Net.Http;
@@ -19,6 +20,7 @@ namespace MizyBureau.Script
         public int Id { get; set; }
         [NonSerialized] public string Json;
         [NonSerialized] public string Url;
+        [NonSerialized] public string Token;
     }
 
     public class SendUser : SendItem
@@ -32,6 +34,7 @@ namespace MizyBureau.Script
             password = u._password;
             Json = JsonConvert.SerializeObject(this);
             Url = "auth/user";
+            Token = u._token;
         }
     }
 
@@ -39,9 +42,7 @@ namespace MizyBureau.Script
     {
         public string email { get; set; }
         public string password { get; set; }
-
         public string lastname { get; set; }
-
         public string firstname { get; set; }
 
         public SendNewUser(User u)
@@ -52,6 +53,22 @@ namespace MizyBureau.Script
             lastname = u._lastname;
             Json = JsonConvert.SerializeObject(this);
             Url = "user";
+            Token = u._token;
+        }
+    }
+
+    public class LinkingFacebook : SendItem
+    {
+        public string email { get; set; }
+        public string password { get; set; }
+
+        public LinkingFacebook(string e, string pw, string t)
+        {
+            email = e;
+            password = pw;
+            Json = JsonConvert.SerializeObject(this);
+            Url = "auth/service/facebook";
+            Token = t;
         }
     }
 
@@ -64,12 +81,19 @@ namespace MizyBureau.Script
 
         public async Task<string> CreateSendItemAsync<T>(T SendItem) where T : SendItem
         {
-            HttpResponseMessage response = await client.PostAsync(SendItem.Url, new StringContent(SendItem.Json, Encoding.UTF8, "application/json"));
+            var request = new HttpRequestMessage()
+            {
+                RequestUri = new Uri(SendItem.Url, UriKind.Relative),
+                Method = HttpMethod.Post,
+                Content = new StringContent(SendItem.Json, Encoding.UTF8, "application/json")
+            };
+            request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", SendItem.Token);
+            HttpResponseMessage response = await client.SendAsync(request);
 
             if (ShowDebug)
             {
-                Console.WriteLine($"Json: {SendItem.Json}");
-                Console.WriteLine($"response: {response}");
+                Debug.WriteLine($"Json: {SendItem.Json}");
+                Debug.WriteLine($"response: {response}");
             }
 
             try

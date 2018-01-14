@@ -29,5 +29,29 @@ namespace MizyBureau
         {
             Home.instance.Go_to_Edit_Profile();
         }
+
+        public void OnLoadPage()
+        {
+            User u = Home.instance.GetUser();
+
+            txtName.Text = u._firstname + " " + u._lastname;
+
+            txtEmail.Text = u._email;
+
+            if (u._twitter == false)
+                imgTwitter.Visibility = Visibility.Hidden;
+            else
+                imgTwitter.Visibility = Visibility.Visible;
+
+            if (u._facebook == false)
+                imgSlack.Visibility = Visibility.Hidden;
+            else
+                imgSlack.Visibility = Visibility.Visible;
+
+            if (u._slack == false)
+                imgTwitter.Visibility = Visibility.Hidden;
+            else
+                imgTwitter.Visibility = Visibility.Visible;
+        }
     }
 }

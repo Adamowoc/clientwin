@@ -74,13 +74,13 @@ namespace MizyBureau
 
         private void addConv(object sender, RoutedEventArgs e)
         {
-            if (boxIdentifiant.Text == string.Empty || _nb_conv == 6)
+         // if (boxIdentifiant.Text == string.Empty || _nb_conv == 6)
                 return;
 
             _im.Add(new InstantMessagery());
             setRectangle(_nb_conv);
             setProfileImg("/Images/fille-logo.png", _nb_conv);
-            setNameText(boxIdentifiant.Text, _nb_conv);
+           // setNameText(boxIdentifiant.Text, _nb_conv);
 
             int i = _nb_conv % 3;
 
@@ -193,6 +193,11 @@ namespace MizyBureau
             TextBox tb = (TextBox)sender;
             tb.Text = string.Empty;
             tb.GotFocus -= Peudo_GotFocus;
+        }
+
+        private void GoToEditContact(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

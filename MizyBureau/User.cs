@@ -16,8 +16,16 @@ namespace MizyBureau
             _password = password;
             _lastname = l;
             _firstname = f;
-        }
 
+            Random rd = new Random();
+
+            if (rd.Next(0, 2) > 1)
+                _facebook = true;
+            if (rd.Next(0, 2) > 1)
+                _twitter = true;
+            if (rd.Next(0, 2) > 1)
+                _slack = true;
+        }
 
         public string _token;
         public string _email { get; set; }
@@ -26,5 +34,8 @@ namespace MizyBureau
         public bool _isFacebook { get; set; }
         public bool _isTwitter { get; set; }
         public string _password { get; set; }
+        public bool _facebook { get; set; }
+        public bool _twitter { get; set; }
+        public bool _slack{ get; set; }
     }
 }

@@ -13,15 +13,19 @@
         </Grid.RowDefinitions>
 
         <Canvas x:Name="Page_Profile" Background="#FF050B0F" RenderTransformOrigin="0.646,0.559">
-            <Image x:Name="imgFbLogo" Margin="0,0,0,0"  Source="{StaticResource MyImageFacebook}" Height="50" Canvas.Top="37" Width="51" Canvas.Left="1073" RenderTransformOrigin="0.83,0.029" Panel.ZIndex="3" />
-            <Image x:Name="imgTwitter" HorizontalAlignment="Left" Height="50" Width="55" VerticalAlignment="Top" Source="{StaticResource MyImageTwitter}" RenderTransformOrigin="0.531,0.698" Canvas.Left="1129" Canvas.Top="37" Panel.ZIndex="3"/>
-            <Image x:Name="imgfille" HorizontalAlignment="Left" Height="107" Width="120" VerticalAlignment="Top" Source="{StaticResource MyImageFille}" RenderTransformOrigin="0.531,0.698" Panel.ZIndex="3" Canvas.Left="10"/>
-            <Button x:Name="Show" Content="Show" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120" Background="{x:Null}" Foreground="#FF40A491" FontSize="16" Click="GoToMessagerie" Canvas.Left="907" Canvas.Top="43" Panel.ZIndex="3"/>
+            <TextBlock x:Name="txtNameTitle" TextWrapping="Wrap" Foreground="#abcdea" FontSize="28" Height="44" Width="267" HorizontalAlignment="Left" VerticalAlignment="Top" Text="Filtre par nom" Canvas.Left="132" Canvas.Top="37"/>
+            <TextBox x:Name="boxName" HorizontalAlignment="Center" Height="44" TextWrapping="Wrap" VerticalAlignment="Center" Width="631" Background="{x:Null}" Foreground="#FF40A491" Grid.RowSpan="9" FontSize="24" Text="" SelectionBrush="#FF40A491" Canvas.Left="399" Canvas.Top="41" />
 
-            <Rectangle Fill="#2F3640" Height="100"  Width="1194" Panel.ZIndex="2"/>
-            <TextBlock x:Name="txtUser" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Ellena Almart" VerticalAlignment="Center" Foreground="#40A491" FontSize="40" Height="58" Canvas.Left="130" Canvas.Top="10" Panel.ZIndex="3" Width="381"/>
-            <TextBox x:Name="boxIdentifiant" HorizontalAlignment="Center" Height="26" TextWrapping="Wrap" VerticalAlignment="Center" Width="220" Background="{x:Null}" Foreground="#FF40A491" Grid.RowSpan="9" FontSize="16" Text="User" SelectionBrush="#FF40A491" GotFocus="Peudo_GotFocus" Canvas.Left="751" Canvas.Top="640"/>
-            <Button x:Name="add" Content="Add" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120" Background="{x:Null}" Foreground="#FF40A491" FontSize="16" Click="addConv" Canvas.Left="1004" Canvas.Top="640" Panel.ZIndex="3"/>
+
+            <Image x:Name="imgFbLogo" Margin="0,0,0,0"  Source="{StaticResource MyImageFacebook}" Height="50" Canvas.Top="159" Width="51" Canvas.Left="1079" RenderTransformOrigin="0.83,0.029" Panel.ZIndex="3" />
+            <Image x:Name="imgTwitter" HorizontalAlignment="Left" Height="50" Width="55" VerticalAlignment="Top" Source="{StaticResource MyImageTwitter}" RenderTransformOrigin="0.531,0.698" Canvas.Left="1135" Canvas.Top="159" Panel.ZIndex="3"/>
+            <Image x:Name="imgSlack" HorizontalAlignment="Left" Height="50" Width="55" VerticalAlignment="Top" Source="{StaticResource MyImageSlack}" RenderTransformOrigin="0.531,0.698" Canvas.Left="1024" Canvas.Top="159" Panel.ZIndex="3"/>
+            <Button x:Name="Show" Content="Show" HorizontalAlignment="Center" VerticalAlignment="Center" Width="162" Background="{x:Null}" Foreground="#FF40A491" FontSize="16" Click="GoToMessagerie" Canvas.Left="589" Canvas.Top="140" Panel.ZIndex="3" Height="69"/>
+            <Button x:Name="Edit" Content="Edit" HorizontalAlignment="Center" VerticalAlignment="Center" Width="162" Background="{x:Null}" Foreground="#FF40A491" FontSize="16" Click="GoToEditContact" Canvas.Left="815" Canvas.Top="140" Panel.ZIndex="3" Height="69"/>
+            <Rectangle Fill="#2F3640" Height="100"  Width="1194" Panel.ZIndex="2" Canvas.Left="6" Canvas.Top="122"/>
+            <TextBlock x:Name="txtUser" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Ellena Almart" VerticalAlignment="Center" Foreground="#40A491" FontSize="40" Height="58" Canvas.Left="132" Canvas.Top="138" Panel.ZIndex="3" Width="381"/>
+
+            <Button x:Name="add" Content="Add Contact" HorizontalAlignment="Center" VerticalAlignment="Center" Width="208" Background="{x:Null}" Foreground="#FF40A491" FontSize="16" Click="addConv" Canvas.Left="953" Canvas.Top="701" Panel.ZIndex="3" Height="70"/>
 
         </Canvas>
     </Grid>

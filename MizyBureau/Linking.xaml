@@ -44,7 +44,7 @@
                 <TextBox x:Name="boxIdSlack" HorizontalAlignment="Center" Height="23" TextWrapping="Wrap" VerticalAlignment="Center" Width="314" Background="{x:Null}" Foreground="#FF40A491" Grid.RowSpan="9" FontSize="16" Text="Identifiant" SelectionBrush="#FF40A491" GotFocus="Pseudo_GotFocus" Canvas.Left="285" Canvas.Top="774"/>
                 <PasswordBox x:Name="pboxPwdSlack" HorizontalAlignment="Center" Height="23" VerticalAlignment="Center" Width="314" Background="{x:Null}" Foreground="#FF40A491" Grid.RowSpan="9" FontSize="16" AutomationProperties.HelpText="Mot de passe" Password="Password" SelectionBrush="#FF40A491" GotFocus="Pwd_GotFocus" Canvas.Left="285" Canvas.Top="807"/>
                 <Image x:Name="imgSlack" Source="{StaticResource MyImageSlack}" Width="90" Canvas.Left="162" Canvas.Top="734" Height="96" />
-                <Button x:Name="coSlack" Content="Se connecter" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120" Background="{x:Null}" Foreground="#FF40A491" FontSize="16" Click="connexion_facebook" Canvas.Left="642" Canvas.Top="806"/>
+                <Button x:Name="coSlack" Content="Se connecter" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120" Background="{x:Null}" Foreground="#FF40A491" FontSize="16" Click="OnConnectionSlack" Canvas.Left="642" Canvas.Top="806"/>
 
             </Canvas>
         </Grid>

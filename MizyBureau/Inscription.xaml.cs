@@ -61,7 +61,7 @@ namespace MizyBureau
             tb.GotFocus -= Email_GotFocus;
         }
 
-        private void RegisterUser(object sender, RoutedEventArgs e)
+        private async void RegisterUser(object sender, RoutedEventArgs e)
         {
 
             if (Is_data_ok() == false)
@@ -70,6 +70,19 @@ namespace MizyBureau
                 return;
             }
 
+            User toto = new User(boxEmail.Text, true, true, pboxPwd.Password, boxFirstName.Text, boxLastName.Text);
+
+            string response = await Script.OverHttpClient.instance.CreateSendItemAsync(new Script.SendNewUser(toto));
+            if (string.IsNullOrEmpty(response))
+            {
+                MessageBox.Show("data incorrect.");
+                return;
+            }
+
+            MessageBox.Show("Inscription done.");
+
+
+            Script.PageManager.instance.ChangePage(Script.PageManager.ListPage.CONNECTION);
         }
 
         private bool Is_data_ok()

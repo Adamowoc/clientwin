@@ -33,16 +33,16 @@ namespace MizyBureau
 
       private void connexion_twitter(object sender, RoutedEventArgs e)
         {
-           // string url = "void";
+            // string url = "void";
             //if (_socketClient.Linking_twitter(ref url, _user._email) == false)
             //{
-             //   MessageBox.Show("Link Twitter fail");
+            //   MessageBox.Show("Link Twitter fail");
             //}
             //else
             //{
-              //  txtUrl.Text = url;
-                //System.Uri uri = new System.Uri(url);
-                //hyper.NavigateUri = uri;
+            //  txtUrl.Text = url;
+            //System.Uri uri = new System.Uri(url);
+            //hyper.NavigateUri = uri;
             //}
         }
 
@@ -57,18 +57,22 @@ namespace MizyBureau
             //    MessageBox.Show("Vous êtes maintenant connecté à Twitter !");
             //    _user._isTwitter = true;
             //}
+
+            Home.instance.GetUser()._twitter = true;
         }
 
         private void connexion_facebook(object sender, RoutedEventArgs e)
         {
-            if (Get_link_fb(boxIdFB.Text, pboxPwdFb.Password.ToString(), "facebook") == false)
-            {
-                MessageBox.Show("Le mot de passe ou l'identifiant est incorrect.");
-            }
-            else
-            {
-                _user._isFacebook = true;
-            }
+            Home.instance.GetUser()._facebook = true;
+
+            //if (Get_link_fb(boxIdFB.Text, pboxPwdFb.Password.ToString(), "facebook") == false)
+            //{
+            //    MessageBox.Show("Le mot de passe ou l'identifiant est incorrect.");
+            //}
+            //else
+            //{
+            //    _user._isFacebook = true;
+            //}
         }
 
         private bool Get_link_fb(string email, string pwd, string channel)
@@ -98,6 +102,11 @@ namespace MizyBureau
         {
             Process.Start(new ProcessStartInfo(e.Uri.AbsoluteUri));
             e.Handled = true;
+        }
+
+        private void OnConnectionSlack(object sender, RoutedEventArgs e)
+        {
+            Home.instance.GetUser()._slack = true;
         }
     }
 }

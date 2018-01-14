@@ -26,6 +26,11 @@ namespace MizyBureau
 
         private User _user;
 
+        public User GetUser()
+        {
+            return _user;
+        }
+
         public Home()
         {
             InitializeComponent();
@@ -43,32 +48,32 @@ namespace MizyBureau
             _e = new EditProfil();
 
             if (_user._isFacebook == false || _user._isTwitter == false)
-                this.contentControl.Content = _l;
+                Go_To_Blank();
             else
-                this.contentControl.Content = _p;
-            Accout_Email.Text = "Compte : " + _user._email + " | twitter : " + _user._isTwitter + " | facebook : " + _user._isFacebook;
+                Go_To_Profile();
+            //Accout_Email.Text = "Compte : " + _user._email + " | twitter : " + _user._isTwitter + " | facebook : " + _user._isFacebook;
         }
-
 
         private void Go_To_Conversation(object sender, RoutedEventArgs e)
         {
             contentControl.Content = _c;
-            Accout_Email.Text = "Compte : " + _user._email + " | twitter : " + _user._isTwitter + " | facebook : " + _user._isFacebook;
+            //Accout_Email.Text = "Compte : " + _user._email + " | twitter : " + _user._isTwitter + " | facebook : " + _user._isFacebook;
         }
 
-        private void Go_To_Profile(object sender, RoutedEventArgs e)
+        public void Go_To_Profile(object sender = null, RoutedEventArgs e = null)
         {
             this.contentControl.Content = _p;
-            Accout_Email.Text =  "Compte : " + _user._email + " | twitter : " + _user._isTwitter + " | facebook : " + _user._isFacebook;
+            _p.OnLoadPage();
+            //Accout_Email.Text =  "Compte : " + _user._email + " | twitter : " + _user._isTwitter + " | facebook : " + _user._isFacebook;
         }
 
-        private void Go_To_Blank(object sender, RoutedEventArgs e)
+        public void Go_To_Blank(object sender = null, RoutedEventArgs e = null)
         {
             this.contentControl.Content = _l;
-            Accout_Email.Text =  "Compte : " + _user._email + " | twitter : " + _user._isTwitter + " | facebook : " + _user._isFacebook;
+            //Accout_Email.Text =  "Compte : " + _user._email + " | twitter : " + _user._isTwitter + " | facebook : " + _user._isFacebook;
         }
 
-        private void Exitt(object sender, RoutedEventArgs e)
+        public void Exitt(object sender, RoutedEventArgs e)
         {
             Script.PageManager.instance.ChangePage(Script.PageManager.ListPage.CONNECTION);
         }
@@ -76,13 +81,14 @@ namespace MizyBureau
         public void Go_To_Messagerie(InstantMessagery i)
         {
             this.contentControl.Content = i;
-            Accout_Email.Text = "Compte : " + _user._email + " | twitter : " + _user._isTwitter + " | facebook : " + _user._isFacebook;
+            //Accout_Email.Text = "Compte : " + _user._email + " | twitter : " + _user._isTwitter + " | facebook : " + _user._isFacebook;
         }
 
         public void Go_to_Edit_Profile()
         {
             this.contentControl.Content = _e;
-            Accout_Email.Text = "Compte : " + _user._email + " | twitter : " + _user._isTwitter + " | facebook : " + _user._isFacebook;
+            _e.OnLoadEditProfil();
+            //Accout_Email.Text = "Compte : " + _user._email + " | twitter : " + _user._isTwitter + " | facebook : " + _user._isFacebook;
         }
 
         private Linking _l;
