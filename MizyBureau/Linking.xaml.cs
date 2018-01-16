@@ -14,7 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Data.SqlClient;
 using System.Diagnostics;
-
+using System.Xml;
 
 namespace MizyBureau
 {
@@ -29,9 +29,37 @@ namespace MizyBureau
         {
             InitializeComponent();
             _user = user;
+            Set_Texts();
         }
-
-      private void connexion_twitter(object sender, RoutedEventArgs e)
+        private void Set_Texts()
+        {
+            XmlDocument doc = new XmlDocument();
+            doc.Load(@"..\..\language.xml");
+            XmlNode node = doc.DocumentElement.SelectSingleNode("/mizy/accountslinking/title");
+            if (node != null)
+                txtName.Text = node.InnerText;
+            if ((node = doc.DocumentElement.SelectSingleNode("/mizy/accountslinking/twittermessage")) != null)
+                txtExpliTwi.Text = node.InnerText;
+            if ((node = doc.DocumentElement.SelectSingleNode("/mizy/accountslinking/getlink")) != null)
+                getLinkTwi.Content = node.InnerText;
+            if ((node = doc.DocumentElement.SelectSingleNode("/mizy/accountslinking/enterpin")) != null)
+                boxPINTwi.Text = node.InnerText;
+            if ((node = doc.DocumentElement.SelectSingleNode("/mizy/accountslinking/validate")) != null)
+                validateTwi.Content = node.InnerText;
+            if ((node = doc.DocumentElement.SelectSingleNode("/mizy/accountslinking/id")) != null)
+            {
+                boxIdFB.Text = node.InnerText;
+                boxIdDisc.Text = node.InnerText;
+                boxIdSlack.Text = node.InnerText;
+            }
+            if ((node = doc.DocumentElement.SelectSingleNode("/mizy/accountslinking/connect")) != null)
+            {
+                coFb.Content = node.InnerText;
+                coDisc.Content = node.InnerText;
+                coSlack.Content = node.InnerText;
+            }
+        }
+            private void connexion_twitter(object sender, RoutedEventArgs e)
         {
             // string url = "void";
             //if (_socketClient.Linking_twitter(ref url, _user._email) == false)

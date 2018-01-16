@@ -7,6 +7,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Navigation;
 using System.Windows.Documents;
+using System.Xml;
 
 namespace MizyBureau
 {
@@ -18,44 +19,52 @@ namespace MizyBureau
         public InstantMessagery()
         {
             InitializeComponent();
+            Set_Texts();
             //_stringslqconnection = s;
             //_userid = i;
             //Construct_message_view();
         }
+        private void Set_Texts()
+        {
+            XmlDocument doc = new XmlDocument();
+            doc.Load(@"..\..\language.xml");
+            XmlNode node = doc.DocumentElement.SelectSingleNode("/mizy/messagery/send");
+            if (node != null)
+                btnSend.Content = node.InnerText;
+        }
+            //private void Construct_message_view()
+            //{
+            //    SqlConnection sqlConnection1 = new SqlConnection(_stringslqconnection);
+            //    SqlCommand cmd = new SqlCommand();
+            //    SqlDataReader reader;
 
-        //private void Construct_message_view()
-        //{
-        //    SqlConnection sqlConnection1 = new SqlConnection(_stringslqconnection);
-        //    SqlCommand cmd = new SqlCommand();
-        //    SqlDataReader reader;
+            //    cmd.CommandText = "SELECT * FROM Messagerie where IdUsername = '" + _userid + "' order by Date";
+            //    cmd.CommandType = CommandType.Text;
+            //    cmd.Connection = sqlConnection1;
 
-        //    cmd.CommandText = "SELECT * FROM Messagerie where IdUsername = '" + _userid + "' order by Date";
-        //    cmd.CommandType = CommandType.Text;
-        //    cmd.Connection = sqlConnection1;
+            //    sqlConnection1.Open();
+            //    using (reader = cmd.ExecuteReader())
+            //    {
+            //        while (reader.Read())
+            //        {
+            //            TextBlock new_message = new TextBlock();
+            //            new_message.Background = new SolidColorBrush(Color.FromArgb(0xFF, 0x05, 0x0B, 0x0F));
+            //            if (reader.GetBoolean(4) == false)
+            //                new_message.Foreground = Brushes.AntiqueWhite;
+            //            else
+            //                new_message.Foreground = Brushes.Yellow;
 
-        //    sqlConnection1.Open();
-        //    using (reader = cmd.ExecuteReader())
-        //    {
-        //        while (reader.Read())
-        //        {
-        //            TextBlock new_message = new TextBlock();
-        //            new_message.Background = new SolidColorBrush(Color.FromArgb(0xFF, 0x05, 0x0B, 0x0F));
-        //            if (reader.GetBoolean(4) == false)
-        //                new_message.Foreground = Brushes.AntiqueWhite;
-        //            else
-        //                new_message.Foreground = Brushes.Yellow;
+            //            if (reader.GetInt32(5) == 1)
+            //                new_message.Text = reader["Date"] + "\n" + reader.GetString(2) + "\n send from Facebook";
+            //            else
+            //                new_message.Text = reader["Date"] + "\n" + reader.GetString(2) + "\n send from Skype  by toto";
 
-        //            if (reader.GetInt32(5) == 1)
-        //                new_message.Text = reader["Date"] + "\n" + reader.GetString(2) + "\n send from Facebook";
-        //            else
-        //                new_message.Text = reader["Date"] + "\n" + reader.GetString(2) + "\n send from Skype  by toto";
+            //            Message_view.Children.Add(new_message);
+            //        }
+            //    }
+            //}
 
-        //            Message_view.Children.Add(new_message);
-        //        }
-        //    }
-        //}
-
-        private void Send_message(object sender, RoutedEventArgs e)
+            private void Send_message(object sender, RoutedEventArgs e)
         {
             TextBlock new_message = new TextBlock();
             new_message.Background = new SolidColorBrush(Color.FromArgb(0xFF, 0x05, 0x0B, 0x0F));

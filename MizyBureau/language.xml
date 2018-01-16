@@ -54,4 +54,18 @@
 		<slack>Pseudo Slack</slack>
 	</addcontact>
 	
+	<messagery>
+		<send>Envoyer</send>
+	</messagery>
+	
+	<accountslinking>
+		<title>Liaison des comptes</title>
+		<twittermessage>Pour lier votre compte à Twitter, veuillez suivre le lien et vous connecter. Copiez collez le code PIN obtenu dans l'espace ci-dessous.</twittermessage>
+		<getlink>Obtenir le lien</getlink>
+		<enterpin>Entrez le code PIN ici.</enterpin>
+		<validate>Valider</validate>
+		<id>Identifiant</id>
+		<connect>Se connecter</connect>
+	</accountslinking>
+	
 </mizy>
