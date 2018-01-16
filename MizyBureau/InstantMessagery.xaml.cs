@@ -5,6 +5,8 @@ using System.Windows.Media;
 using System.Diagnostics;
 using System.Data;
 using System.Data.SqlClient;
+using System.Windows.Navigation;
+using System.Windows.Documents;
 
 namespace MizyBureau
 {
@@ -58,7 +60,9 @@ namespace MizyBureau
             TextBlock new_message = new TextBlock();
             new_message.Background = new SolidColorBrush(Color.FromArgb(0xFF, 0x05, 0x0B, 0x0F));
             new_message.Foreground = Brushes.AntiqueWhite;
-            new_message.Text = DateTime.Now + "\n" + My_message.Text + "\n send from Mizy";
+            new_message.Text = DateTime.Now + " \n" + My_message.Text + " \n" + "sent from Mizy\n";
+            FindLinks(new_message);
+
 
             //    using (SqlConnection conn = new SqlConnection(_stringslqconnection))
             //    {
@@ -82,11 +86,42 @@ namespace MizyBureau
             //                Debug.Write(err.Errors.ToString() + "\ntoto42\n");
             //            }
             //        }
-        //       }
+            //       }
             My_message.Text = "";
             Message_view.Children.Add(new_message);
         }
 
+        // LINKS
+        private void HandleRequestNavigate(object sender, RequestNavigateEventArgs args) 
+        {
+            System.Diagnostics.Process.Start(args.Uri.ToString());
+        }
+        public TextBlock FindLinks(TextBlock textBlock1)
+        {
+            Uri uriResult;
+            string txt = textBlock1.Text;
+            textBlock1.Text = "";
+            Debug.Write("  begining  " + txt);
+            foreach (string word in txt.Split(' '))
+            {
+                Debug.Write(" split=" + word);
+                Run run = new Run(word); Debug.Write("result : " + Uri.TryCreate(word, UriKind.Absolute, out uriResult));
+                if (Uri.TryCreate(word, UriKind.Absolute, out uriResult))
+                {
+
+                    Hyperlink hyperlink = new Hyperlink(run)
+                    {
+                        NavigateUri = new Uri(word)
+                    }; Debug.Write(" .hyperlink. ");
+                    hyperlink.RequestNavigate += new System.Windows.Navigation.RequestNavigateEventHandler(HandleRequestNavigate);
+                    textBlock1.Inlines.Add(hyperlink);
+                }
+                else
+                    textBlock1.Inlines.Add(run);
+                textBlock1.Inlines.Add(" ");
+            }
+            return (textBlock1);
+        }
         //private int _userid;
         //private string _stringslqconnection;
     }
