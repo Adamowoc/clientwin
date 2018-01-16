@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Xml;
 
 namespace MizyBureau
 {
@@ -23,8 +24,17 @@ namespace MizyBureau
         public EditProfil()
         {
             InitializeComponent();
+            Set_Texts();
         }
-
+        private void Set_Texts()
+        {
+            XmlDocument doc = new XmlDocument();
+            doc.Load(@"..\..\language.xml");
+            XmlNode node = doc.DocumentElement.SelectSingleNode("/mizy/editprofile/firstname");
+            txtFirstNameTitle.Text = node.InnerText;
+            node = doc.DocumentElement.SelectSingleNode("/mizy/editprofile/lastname");
+            txtLastnameTitle.Text = node.InnerText;
+        }
         public void OnLoadEditProfil()
         {
             User u = Home.instance.GetUser();

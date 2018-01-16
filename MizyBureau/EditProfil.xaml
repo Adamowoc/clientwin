@@ -8,8 +8,8 @@
              d:DesignHeight="800" d:DesignWidth="1200">
     <Grid>
         <Canvas x:Name="Page_EditProfile" Background="#FF050B0F">
-            <TextBlock x:Name="txtNameTitle" TextWrapping="Wrap" Foreground="#abcdea" FontSize="28" Height="44" Width="118" HorizontalAlignment="Left" VerticalAlignment="Top" Text="Prenom" Canvas.Left="190" Canvas.Top="185"/>
-            <TextBlock x:Name="txtProfileTitle" TextWrapping="Wrap" Foreground="#abcdea" FontSize="28" Height="50" Width="118" HorizontalAlignment="Left" VerticalAlignment="Top" Text="Nom" Canvas.Left="190" Canvas.Top="247"/>
+            <TextBlock x:Name="txtFirstNameTitle" TextWrapping="Wrap" Foreground="#abcdea" FontSize="28" Height="44" Width="118" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="190" Canvas.Top="185" Text="Prénom"/>
+            <TextBlock x:Name="txtLastnameTitle" TextWrapping="Wrap" Foreground="#abcdea" FontSize="28" Height="50" Width="118" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="190" Canvas.Top="247" Text="Nom"/>
             <TextBox x:Name="boxName" HorizontalAlignment="Center" Height="44" TextWrapping="Wrap" VerticalAlignment="Center" Width="631" Background="{x:Null}" Foreground="#FF40A491" Grid.RowSpan="9" FontSize="24" Text="John Doe" SelectionBrush="#FF40A491" Canvas.Left="319" Canvas.Top="185" />
             <TextBox x:Name="boxLastName" HorizontalAlignment="Center" Height="46" TextWrapping="Wrap" VerticalAlignment="Center" Width="631" Background="{x:Null}" Foreground="#FF40A491" Grid.RowSpan="9" FontSize="24" Text="Lorem Ipsum elit, sed do eiusmod tempor incididunt ut labore et dolore magna" SelectionBrush="#FF40A491" Canvas.Left="319" Canvas.Top="251" />
             <Image x:Name="imgSmsLogo" HorizontalAlignment="Left" Height="48" Width="88" VerticalAlignment="Top" Source="{StaticResource MyImageSMS}" RenderTransformOrigin="0.911,0.609" Canvas.Left="190" Canvas.Top="374"/>

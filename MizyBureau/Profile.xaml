@@ -8,14 +8,14 @@
              d:DesignHeight="800" d:DesignWidth="1200">
     <Grid x:Name="My_profile">
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" MinHeight="868.8" />
+            <RowDefinition Height="Auto" MinHeight="800" />
             <RowDefinition Height="0*" />
         </Grid.RowDefinitions>
 
-        <Canvas x:Name="Page_Profile" Background="#FF050B0F">
+        <Canvas x:Name="Page_Profile" Background="#FF050B0F" Margin="0,0,0,3">
             <Image x:Name="imgProfile" Source="{StaticResource MyImagePhoto}" Width="304" Canvas.Left="54" Canvas.Top="39" Height="378" />
             <TextBlock x:Name="txtName" TextWrapping="Wrap" Text="John Doe" Foreground="#abcdea" FontSize="38" FontWeight="Bold" Width="741" Canvas.Left="410" Canvas.Top="39"/>
-            <TextBlock x:Name="txtAccounts"  TextWrapping="Wrap" Foreground="#abcdea" FontSize="38" Text="Comptes liés " TextDecorations="{x:Null}" FontWeight="Bold" Canvas.Left="56" Canvas.Top="427"/>
+            <TextBlock x:Name="txtAccounts" Text ="Comptes liés" TextWrapping="Wrap" Foreground="#abcdea" FontSize="38" TextDecorations="{x:Null}" FontWeight="Bold" Canvas.Left="56" Canvas.Top="427"/>
             <Image x:Name="imgFbLogo" Margin="0,0,0,0"  Source="{StaticResource MyImageFacebook}" Height="128" Canvas.Top="477" Width="112" Canvas.Left="56" RenderTransformOrigin="0.83,0.029" />
             <Image x:Name="imgTwitter" HorizontalAlignment="Left" Height="122" Width="129" VerticalAlignment="Top" Source="{StaticResource MyImageTwitter}" RenderTransformOrigin="0.531,0.698" Canvas.Left="184" Canvas.Top="483"/>
             <Image x:Name="imgSlack" HorizontalAlignment="Left" Height="122" Width="129" VerticalAlignment="Top" Source="{StaticResource MyImageDiscord}" RenderTransformOrigin="0.531,0.698" Canvas.Left="318" Canvas.Top="483"/>
@@ -25,7 +25,7 @@
             <TextBlock x:Name="txtSmsName" TextWrapping="Wrap" Foreground="#abcdea" FontSize="28" Height="31" Width="240" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="484" Canvas.Top="140"><Run Text="+33 6 66 66 66 66"/></TextBlock>
             <Image x:Name="imgAnnivIcon" HorizontalAlignment="Left" Height="58" Width="50" VerticalAlignment="Top" Source="{StaticResource MyImageAnniversary}"  RenderTransformOrigin="0.937,0.543" Canvas.Left="411" Canvas.Top="271"/>
             <TextBlock x:Name="txtAnniv" TextWrapping="Wrap" Foreground="#abcdea" FontSize="28" Height="31" Width="240" HorizontalAlignment="Left" VerticalAlignment="Top" Text="12 Janvier" Canvas.Left="484" Canvas.Top="285"/>
-            <Button x:Name="buttonModify" Content="Modifier" VerticalAlignment="Bottom" Width="226" Background="{x:Null}" Foreground="#FF40A491" FontSize="28" Height="72" Canvas.Left="925" Canvas.Top="558" RenderTransformOrigin="-0.012,0.414" HorizontalAlignment="Right" Click="buttonModify_Click"/>
+            <Button x:Name="btnModify" Content="Modifier" VerticalAlignment="Bottom" Width="226" Background="{x:Null}" Foreground="#FF40A491" FontSize="28" Height="72" Canvas.Left="925" Canvas.Top="533" RenderTransformOrigin="-0.012,0.414" HorizontalAlignment="Right" Click="buttonModify_Click"/>
         </Canvas>
     </Grid>
 </UserControl>

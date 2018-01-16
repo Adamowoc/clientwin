@@ -14,7 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Data.SqlClient;
 using System.Diagnostics;
-
+using System.Xml;
 
 namespace MizyBureau
 {
@@ -52,8 +52,22 @@ namespace MizyBureau
             _im = new List<InstantMessagery>();
             _im.Add(new InstantMessagery());
             _conversations = new List<T_Conversation>();
+            Set_Texts();
         }
-
+    
+        private void Set_Texts()
+        {
+            XmlDocument doc = new XmlDocument();
+            doc.Load(@"..\..\language.xml");
+            XmlNode node = doc.DocumentElement.SelectSingleNode("/mizy/conversations/filter");
+            txtNameTitle.Text = node.InnerText;
+            node = doc.DocumentElement.SelectSingleNode("/mizy/conversations/open");
+            btnShow.Content = node.InnerText;
+            node = doc.DocumentElement.SelectSingleNode("/mizy/conversations/edit");
+            btnEdit.Content = node.InnerText;
+            node = doc.DocumentElement.SelectSingleNode("/mizy/conversations/addcontact");
+            btnAdd.Content = node.InnerText;
+        }
         private void GoToMessagerie(object sender, RoutedEventArgs e)
         {
             Home.instance.Go_To_Messagerie(_im[_nb_conv-1]);

@@ -1,20 +1,38 @@
 <?xml version="1.0" ?>
 
 <mizy>
-<connection>
-<message>Veuillez vous connecter.</message>
-<mail>E-mail</mail>
-<toggle>Rester connecté.</toggle>
-<login>Se connecter</login>
-<signin>S'inscrire</signin>
-</connection>
-<inscription>
-<title>Inscription Mizy</title>
-<message>Veuillez renseigner un nom d'utilisateur, un même mot de passe deux fois ainsi qu'une addresse mail valide.</message>
-<firstname>Prénom</firstname>
-<lastname>Nom</lastname>
-<mail>E-mail</mail>
-<validate>Valider</validate>
-<cancel>Annuler</cancel>
-</inscription>
+	<connection>
+		<message>Veuillez vous connecter.</message>
+		<mail>E-mail</mail>
+		<toggle>Rester connecté.</toggle>
+		<login>Se connecter</login>
+		<signin>S'inscrire</signin>
+	</connection>
+	
+	<inscription>
+		<title>Inscription Mizy</title>
+		<message>Veuillez renseigner un nom d'utilisateur, un même mot de passe deux fois ainsi qu'une addresse mail valide.</message>
+		<firstname>Prénom</firstname>
+		<lastname>Nom</lastname>
+		<mail>E-mail</mail>
+		<validate>Valider</validate>
+		<cancel>Annuler</cancel>
+	</inscription>
+	
+	<profile>
+	<accounts>Comptes liés</accounts>
+	<modify>Modifier</modify>
+	</profile>
+	
+	<editprofile>
+		<firstname>Prénom</firstname>
+		<lastname>Nom</lastname>
+	</editprofile>
+	
+	<conversations>
+		<filter>Filtrer par nom</filter>
+		<open>Ouvrir</open>
+		<edit>Editer</edit>
+		<addcontact>Ajouter un contact</addcontact>
+	</conversations>
 </mizy>
