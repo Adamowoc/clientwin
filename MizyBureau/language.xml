@@ -20,8 +20,8 @@
 	</inscription>
 	
 	<profile>
-	<accounts>Comptes liés</accounts>
-	<modify>Modifier</modify>
+		<accounts>Comptes liés</accounts>
+		<modify>Modifier</modify>
 	</profile>
 	
 	<editprofile>
@@ -35,4 +35,23 @@
 		<edit>Editer</edit>
 		<addcontact>Ajouter un contact</addcontact>
 	</conversations>
+	
+	<editcontact>
+		<mizy>Pseudo Mizy</mizy>
+		<fb>Pseudo Facebook</fb>
+		<twitter>Pseudo Twitter</twitter>
+		<discord>Pseudo Discord</discord>
+		<slack>Pseudo Slack</slack>
+	</editcontact>
+	
+	<addcontact>
+		<title>Ajouter un contact</title>
+		<message>Veuillez renseigner un ou plusieurs comptes.</message>
+		<mizy>Pseudo Mizy</mizy>
+		<fb>Pseudo Facebook</fb>
+		<twitter>Pseudo Twitter</twitter>
+		<discord>Pseudo Discord</discord>
+		<slack>Pseudo Slack</slack>
+	</addcontact>
+	
 </mizy>
