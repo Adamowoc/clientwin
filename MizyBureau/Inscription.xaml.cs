@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using RestSharp;
 using System.Diagnostics;
 using System.Text.RegularExpressions;
+using System.Xml;
 
 namespace MizyBureau
 {
@@ -26,8 +27,27 @@ namespace MizyBureau
         public Inscription()
         {
             InitializeComponent();
+            Set_Texts();
         }
-
+        private void Set_Texts()
+        {
+            XmlDocument doc = new XmlDocument();
+            doc.Load(@"C:\Users\Manon\Pictures\School\EIP\GITHUB\Mizy Sounds\clientwin\MizyBureau\language.xml");
+            XmlNode node = doc.DocumentElement.SelectSingleNode("/mizy/inscription/title");
+            txtConnexion.Text = node.InnerText;
+            node = doc.DocumentElement.SelectSingleNode("/mizy/inscription/message");
+            txtaide.Text = node.InnerText;
+            node = doc.DocumentElement.SelectSingleNode("/mizy/inscription/firstname");
+            boxFirstName.Text = node.InnerText;
+            node = doc.DocumentElement.SelectSingleNode("/mizy/inscription/lastname");
+            boxLastName.Text = node.InnerText;
+            node = doc.DocumentElement.SelectSingleNode("/mizy/inscription/mail");
+            boxEmail.Text = node.InnerText;
+            node = doc.DocumentElement.SelectSingleNode("/mizy/inscription/validate");
+            btnvalidation.Content = node.InnerText;
+            node = doc.DocumentElement.SelectSingleNode("/mizy/inscription/cancel");
+            btnannulation.Content = node.InnerText;
+        }
         private void Connection_Load(object sender, RoutedEventArgs e)
         {
             Script.PageManager.instance.ChangePage(Script.PageManager.ListPage.CONNECTION);

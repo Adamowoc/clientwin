@@ -1,14 +1,8 @@
 ﻿using System;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Media;
-using RestSharp;
 using System.Diagnostics;
-using System.Data.SqlClient;
 using Newtonsoft.Json;
-using System.Xml.Linq;
-using System.Linq;
-using System.IO;
 using System.Xml;
 
 namespace MizyBureau
@@ -27,15 +21,15 @@ namespace MizyBureau
         {
             XmlDocument doc = new XmlDocument();
             doc.Load(@"C:\Users\Manon\Pictures\School\EIP\GITHUB\Mizy Sounds\clientwin\MizyBureau\language.xml");
-            XmlNode node = doc.DocumentElement.SelectSingleNode("/connection/message");
+            XmlNode node = doc.DocumentElement.SelectSingleNode("/mizy/connection/message");
             txtConnexion.Text = node.InnerText;
-            node = doc.DocumentElement.SelectSingleNode("/connection/mail");
+            node = doc.DocumentElement.SelectSingleNode("/mizy/connection/mail");
             boxIdentifiant.Text = node.InnerText;
-            node = doc.DocumentElement.SelectSingleNode("/connection/toggle");
+            node = doc.DocumentElement.SelectSingleNode("/mizy/connection/toggle");
             ckboxResterCo.Content = node.InnerText;
-            node = doc.DocumentElement.SelectSingleNode("/connection/login");
+            node = doc.DocumentElement.SelectSingleNode("/mizy/connection/login");
             connexion.Content = node.InnerText;
-            node = doc.DocumentElement.SelectSingleNode("/connection/signin");
+            node = doc.DocumentElement.SelectSingleNode("/mizy/connection/signin");
             inscription.Content = node.InnerText;
         }
 
