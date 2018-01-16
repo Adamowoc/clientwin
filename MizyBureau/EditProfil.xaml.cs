@@ -31,9 +31,10 @@ namespace MizyBureau
             XmlDocument doc = new XmlDocument();
             doc.Load(@"..\..\language.xml");
             XmlNode node = doc.DocumentElement.SelectSingleNode("/mizy/editprofile/firstname");
-            txtFirstNameTitle.Text = node.InnerText;
-            node = doc.DocumentElement.SelectSingleNode("/mizy/editprofile/lastname");
-            txtLastnameTitle.Text = node.InnerText;
+            if (node != null)
+                txtFirstNameTitle.Text = node.InnerText;
+            if ((node = doc.DocumentElement.SelectSingleNode("/mizy/editprofile/lastname")) != null)
+                txtLastnameTitle.Text = node.InnerText;
         }
         public void OnLoadEditProfil()
         {

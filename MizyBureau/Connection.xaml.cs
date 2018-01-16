@@ -22,15 +22,16 @@ namespace MizyBureau
             XmlDocument doc = new XmlDocument();
             doc.Load(@"..\..\language.xml");
             XmlNode node = doc.DocumentElement.SelectSingleNode("/mizy/connection/message");
-            txtConnexion.Text = node.InnerText;
-            node = doc.DocumentElement.SelectSingleNode("/mizy/connection/mail");
-            boxIdentifiant.Text = node.InnerText;
-            node = doc.DocumentElement.SelectSingleNode("/mizy/connection/toggle");
-            ckboxResterCo.Content = node.InnerText;
-            node = doc.DocumentElement.SelectSingleNode("/mizy/connection/login");
-            connexion.Content = node.InnerText;
-            node = doc.DocumentElement.SelectSingleNode("/mizy/connection/signin");
-            inscription.Content = node.InnerText;
+            if (node != null)
+                txtConnexion.Text = node.InnerText;
+            if ((node = doc.DocumentElement.SelectSingleNode("/mizy/connection/mail")) != null)
+                boxIdentifiant.Text = node.InnerText;
+            if ((node = doc.DocumentElement.SelectSingleNode("/mizy/connection/toggle")) != null)
+                ckboxResterCo.Content = node.InnerText;
+            if ((node = doc.DocumentElement.SelectSingleNode("/mizy/connection/login")) != null)
+                connexion.Content = node.InnerText;
+            if ((node = doc.DocumentElement.SelectSingleNode("/mizy/connection/signin")) != null)
+                inscription.Content = node.InnerText;
         }
 
         private void Inscription_Load(object sender, RoutedEventArgs e)

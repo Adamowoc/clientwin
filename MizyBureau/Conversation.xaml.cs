@@ -60,13 +60,14 @@ namespace MizyBureau
             XmlDocument doc = new XmlDocument();
             doc.Load(@"..\..\language.xml");
             XmlNode node = doc.DocumentElement.SelectSingleNode("/mizy/conversations/filter");
-            txtNameTitle.Text = node.InnerText;
-            node = doc.DocumentElement.SelectSingleNode("/mizy/conversations/open");
-            btnShow.Content = node.InnerText;
-            node = doc.DocumentElement.SelectSingleNode("/mizy/conversations/edit");
-            btnEdit.Content = node.InnerText;
-            node = doc.DocumentElement.SelectSingleNode("/mizy/conversations/addcontact");
-            btnAdd.Content = node.InnerText;
+            if (node != null)
+                txtNameTitle.Text = node.InnerText;
+            if ((node = doc.DocumentElement.SelectSingleNode("/mizy/conversations/open")) != null)
+                btnShow.Content = node.InnerText;
+            if ((node = doc.DocumentElement.SelectSingleNode("/mizy/conversations/edit")) != null)
+                btnEdit.Content = node.InnerText;
+            if ((node = doc.DocumentElement.SelectSingleNode("/mizy/conversations/addcontact")) != null)
+                btnAdd.Content = node.InnerText;
         }
         private void GoToMessagerie(object sender, RoutedEventArgs e)
         {

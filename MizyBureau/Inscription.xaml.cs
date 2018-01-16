@@ -34,19 +34,20 @@ namespace MizyBureau
             XmlDocument doc = new XmlDocument();
             doc.Load(@"..\..\language.xml");
             XmlNode node = doc.DocumentElement.SelectSingleNode("/mizy/inscription/title");
-            txtConnexion.Text = node.InnerText;
-            node = doc.DocumentElement.SelectSingleNode("/mizy/inscription/message");
-            txtaide.Text = node.InnerText;
-            node = doc.DocumentElement.SelectSingleNode("/mizy/inscription/firstname");
-            boxFirstName.Text = node.InnerText;
-            node = doc.DocumentElement.SelectSingleNode("/mizy/inscription/lastname");
-            boxLastName.Text = node.InnerText;
-            node = doc.DocumentElement.SelectSingleNode("/mizy/inscription/mail");
-            boxEmail.Text = node.InnerText;
-            node = doc.DocumentElement.SelectSingleNode("/mizy/inscription/validate");
-            btnvalidation.Content = node.InnerText;
-            node = doc.DocumentElement.SelectSingleNode("/mizy/inscription/cancel");
-            btnannulation.Content = node.InnerText;
+            if (node != null)
+                txtConnexion.Text = node.InnerText;
+            if ((node = doc.DocumentElement.SelectSingleNode("/mizy/inscription/message")) != null)
+                txtaide.Text = node.InnerText;
+            if ((node = doc.DocumentElement.SelectSingleNode("/mizy/inscription/firstname")) != null)
+                boxFirstName.Text = node.InnerText;
+            if ((node = doc.DocumentElement.SelectSingleNode("/mizy/inscription/lastname")) != null)
+                boxLastName.Text = node.InnerText;
+            if ((node = doc.DocumentElement.SelectSingleNode("/mizy/inscription/mail")) != null)
+                boxEmail.Text = node.InnerText;
+            if ((node = doc.DocumentElement.SelectSingleNode("/mizy/inscription/validate")) != null)
+                btnvalidation.Content = node.InnerText;
+            if ((node = doc.DocumentElement.SelectSingleNode("/mizy/inscription/cancel")) != null)
+                btnannulation.Content = node.InnerText;
         }
         private void Connection_Load(object sender, RoutedEventArgs e)
         {

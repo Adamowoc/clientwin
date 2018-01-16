@@ -32,9 +32,10 @@ namespace MizyBureau
             XmlDocument doc = new XmlDocument();
             doc.Load(@"..\..\language.xml");
             XmlNode node = doc.DocumentElement.SelectSingleNode("/mizy/profile/accounts");
-            txtAccounts.Text = node.InnerText;
-            node = doc.DocumentElement.SelectSingleNode("/mizy/profile/modify");
-            btnModify.Content = node.InnerText;
+            if (node != null)
+                txtAccounts.Text = node.InnerText;
+            if ((node = doc.DocumentElement.SelectSingleNode("/mizy/profile/modify")) != null)
+                btnModify.Content = node.InnerText;
         }
         private void buttonModify_Click(object sender, RoutedEventArgs e)
         {
