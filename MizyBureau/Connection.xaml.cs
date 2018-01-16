@@ -6,8 +6,10 @@ using RestSharp;
 using System.Diagnostics;
 using System.Data.SqlClient;
 using Newtonsoft.Json;
-
-
+using System.Xml.Linq;
+using System.Linq;
+using System.IO;
+using System.Xml;
 
 namespace MizyBureau
 {
@@ -19,6 +21,22 @@ namespace MizyBureau
         public Connection()
         {
             InitializeComponent();
+            Set_Texts();
+        }
+        private void Set_Texts()
+        {
+            XmlDocument doc = new XmlDocument();
+            doc.Load(@"C:\Users\Manon\Pictures\School\EIP\GITHUB\Mizy Sounds\clientwin\MizyBureau\language.xml");
+            XmlNode node = doc.DocumentElement.SelectSingleNode("/connection/message");
+            txtConnexion.Text = node.InnerText;
+            node = doc.DocumentElement.SelectSingleNode("/connection/mail");
+            boxIdentifiant.Text = node.InnerText;
+            node = doc.DocumentElement.SelectSingleNode("/connection/toggle");
+            ckboxResterCo.Content = node.InnerText;
+            node = doc.DocumentElement.SelectSingleNode("/connection/login");
+            connexion.Content = node.InnerText;
+            node = doc.DocumentElement.SelectSingleNode("/connection/signin");
+            inscription.Content = node.InnerText;
         }
 
         private void Inscription_Load(object sender, RoutedEventArgs e)

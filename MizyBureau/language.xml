@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+
+<connection>
+<message>Veuillez vous connecter.</message>
+<mail>E-mail</mail>
+<toggle>Rester connecté.</toggle>
+<login>Se connecter</login>
+<signin>S'inscrire</signin>
+</connection>
