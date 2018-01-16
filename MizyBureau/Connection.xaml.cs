@@ -20,7 +20,7 @@ namespace MizyBureau
         private void Set_Texts()
         {
             XmlDocument doc = new XmlDocument();
-            doc.Load(@"C:\Users\Manon\Pictures\School\EIP\GITHUB\Mizy Sounds\clientwin\MizyBureau\language.xml");
+            doc.Load(@"..\..\language.xml");
             XmlNode node = doc.DocumentElement.SelectSingleNode("/mizy/connection/message");
             txtConnexion.Text = node.InnerText;
             node = doc.DocumentElement.SelectSingleNode("/mizy/connection/mail");
