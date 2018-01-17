@@ -80,6 +80,7 @@ namespace MizyBureau
         {
             Sounds.Sound1();
             Script.PageManager.instance.ChangePage(Script.PageManager.ListPage.CONNECTION);
+            Sounds.Disco();
         }
 
         public void Go_To_Messagerie(InstantMessagery i)

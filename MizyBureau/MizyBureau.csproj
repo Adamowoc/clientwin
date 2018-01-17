@@ -247,6 +247,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="sound\clic.wav" />
+    <Content Include="sound\connect.wav" />
+    <Content Include="sound\disco.wav" />
+    <Content Include="sound\notif.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -8,7 +8,6 @@ using System.Net;
 using System.Windows;
 using System.IO;
 using System.Media;
-using System.Diagnostics;
 
 namespace MizyBureau
 {
@@ -16,13 +15,42 @@ namespace MizyBureau
      {
          public static void Sound1()
          {
-            DirectoryInfo fullPathToSound = new DirectoryInfo(@"..\..\sound\clic.wav");
+            new System.Threading.Thread(() =>
+            {
+                DirectoryInfo fullPathToSound = new DirectoryInfo(@"..\..\sound\clic.wav");
             SoundPlayer player = new SoundPlayer(fullPathToSound.FullName);
-            Debug.Print("HELLO " + fullPathToSound.FullName);
-            player.Play();
-            return;
-         }
-     }
+            player.PlaySync();
+            }).Start();
+    }
+        public static void Connect()
+        {
+            new System.Threading.Thread(() =>
+            {
+                DirectoryInfo fullPathToSound = new DirectoryInfo(@"..\..\sound\connect.wav");
+                SoundPlayer player = new SoundPlayer(fullPathToSound.FullName);
+                player.PlaySync();
+            }).Start();
+        }
+        public static void Notif()
+        {
+            new System.Threading.Thread(() =>
+            {
+                DirectoryInfo fullPathToSound = new DirectoryInfo(@"..\..\sound\notif.wav");
+                SoundPlayer player = new SoundPlayer(fullPathToSound.FullName);
+                player.PlaySync();
+            }).Start();
+
+        }
+        public static void Disco()
+        {
+            new System.Threading.Thread(() =>
+            {
+                DirectoryInfo fullPathToSound = new DirectoryInfo(@"..\..\sound\disco.wav");
+            SoundPlayer player = new SoundPlayer(fullPathToSound.FullName);
+            player.PlaySync();
+            }).Start();
+        }
+    }
 //    public static class Constants
 //    {
 //        public const string LocalDB_connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\MizyLocalDB.mdf;Integrated Security = True";

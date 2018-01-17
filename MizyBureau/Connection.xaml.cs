@@ -44,7 +44,7 @@ namespace MizyBureau
         private async void Home_LoadAsync(object sender, RoutedEventArgs e)
         {
             Sounds.Sound1();
-            if (boxIdentifiant.Text == "Identifiant" || pboxPwd.Password == "Password")
+            if (boxIdentifiant.Text == "Identifiant")
             {
                 MessageBox.Show("Veuillez entrer votre email et mot de passe.");
                 return;
@@ -63,8 +63,7 @@ namespace MizyBureau
                 MessageBox.Show("User incorrect.");
                 return;
             }
-
-            Debug.WriteLine(response);
+            Sounds.Connect();
 
             dynamic test = JsonConvert.DeserializeObject(response);
            
