@@ -47,6 +47,7 @@ namespace MizyBureau
 
         public void OnClickValidate(object sender, RoutedEventArgs e)
         {
+            Sounds.Sound1();
             User u = Home.instance.GetUser();
 
             u._firstname = boxName.Text;

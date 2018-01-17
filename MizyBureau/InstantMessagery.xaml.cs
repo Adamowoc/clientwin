@@ -65,7 +65,8 @@ namespace MizyBureau
             //}
 
             private void Send_message(object sender, RoutedEventArgs e)
-        {
+            {
+            Sounds.Sound1();
             TextBlock new_message = new TextBlock();
             new_message.Background = new SolidColorBrush(Color.FromArgb(0xFF, 0x05, 0x0B, 0x0F));
             new_message.Foreground = Brushes.AntiqueWhite;

@@ -71,6 +71,7 @@ namespace MizyBureau
         }
         private void GoToMessagerie(object sender, RoutedEventArgs e)
         {
+            Sounds.Sound1();
             Home.instance.Go_To_Messagerie(_im[_nb_conv-1]);
         }
 
@@ -89,8 +90,9 @@ namespace MizyBureau
 
         private void addConv(object sender, RoutedEventArgs e)
         {
-         // if (boxIdentifiant.Text == string.Empty || _nb_conv == 6)
-                return;
+            Sounds.Sound1();
+            // if (boxIdentifiant.Text == string.Empty || _nb_conv == 6)
+            return;
 
             _im.Add(new InstantMessagery());
             setRectangle(_nb_conv);
@@ -212,7 +214,7 @@ namespace MizyBureau
 
         private void GoToEditContact(object sender, RoutedEventArgs e)
         {
-
+            Sounds.Sound1();
         }
     }
 }

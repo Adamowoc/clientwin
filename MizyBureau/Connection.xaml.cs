@@ -40,6 +40,7 @@ namespace MizyBureau
             Script.PageManager.instance.ChangePage(Script.PageManager.ListPage.INSCRIPTION);
         }
 
+
         private async void Home_LoadAsync(object sender, RoutedEventArgs e)
         {
             Sounds.Sound1();

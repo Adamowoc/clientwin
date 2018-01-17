@@ -56,12 +56,14 @@ namespace MizyBureau
 
         private void Go_To_Conversation(object sender, RoutedEventArgs e)
         {
+            Sounds.Sound1();
             contentControl.Content = _c;
             //Accout_Email.Text = "Compte : " + _user._email + " | twitter : " + _user._isTwitter + " | facebook : " + _user._isFacebook;
         }
 
         public void Go_To_Profile(object sender = null, RoutedEventArgs e = null)
         {
+            Sounds.Sound1();
             this.contentControl.Content = _p;
             _p.OnLoadPage();
             //Accout_Email.Text =  "Compte : " + _user._email + " | twitter : " + _user._isTwitter + " | facebook : " + _user._isFacebook;
@@ -69,12 +71,14 @@ namespace MizyBureau
 
         public void Go_To_Blank(object sender = null, RoutedEventArgs e = null)
         {
+            Sounds.Sound1();
             this.contentControl.Content = _l;
             //Accout_Email.Text =  "Compte : " + _user._email + " | twitter : " + _user._isTwitter + " | facebook : " + _user._isFacebook;
         }
 
         public void Exitt(object sender, RoutedEventArgs e)
         {
+            Sounds.Sound1();
             Script.PageManager.instance.ChangePage(Script.PageManager.ListPage.CONNECTION);
         }
 

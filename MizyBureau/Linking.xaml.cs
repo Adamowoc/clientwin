@@ -61,6 +61,7 @@ namespace MizyBureau
         }
             private void connexion_twitter(object sender, RoutedEventArgs e)
         {
+            Sounds.Sound1();
             // string url = "void";
             //if (_socketClient.Linking_twitter(ref url, _user._email) == false)
             //{
@@ -76,6 +77,7 @@ namespace MizyBureau
 
       private void validate_twitter(object sender, RoutedEventArgs e)
         {
+            Sounds.Sound1();
             //if (_socketClient.Validate_twitter_PIN(boxPINTwi.Text, _user._email) == false)
             //{
             //    MessageBox.Show("Le code PIN est incorrect.");
@@ -89,8 +91,9 @@ namespace MizyBureau
             Home.instance.GetUser()._twitter = true;
         }
 
-        private void connexion_facebook(object sender, RoutedEventArgs e)
+        private void Connexion_Facebook(object sender, RoutedEventArgs e)
         {
+            Sounds.Sound1();
             Home.instance.GetUser()._facebook = true;
 
             //if (Get_link_fb(boxIdFB.Text, pboxPwdFb.Password.ToString(), "facebook") == false)
@@ -101,6 +104,15 @@ namespace MizyBureau
             //{
             //    _user._isFacebook = true;
             //}
+        }
+        private void Connexion_Discord(object sender, RoutedEventArgs e)
+        {
+            Sounds.Sound1();
+        }
+        private void Connexion_Slack(object sender, RoutedEventArgs e)
+        {
+            Sounds.Sound1();
+            Home.instance.GetUser()._slack = true;
         }
 
         private bool Get_link_fb(string email, string pwd, string channel)
@@ -132,9 +144,5 @@ namespace MizyBureau
             e.Handled = true;
         }
 
-        private void OnConnectionSlack(object sender, RoutedEventArgs e)
-        {
-            Home.instance.GetUser()._slack = true;
-        }
     }
 }

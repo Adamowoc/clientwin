@@ -46,5 +46,10 @@ namespace MizyBureau
             if ((node = doc.DocumentElement.SelectSingleNode("/mizy/addcontact/message")) != null)
                 txtConnexion.Text = node.InnerText;
         }
+
+        private void Create_Friend(object sender, RoutedEventArgs e)
+        {
+            Sounds.Sound1();
+        }
     }
 }

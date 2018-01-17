@@ -26,7 +26,7 @@
             <TextBlock x:Name="txtSlaPseudo" TextWrapping="Wrap" Foreground="#abcdea" FontSize="28" Height="44" Width="293" HorizontalAlignment="Left" VerticalAlignment="Top" Text="Pseudo Slack" Canvas.Left="190" Canvas.Top="531"/>
             <TextBox x:Name="boxSlaPseudo" HorizontalAlignment="Center" Height="44" TextWrapping="Wrap" VerticalAlignment="Center" Width="422" Background="{x:Null}" Foreground="#FF40A491" Grid.RowSpan="9" FontSize="24" Text="" SelectionBrush="#FF40A491" Canvas.Left="528" Canvas.Top="531" />
 
-            <Button x:Name="buttonValidate" Content="Valider" VerticalAlignment="Bottom" Width="226" Background="{x:Null}" Foreground="#FF40A491" FontSize="28" Height="72" Canvas.Left="924" Canvas.Top="674" RenderTransformOrigin="-0.012,0.414" HorizontalAlignment="Right"/>
+            <Button x:Name="buttonValidate" Content="Valider" VerticalAlignment="Bottom" Width="226" Background="{x:Null}" Foreground="#FF40A491" FontSize="28" Height="72" Canvas.Left="924" Canvas.Top="674" RenderTransformOrigin="-0.012,0.414" HorizontalAlignment="Right" Click="Create_Friend"/>
         </Canvas>
     </Grid>
 </UserControl>

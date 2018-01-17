@@ -39,6 +39,7 @@ namespace MizyBureau
         }
         private void buttonModify_Click(object sender, RoutedEventArgs e)
         {
+            Sounds.Sound1();
             Home.instance.Go_to_Edit_Profile();
         }
 
