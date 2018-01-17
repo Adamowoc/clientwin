@@ -1,4 +1,6 @@
 ﻿using System.Windows;
+using System.Windows.Media;
+using System.Xml;
 
 namespace MizyBureau
 {
@@ -22,9 +24,20 @@ namespace MizyBureau
         {
             InitializeComponent();
             instance = this;
+            Set_UI();
         }
-
-        public void SetHomeWithUser()
+        private void Set_UI()
+        {
+            XmlDocument doc = new XmlDocument();
+            doc.Load(@"..\..\" + UI.Get_Theme() + ".xml");
+            XmlNode node = doc.DocumentElement.SelectSingleNode("/ui/bgcolor");
+            if (node != null)
+            {
+                Color color = (Color)ColorConverter.ConvertFromString(node.InnerText);
+                Menu.Background = new SolidColorBrush(color);
+            }
+        }
+            public void SetHomeWithUser()
         {
             _user = Script.UserManager.instance.ActualUser;
             // load userform (pages)

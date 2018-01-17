@@ -246,6 +246,8 @@
     </Resource>
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="dark.xml" />
+    <Resource Include="light.xml" />
     <Content Include="sound\clic.wav" />
     <Content Include="sound\connect.wav" />
     <Content Include="sound\disco.wav" />

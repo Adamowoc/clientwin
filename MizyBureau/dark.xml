@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+
+<ui>
+	<bgcolor>#FF050B0F</bgcolor>
+	<title>
+		<color>#abcdea</color>
+		<size>38</size>
+	</title>
+	<text>
+		<color>#FF7FC5B8</color>
+		<size></size>
+	</text>
+	<button>
+		<color>#FF7FC5B8</color>
+		<textsize></textsize>
+	</button>
+</ui>

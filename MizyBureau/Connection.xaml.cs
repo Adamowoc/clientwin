@@ -2,6 +2,7 @@
 using System.Windows.Controls;
 using Newtonsoft.Json;
 using System.Xml;
+using System.Windows.Media;
 
 namespace MizyBureau
 {
@@ -14,7 +15,33 @@ namespace MizyBureau
         {
             InitializeComponent();
             Set_Texts();
+            Set_UI();
         }
+
+        private void Set_UI()
+        {
+            XmlDocument doc = new XmlDocument();
+            doc.Load(@"..\..\" + UI.Get_Theme() + ".xml");
+            XmlNode node = doc.DocumentElement.SelectSingleNode("/ui/bgcolor");
+            if (node != null)
+            {
+                Color color = (Color)ColorConverter.ConvertFromString(node.InnerText);
+                coGrid.Background = new SolidColorBrush(color);
+            }
+            if ((node = doc.DocumentElement.SelectSingleNode("/ui/text/color")) != null)
+            {
+                var converter = new System.Windows.Media.BrushConverter();
+                var brush = (Brush)converter.ConvertFromString(node.InnerText);
+                txtConnexion.Foreground = ckboxResterCo.Foreground = connexion.Foreground = inscription.Foreground = brush;
+            }
+            if ((node = doc.DocumentElement.SelectSingleNode("/ui/button/color")) != null)
+            {
+                var converter = new System.Windows.Media.BrushConverter();
+                var brush = (Brush)converter.ConvertFromString(node.InnerText);
+                boxIdentifiant.Foreground = pboxPwd.Foreground = brush;
+            }
+        }
+
         private void Set_Texts()
         {
             XmlDocument doc = new XmlDocument();
