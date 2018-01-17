@@ -18,8 +18,8 @@ namespace MizyBureau
             new System.Threading.Thread(() =>
             {
                 DirectoryInfo fullPathToSound = new DirectoryInfo(@"..\..\sound\clic.wav");
-            SoundPlayer player = new SoundPlayer(fullPathToSound.FullName);
-            player.PlaySync();
+                SoundPlayer player = new SoundPlayer(fullPathToSound.FullName);
+                player.PlaySync();
             }).Start();
     }
         public static void Connect()
@@ -46,8 +46,8 @@ namespace MizyBureau
             new System.Threading.Thread(() =>
             {
                 DirectoryInfo fullPathToSound = new DirectoryInfo(@"..\..\sound\disco.wav");
-            SoundPlayer player = new SoundPlayer(fullPathToSound.FullName);
-            player.PlaySync();
+                SoundPlayer player = new SoundPlayer(fullPathToSound.FullName);
+                player.PlaySync();
             }).Start();
         }
     }

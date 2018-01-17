@@ -3,8 +3,6 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Diagnostics;
-using System.Data;
-using System.Data.SqlClient;
 using System.Windows.Navigation;
 using System.Windows.Documents;
 using System.Xml;
