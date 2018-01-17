@@ -36,11 +36,13 @@ namespace MizyBureau
 
         private void Inscription_Load(object sender, RoutedEventArgs e)
         {
+            Sounds.Sound1();
             Script.PageManager.instance.ChangePage(Script.PageManager.ListPage.INSCRIPTION);
         }
 
         private async void Home_LoadAsync(object sender, RoutedEventArgs e)
         {
+            Sounds.Sound1();
             if (boxIdentifiant.Text == "Identifiant" || pboxPwd.Password == "Password")
             {
                 MessageBox.Show("Veuillez entrer votre email et mot de passe.");

@@ -1,14 +1,28 @@
-﻿//using System;
-//using System.Collections.Generic;
-//using System.Linq;
-//using System.Text;
-//using System.Threading.Tasks;
-//using System.Net.Sockets;
-//using System.Net;
-//using System.Windows;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Net.Sockets;
+using System.Net;
+using System.Windows;
+using System.IO;
+using System.Media;
+using System.Diagnostics;
 
-//namespace MizyBureau
-//{
+namespace MizyBureau
+{
+    public class Sounds
+     {
+         public static void Sound1()
+         {
+            DirectoryInfo fullPathToSound = new DirectoryInfo(@"..\..\sound\clic.wav");
+            SoundPlayer player = new SoundPlayer(fullPathToSound.FullName);
+            Debug.Print("HELLO " + fullPathToSound.FullName);
+            player.Play();
+            return;
+         }
+     }
 //    public static class Constants
 //    {
 //        public const string LocalDB_connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\MizyLocalDB.mdf;Integrated Security = True";
@@ -200,4 +214,4 @@
 //        }
 
 //    }
-//}
+}

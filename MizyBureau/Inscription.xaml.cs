@@ -51,6 +51,7 @@ namespace MizyBureau
         }
         private void Connection_Load(object sender, RoutedEventArgs e)
         {
+            Sounds.Sound1();
             Script.PageManager.instance.ChangePage(Script.PageManager.ListPage.CONNECTION);
         }
 
@@ -84,7 +85,7 @@ namespace MizyBureau
 
         private async void RegisterUser(object sender, RoutedEventArgs e)
         {
-
+            Sounds.Sound1();
             if (Is_data_ok() == false)
             {
                 MessageBox.Show(Msg_error);
