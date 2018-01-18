@@ -55,7 +55,7 @@ namespace MizyBureau
     }
     public class UI
     {
-        private static string Theme = "light";
+        private static string Theme = "dark";
          UI()
         {
             XmlDocument doc = new XmlDocument();
@@ -72,6 +72,14 @@ namespace MizyBureau
         {
             if (txt == "light" || txt == "dark")
             {
+                XmlDocument doc = new XmlDocument();
+                doc.Load(@"..\..\user.xml");
+                XmlNode node = doc.DocumentElement.SelectSingleNode("/user/theme");
+                if (node != null)
+                {
+                    node.InnerText = txt;
+                    doc.Save(@"..\..\user.xml");
+                }
                 Theme = txt;
             }
             return;
