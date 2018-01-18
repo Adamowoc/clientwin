@@ -108,19 +108,13 @@ namespace MizyBureau
             if (node != null)
             {
                 Color color = (Color)ColorConverter.ConvertFromString(node.InnerText);
-             //   messGrid.Background = My_message.Background = btnSend.Background = messFirst.Background = new SolidColorBrush(color);
+                messGrid.Background = My_message.Background = btnSend.Background =  new SolidColorBrush(color);
             }
             if ((node = doc.DocumentElement.SelectSingleNode("/ui/text/color")) != null)
             {
                 var converter = new System.Windows.Media.BrushConverter();
                 var brush = (Brush)converter.ConvertFromString(node.InnerText);
                 btnSend.Foreground = My_message.Foreground = btnSend.Foreground = brush;
-            }
-            if ((node = doc.DocumentElement.SelectSingleNode("/ui/title/color")) != null)
-            {
-                var converter = new System.Windows.Media.BrushConverter();
-                var brush = (Brush)converter.ConvertFromString(node.InnerText);
-            //    messFirst.Foreground = brush;
             }
         }
 
