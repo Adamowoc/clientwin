@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using System.Xml;
 
 namespace MizyBureau
 {
@@ -13,6 +14,17 @@ namespace MizyBureau
 
         public MainWindow()
         {
+            if (UI.is_theme_set == false)
+            {
+                XmlDocument doc = new XmlDocument();
+                doc.Load(@"..\..\user.xml");
+                XmlNode node = doc.DocumentElement.SelectSingleNode("/user/theme");
+                if (node != null)
+                {
+                    UI.Set_Theme(node.InnerText);
+                }
+                UI.is_theme_set = true;
+            }
             InitializeComponent();
             instance = this;
             Script.PageManager toto = new Script.PageManager();

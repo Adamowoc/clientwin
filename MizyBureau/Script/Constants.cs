@@ -55,7 +55,8 @@ namespace MizyBureau
     }
     public class UI
     {
-        private static string Theme = "dark";
+        public static bool is_theme_set = false;
+        private static string Theme;
          UI()
         {
             XmlDocument doc = new XmlDocument();
