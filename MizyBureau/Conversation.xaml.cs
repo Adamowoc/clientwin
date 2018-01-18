@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Data;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
@@ -67,8 +69,25 @@ namespace MizyBureau
             };
 
             ListConversation.ItemsSource = _conversations;
+
+            CollectionView view = (CollectionView)CollectionViewSource.GetDefaultView(ListConversation.ItemsSource);
+            view.Filter = UserFilter;
+
             Set_Texts();
             Set_UI();
+        }
+
+        private bool UserFilter(object item)
+        {
+            if (String.IsNullOrEmpty(boxName.Text))
+                return true;
+            else
+                return ((item as C_Conversation).Name.IndexOf(boxName.Text, StringComparison.OrdinalIgnoreCase) >= 0);
+        }
+
+        private void boxName_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            CollectionViewSource.GetDefaultView(ListConversation.ItemsSource).Refresh();
         }
 
         private void Show_Click(object sender, RoutedEventArgs e)
@@ -153,11 +172,11 @@ namespace MizyBureau
             if (node != null)
                 txtNameTitle.Text = node.InnerText;
             if ((node = doc.DocumentElement.SelectSingleNode("/mizy/conversations/open")) != null)
-                // btnShow.Content = node.InnerText;
-                if ((node = doc.DocumentElement.SelectSingleNode("/mizy/conversations/edit")) != null)
-                    // btnEdit.Content = node.InnerText;
-                    if ((node = doc.DocumentElement.SelectSingleNode("/mizy/conversations/addcontact")) != null)
-                        btnAdd.Content = node.InnerText;
+                btnShow.Content = node.InnerText;
+            if ((node = doc.DocumentElement.SelectSingleNode("/mizy/conversations/edit")) != null)
+                btnEdit.Content = node.InnerText;
+            if ((node = doc.DocumentElement.SelectSingleNode("/mizy/conversations/addcontact")) != null)
+                btnAdd.Content = node.InnerText;
         }
     }
 }
