@@ -16,7 +16,7 @@ namespace MizyBureau
             Set_Texts();
             Set_UI();
         }
-        private void Set_UI()
+        public void Set_UI()
         {
             XmlDocument doc = new XmlDocument();
             doc.Load(@"..\..\" + UI.Get_Theme() + ".xml");
@@ -56,13 +56,15 @@ namespace MizyBureau
         }
         private void Set_Light(object sender, RoutedEventArgs e)
         {
-            UI.Set_Theme("light");        
-            Home.instance.Go_to_Edit_Profile();
+            UI.Set_Theme("light");
+            Home.instance.Set_UI();
+            Home.instance.Reload_UI();
         }
         private void Set_Dark(object sender, RoutedEventArgs e)
         {
             UI.Set_Theme("dark");
-            Home.instance.Go_to_Edit_Profile();
+            Home.instance.Set_UI();
+            Home.instance.Reload_UI();
         }
         public void OnLoadEditProfil()
         {

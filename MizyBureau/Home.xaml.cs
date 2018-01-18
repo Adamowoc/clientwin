@@ -26,17 +26,7 @@ namespace MizyBureau
             instance = this;
             Set_UI();
         }
-        private void Set_UI()
-        {
-            XmlDocument doc = new XmlDocument();
-            doc.Load(@"..\..\" + UI.Get_Theme() + ".xml");
-            XmlNode node = doc.DocumentElement.SelectSingleNode("/ui/menucolor");
-            if (node != null)
-            {
-                Color color = (Color)ColorConverter.ConvertFromString(node.InnerText);
-                Menu.Background = new SolidColorBrush(color);
-            }
-        }
+
             public void SetHomeWithUser()
         {
             _user = Script.UserManager.instance.ActualUser;
@@ -95,12 +85,31 @@ namespace MizyBureau
             _e.OnLoadEditProfil();
             //Accout_Email.Text = "Compte : " + _user._email + " | twitter : " + _user._isTwitter + " | facebook : " + _user._isFacebook;
         }
-
+        public void Set_UI()
+        {
+            XmlDocument doc = new XmlDocument();
+            doc.Load(@"..\..\" + UI.Get_Theme() + ".xml");
+            XmlNode node = doc.DocumentElement.SelectSingleNode("/ui/menucolor");
+            if (node != null)
+            {
+                Color color = (Color)ColorConverter.ConvertFromString(node.InnerText);
+                Menu.Background = new SolidColorBrush(color);
+            }
+        }
+   
+         public void Reload_UI()
+         {
+           _l.Set_UI();
+           _p.Set_UI();
+           _c.Set_UI();
+           _i.Set_UI();
+           _e.Set_UI();
+        }
         private Linking _l;
         private Profile _p;
         private Conversation _c;
         private InstantMessagery _i;
         private EditProfil _e;
-    }
+ }
 }
 

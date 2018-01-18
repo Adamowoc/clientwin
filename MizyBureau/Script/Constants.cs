@@ -9,6 +9,7 @@ using System.Windows;
 using System.IO;
 using System.Media;
 using System.Diagnostics;
+using System.Xml;
 
 namespace MizyBureau
 {
@@ -55,6 +56,14 @@ namespace MizyBureau
     public class UI
     {
         private static string Theme = "light";
+         UI()
+        {
+            XmlDocument doc = new XmlDocument();
+            doc.Load(@"..\..\user.xml");
+            XmlNode node = doc.DocumentElement.SelectSingleNode("/user/theme");
+            if (node != null && (node.InnerText == "light" || node.InnerText == "dark"))
+                Theme = node.InnerText;
+        }
         public static string Get_Theme()
         {
             return Theme;
