@@ -92,6 +92,8 @@ namespace MizyBureau
             CollectionView view = (CollectionView)CollectionViewSource.GetDefaultView(ListConversation.ItemsSource);
             view.Filter = UserFilter;
 
+            Home.instance.SetNotif(true);
+
             Set_Texts();
             Set_UI();
         }
@@ -128,6 +130,8 @@ namespace MizyBureau
                     if (cc.HasNotif == true)
                         HasNotif = true;
                 }
+
+                Home.instance.SetNotif(HasNotif);
 
                 Home.instance.Go_To_Messagerie(i);
             }
@@ -180,6 +184,16 @@ namespace MizyBureau
         public void Add_Conversation(C_Conversation c)
         {
             _conversations.Add(c);
+
+            HasNotif = false;
+
+            foreach (C_Conversation cc in _conversations)
+            {
+                if (cc.HasNotif == true)
+                    HasNotif = true;
+            }
+
+            Home.instance.SetNotif(HasNotif);
         }
 
         public void Add_Message(int i, Message m)

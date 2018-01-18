@@ -24,12 +24,13 @@
                                 <ColumnDefinition Width="260" />
                                 <ColumnDefinition Width="50" />
                                 <ColumnDefinition Width="50" />
-                                <ColumnDefinition Width="50" />
+                                <ColumnDefinition Width="75" />
                             </Grid.ColumnDefinitions>
                             <TextBlock x:Name="txtUser" TextWrapping="Wrap" Text="{Binding Name}" Foreground="#40A491" FontSize="40" Height="58" Width="381" />
                             <Image x:Name="imgFbLogo" Grid.Column="1" Source="{StaticResource MyImageFacebook}" Height="50" Width="51" HorizontalAlignment="Right" Visibility="{Binding Facebook}" />
                             <Image x:Name="imgTwitter"  Grid.Column="2" Height="50" Width="55" Source="{StaticResource MyImageTwitter}" Visibility="{Binding Twitter}" />
                             <Image x:Name="imgSlack" Grid.Column="3" Height="50" Width="55" VerticalAlignment="Top" Source="{StaticResource MyImageSlack}" Visibility="{Binding Slack}" />
+                            <!--<Image x:Name="imgNotif" Grid.Column="4" Height="50" Width="55" VerticalAlignment="Top" Source="{StaticResource MyImageNotif}" Visibility="{Binding HasNotif}" />-->
                         </Grid>
                     </DataTemplate>
                 </ListBox.ItemTemplate>

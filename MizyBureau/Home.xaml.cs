@@ -1,5 +1,7 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using System.Windows.Media;
+using System.Windows.Media.Imaging;
 using System.Xml;
 
 namespace MizyBureau
@@ -114,6 +116,20 @@ namespace MizyBureau
             Sounds.Sound1();
             Script.PageManager.instance.ChangePage(Script.PageManager.ListPage.CONNECTION);
             Sounds.Disco();
+        }
+
+        public void SetNotif(bool b)
+        {
+            if (b)
+            {
+                Uri iconUri = new Uri("../../Images/logonotif.png", UriKind.RelativeOrAbsolute);
+                this.Icon = BitmapFrame.Create(iconUri);
+            }
+            else
+            {
+                Uri iconUri = new Uri("../../Images/logo.png", UriKind.RelativeOrAbsolute);
+                this.Icon = BitmapFrame.Create(iconUri);
+            }
         }
 
         public void Go_To_Messagerie(int i)
