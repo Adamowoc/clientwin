@@ -130,6 +130,7 @@ namespace MizyBureau
            _c.Set_UI();
            _i.Set_UI();
            _e.Set_UI();
+           _editContact.Set_UI();
         }
 
         private Linking _l;

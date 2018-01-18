@@ -1,0 +1,73 @@
+<?xml version="1.0" ?>
+
+<mizy>
+	<connection>
+		<message>Please log in.</message>
+		<mail>E-mail</mail>
+		<toggle>Stay connected.</toggle>
+		<login>Log in</login>
+		<signin>Sign in</signin>
+	</connection>
+	
+	<inscription>
+		<title>Mizy sign in</title>
+		<message>Please enter a username, the same password twice and a valid email address.</message>
+		<firstname>Firstname</firstname>
+		<lastname>Lastname</lastname>
+		<mail>E-mail</mail>
+		<validate>Validate</validate>
+		<cancel>Cancel</cancel>
+	</inscription>
+	
+	<profile>
+		<accounts>Linked accounts</accounts>
+		<modify>Modify</modify>
+	</profile>
+	
+	<editprofile>
+		<firstname>Firstname</firstname>
+		<lastname>Lastname</lastname>
+    <lighttheme>Light theme</lighttheme>
+    <darktheme>Dark theme</darktheme>
+	</editprofile>
+	
+	<conversations>
+		<filter>Filter by name</filter>
+		<open>Open</open>
+		<edit>Edit</edit>
+		<addcontact>Add a contact</addcontact>
+	</conversations>
+	
+	<editcontact>
+		<mizy>Mizy pseudo</mizy>
+		<fb>Facebook pseudo</fb>
+		<twitter>Twitter pseudo</twitter>
+		<discord>Discord pseudo</discord>
+		<slack>Slack pseudo</slack>
+	</editcontact>
+	
+	<addcontact>
+		<title>Add a contact</title>
+		<message>Please enter one or more accounts.</message>
+		<mizy>Mizy pseudo</mizy>
+		<fb>Facebook pseudo</fb>
+		<twitter>Twitter pseudo</twitter>
+		<discord>Discord pseudo</discord>
+		<slack>Slack pseudo</slack>
+	</addcontact>
+	
+	<messagery>
+		<send>Send</send>
+	</messagery>
+	
+	<accountslinking>
+		<title>Accounts linking</title>
+		<twittermessage>To link your Twitter account, please follow the link and login. Copy Paste the PIN code obtained in the space below.</twittermessage>
+		<getlink>Get the link</getlink>
+		<enterpin>Enter the PIN code here.</enterpin>
+		<validate>Validate</validate>
+		<id>Pseudonym</id>
+		<connect>Connect</connect>
+	</accountslinking>
+	
+</mizy>

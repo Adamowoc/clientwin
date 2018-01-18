@@ -56,7 +56,7 @@ namespace MizyBureau
             }
         }
 
-        private void Set_UI()
+        public void Set_UI()
         {
             XmlDocument doc = new XmlDocument();
             doc.Load(@"..\..\" + UI.Get_Theme() + ".xml");
