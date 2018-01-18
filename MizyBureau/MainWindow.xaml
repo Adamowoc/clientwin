@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:MizyBureau"
         mc:Ignorable="d"
         ResizeMode="NoResize"
+        Icon="{StaticResource MyImageMizy}"
         Title="Mizy - Connexion" Height="600" Width="400">
 
     <DockPanel>
