@@ -65,6 +65,7 @@ namespace MizyBureau
             Message m = new Message(My_message.Text, DateTime.Now.ToString(), "depuis", service);
             Home.instance._c.Add_Message(_tmp, m);
 
+            My_message.Text = "";
 
             _messages.Add(m);
         }
