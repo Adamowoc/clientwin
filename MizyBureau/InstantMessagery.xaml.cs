@@ -18,21 +18,18 @@ namespace MizyBureau
     {
         public ObservableCollection<Message> _messages;
 
-
         public InstantMessagery()
         {
             InitializeComponent();
             Set_Texts();
             Set_UI();
-            _messages = new ObservableCollection<Message>()
-            {
-                new Message("toto", "toto","toto","toto"),
-            };
+            _messages = new ObservableCollection<Message>();
+            ListMessage.ItemsSource = _messages;
         }
 
         public void SetMessages(List<Message> messages)
         {
-            //_messages.Clear();
+            _messages.Clear();
 
             foreach (Message m in messages)
             {
@@ -45,6 +42,24 @@ namespace MizyBureau
             Sounds.Sound1();
             if (My_message.Text == "")
                 return;
+
+            string service = string.Empty;
+            User u = Home.instance.GetUser();
+
+            if (u._isFacebook == true)
+            {
+                service = "Facebook";
+            }
+            else if (u._isTwitter == true)
+            {
+                service = "Twitter";
+            }
+            else if (u._slack == true)
+            {
+                service = "Slack";
+            }
+
+            _messages.Add(new Message(My_message.Text, DateTime.Now.ToString(), "depuis", service));
         }
 
         // LINKS

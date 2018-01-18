@@ -83,6 +83,12 @@ namespace MizyBureau
 
         private void Go_To_Conversation(object sender = null, RoutedEventArgs e = null)
         {
+            if (_user._isFacebook == false && _user._isTwitter == false && _user._slack == false)
+            {
+                Go_To_Blank();
+                return;
+            }
+
             Sounds.Sound1();
             contentControl.Content = _c;
             //Accout_Email.Text = "Compte : " + _user._email + " | twitter : " + _user._isTwitter + " | facebook : " + _user._isFacebook;

@@ -21,10 +21,10 @@
                             <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
-                        <TextBlock x:Name="txtContent" TextWrapping="Wrap" Text="{Binding Content}" Foreground="#40A491" FontSize="20" Height="30"  Width="60"/>
-                        <TextBlock Grid.Column="1" x:Name="txtDate" TextWrapping="Wrap" Text="{Binding Date}" Foreground="#40A491" FontSize="20" Height="30" Width="60"/>
-                        <TextBlock Grid.Column="2" x:Name="txtSender" TextWrapping="Wrap" Text="{Binding Sender}" Foreground="#40A491" FontSize="20" Height="30" Width="60"/>
-                        <TextBlock Grid.Column="3" x:Name="txtService" TextWrapping="Wrap" Text="{Binding Service}" Foreground="#40A491" FontSize="20" Height="30" Width="60"/>
+                        <TextBlock x:Name="txtContent" TextWrapping="Wrap" Text="{Binding Content}" Foreground="#40A491" FontSize="20" Height="50"  Width="200"/>
+                        <TextBlock Grid.Column="1" x:Name="txtDate" TextWrapping="Wrap" Text="{Binding Date}" Foreground="#40A491" FontSize="20" Height="50" Width="300"/>
+                        <TextBlock Grid.Column="2" x:Name="txtSender" TextWrapping="Wrap" Text="{Binding Sender}" Foreground="#40A491" FontSize="20" Height="50" Width="80"/>
+                        <TextBlock Grid.Column="3" x:Name="txtService" TextWrapping="Wrap" Text="{Binding Service}" Foreground="#40A491" FontSize="20" Height="50" Width="100"/>
                     </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>

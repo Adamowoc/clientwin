@@ -80,7 +80,7 @@ namespace MizyBureau
             InitializeComponent();
             _conversations = new ObservableCollection<C_Conversation>()
             {
-                new C_Conversation("Benjamin", true, false, true),
+                new C_Conversation("Benjamin", true, false, false),
             };
 
             HasNotif = true;
