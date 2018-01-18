@@ -241,7 +241,7 @@
     <Resource Include="Images\slack-logo.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="language.xml">
+    <Resource Include="fr.xml">
       <SubType>Designer</SubType>
     </Resource>
   </ItemGroup>

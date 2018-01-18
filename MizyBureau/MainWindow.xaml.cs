@@ -25,6 +25,17 @@ namespace MizyBureau
                 }
                 UI.is_theme_set = true;
             }
+            if (Langue.is_lang_set == false)
+            {
+                XmlDocument doc = new XmlDocument();
+                doc.Load(@"..\..\user.xml");
+                XmlNode node = doc.DocumentElement.SelectSingleNode("/user/language");
+                if (node != null)
+                {
+                    Langue.Set_Lang(node.InnerText);
+                }
+                Langue.is_lang_set = true;
+            }
             InitializeComponent();
             instance = this;
             Script.PageManager toto = new Script.PageManager();

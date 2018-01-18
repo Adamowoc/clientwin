@@ -30,7 +30,9 @@ namespace MizyBureau
             {
                 var converter = new System.Windows.Media.BrushConverter();
                 var brush = (Brush)converter.ConvertFromString(node.InnerText);
-                txtFirstNameTitle.Foreground = txtLastnameTitle.Foreground = brush;
+                txtFirstNameTitle.Foreground = txtLastnameTitle.Foreground =
+                btnlight.Foreground = btndark.Foreground =
+                btnfr.Foreground = btnen.Foreground = buttonValidate.Foreground = brush;
             }
             if ((node = doc.DocumentElement.SelectSingleNode("/ui/box/color")) != null)
             {
@@ -40,10 +42,10 @@ namespace MizyBureau
                     boxMail.Foreground = boxAniv.Foreground = brush;
             }
         }
-        private void Set_Texts()
+        public void Set_Texts()
         {
             XmlDocument doc = new XmlDocument();
-            doc.Load(@"..\..\language.xml");
+            doc.Load(@"..\..\" + Langue.Get_Lang() + ".xml");
             XmlNode node = doc.DocumentElement.SelectSingleNode("/mizy/editprofile/firstname");
             if (node != null)
                 txtFirstNameTitle.Text = node.InnerText;
@@ -65,6 +67,16 @@ namespace MizyBureau
             UI.Set_Theme("dark");
             Home.instance.Set_UI();
             Home.instance.Reload_UI();
+        }
+        private void Set_Fr(object sender, RoutedEventArgs e)
+        {
+            Langue.Set_Lang("fr");
+            Home.instance.Reload_Lang();
+        }
+        private void Set_En(object sender, RoutedEventArgs e)
+        {
+            Langue.Set_Lang("en");
+            Home.instance.Reload_Lang();
         }
         public void OnLoadEditProfil()
         {

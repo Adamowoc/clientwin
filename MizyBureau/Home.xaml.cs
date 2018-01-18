@@ -132,6 +132,16 @@ namespace MizyBureau
            _e.Set_UI();
            _editContact.Set_UI();
         }
+        public void Reload_Lang()
+        {
+            _l.Set_Texts();
+            _p.Set_Texts();
+            _c.Set_Texts();
+            _i.Set_Texts();
+            _e.Set_Texts();
+            _editContact.Set_Texts();
+        }
+
 
         private Linking _l;
         private Profile _p;

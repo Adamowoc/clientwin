@@ -53,7 +53,33 @@ namespace MizyBureau
             }).Start();
         }
     }
-    public class UI
+    public class Langue
+    {
+        public static bool is_lang_set = false;
+        private static string Lang;
+        public static string Get_Lang()
+        {
+            return Lang;
+        }
+        public static void Set_Lang(string txt)
+        {
+            if (txt == "en" || txt == "fr")
+            {
+                XmlDocument doc = new XmlDocument();
+                doc.Load(@"..\..\user.xml");
+                XmlNode node = doc.DocumentElement.SelectSingleNode("/user/language");
+                if (node != null)
+                {
+                    node.InnerText = txt;
+                    doc.Save(@"..\..\user.xml");
+                }
+                Lang = txt;
+            }
+            return;
+        }
+    }
+
+        public class UI
     {
         public static bool is_theme_set = false;
         private static string Theme;

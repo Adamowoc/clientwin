@@ -46,10 +46,10 @@ namespace MizyBureau
                 messFirst.Foreground = brush;
             }
         }
-        private void Set_Texts()
+        public void Set_Texts()
         {
             XmlDocument doc = new XmlDocument();
-            doc.Load(@"..\..\language.xml");
+            doc.Load(@"..\..\" + Langue.Get_Lang() +".xml");
             XmlNode node = doc.DocumentElement.SelectSingleNode("/mizy/messagery/send");
             if (node != null)
                 btnSend.Content = node.InnerText;

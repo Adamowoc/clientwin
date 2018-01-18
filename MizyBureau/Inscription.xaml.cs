@@ -50,7 +50,7 @@ namespace MizyBureau
         private void Set_Texts()
         {
             XmlDocument doc = new XmlDocument();
-            doc.Load(@"..\..\language.xml");
+            doc.Load(@"..\..\" + Langue.Get_Lang() + ".xml");
             XmlNode node = doc.DocumentElement.SelectSingleNode("/mizy/inscription/title");
             if (node != null)
                 txtConnexion.Text = node.InnerText;
