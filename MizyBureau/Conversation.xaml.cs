@@ -40,6 +40,8 @@ namespace MizyBureau
             Facebook = f;
             Twitter = t;
             Slack = s;
+            if (Messages == null)
+                Messages = new List<Message>();
         }
 
         public string Name { get; set; }

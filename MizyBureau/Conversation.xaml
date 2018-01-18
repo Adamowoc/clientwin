@@ -24,6 +24,7 @@
                                 <ColumnDefinition Width="260" />
                                 <ColumnDefinition Width="50" />
                                 <ColumnDefinition Width="50" />
+                                <ColumnDefinition Width="50" />
                             </Grid.ColumnDefinitions>
                             <TextBlock x:Name="txtUser" TextWrapping="Wrap" Text="{Binding Name}" Foreground="#40A491" FontSize="40" Height="58" Width="381" />
                             <Image x:Name="imgFbLogo" Grid.Column="1" Source="{StaticResource MyImageFacebook}" Height="50" Width="51" HorizontalAlignment="Right" Visibility="{Binding Facebook}" />
