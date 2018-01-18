@@ -27,9 +27,12 @@ namespace MizyBureau
             ListMessage.ItemsSource = _messages;
         }
 
-        public void SetMessages(List<Message> messages)
+        int _tmp;
+
+        public void SetMessages(List<Message> messages, int i)
         {
             _messages.Clear();
+            _tmp = i;
 
             foreach (Message m in messages)
             {
@@ -59,7 +62,11 @@ namespace MizyBureau
                 service = "Slack";
             }
 
-            _messages.Add(new Message(My_message.Text, DateTime.Now.ToString(), "depuis", service));
+            Message m = new Message(My_message.Text, DateTime.Now.ToString(), "depuis", service);
+            Home.instance._c.Add_Message(_tmp, m);
+
+
+            _messages.Add(m);
         }
 
         // LINKS

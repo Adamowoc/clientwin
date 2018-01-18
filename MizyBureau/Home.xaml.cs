@@ -118,7 +118,7 @@ namespace MizyBureau
 
         public void Go_To_Messagerie(int i)
         {
-            _i.SetMessages(_c._conversations[i].Messages);
+            _i.SetMessages(_c._conversations[i].Messages, i);
             this.contentControl.Content = _i;
             //Accout_Email.Text = "Compte : " + _user._email + " | twitter : " + _user._isTwitter + " | facebook : " + _user._isFacebook;
         }
