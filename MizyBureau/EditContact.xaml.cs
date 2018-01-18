@@ -31,6 +31,7 @@ namespace MizyBureau
             if (txtTitre.Text == string.Empty)
             {
                 C_Conversation c = new C_Conversation(boxMizyPseudo.Text, boxFbPseudo.Text == string.Empty ? false : true, boxTwiPseudo.Text == string.Empty ? false : true, boxSlaPseudo.Text == string.Empty ? false : true);
+                c.Messages.Clear();
                 Home.instance.AddConversation(c);
             }
             else

@@ -21,6 +21,17 @@ namespace MizyBureau
             Facebook = (f == true) ? "Visible" : "Hidden";
             Twitter = (t == true) ? "Visible" : "Hidden";
             Slack = (s == true) ? "Visible" : "Hidden";
+            Messages = new List<Message>();
+            HasNotif = false;
+            if (Facebook == "Visible")
+                Messages.Add(new Message("coucou !", DateTime.Now.ToString(), "recu par", "Facebook"));
+            else if (Twitter == "Visible")
+                Messages.Add(new Message("coucou !", DateTime.Now.ToString(), "recu par", "Twitter"));
+            else if (Slack == "Visible")
+                Messages.Add(new Message("coucou !", DateTime.Now.ToString(), "recu par", "Slack"));
+            else
+                return;
+            HasNotif = true;
         }
 
         public C_Conversation(string name, string f, string t, string s)
@@ -35,15 +46,19 @@ namespace MizyBureau
         public string Facebook { get; set; }
         public string Twitter { get; set; }
         public string Slack { get; set; }
+        public bool HasNotif { get; set; }
 
         public List<Message> Messages { get; set; }
     }
 
     public class Message
     {
-        public Message()
+        public Message(string c, string d, string s, string s2)
         {
-
+            Content = c;
+            Date = d;
+            Sender = s;
+            Service = s2;
         }
 
         public string Content { get; set; }
@@ -57,8 +72,8 @@ namespace MizyBureau
     /// </summary>
     public partial class Conversation : UserControl
     {
-        private ObservableCollection<C_Conversation> _conversations;
-
+        public ObservableCollection<C_Conversation> _conversations;
+        public bool HasNotif = false;
 
         public Conversation()
         {
@@ -67,6 +82,8 @@ namespace MizyBureau
             {
                 new C_Conversation("Benjamin", true, false, true),
             };
+
+            HasNotif = true;
 
             ListConversation.ItemsSource = _conversations;
 
@@ -96,6 +113,21 @@ namespace MizyBureau
 
             if (i > -1)
             {
+                C_Conversation c = _conversations[i];
+
+                if (c.Facebook == "Hidden" && c.Slack == "Hidden" && c.Twitter == "Hidden")
+                    return;
+
+                _conversations[i].HasNotif = false;
+                HasNotif = false;
+
+                foreach (C_Conversation cc in _conversations)
+                {
+                    if (cc.HasNotif == true)
+                        HasNotif = true;
+                }
+
+                Home.instance.Go_To_Messagerie(i);
             }
         }
 
@@ -111,7 +143,20 @@ namespace MizyBureau
 
         public void Delete_and_Add(C_Conversation c, int i)
         {
-            _conversations.Add(new C_Conversation(c.Name, c.Facebook, c.Twitter, c.Slack));
+            C_Conversation cc_new = new C_Conversation(c.Name, c.Facebook, c.Twitter, c.Slack);
+
+            C_Conversation CC = _conversations[i];
+
+            foreach (Message m in CC.Messages)
+            {
+                if (m.Service == "Facebook" && cc_new.Facebook == "Visible")
+                    cc_new.Messages.Add(new Message(m.Content, m.Date, m.Sender, m.Service));
+                else if (m.Service == "Twitter" && cc_new.Twitter == "Visible")
+                    cc_new.Messages.Add(new Message(m.Content, m.Date, m.Sender, m.Service));
+                else if (m.Service == "Slack" && cc_new.Slack == "Visible")
+                    cc_new.Messages.Add(new Message(m.Content, m.Date, m.Sender, m.Service));
+            }
+            _conversations.Add(cc_new);
             _conversations.RemoveAt(i);
         }
 
@@ -133,6 +178,12 @@ namespace MizyBureau
         public void Add_Conversation(C_Conversation c)
         {
             _conversations.Add(c);
+        }
+
+        public void Add_Message(int i, Message m)
+        {
+            Message new_message = new Message(m.Content, m.Date, m.Sender, m.Service);
+            _conversations[i].Messages.Add(m);
         }
 
         public void Set_UI()

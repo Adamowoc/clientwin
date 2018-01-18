@@ -110,9 +110,10 @@ namespace MizyBureau
             Sounds.Disco();
         }
 
-        public void Go_To_Messagerie(InstantMessagery i)
+        public void Go_To_Messagerie(int i)
         {
-            this.contentControl.Content = i;
+            _i.SetMessages(_c._conversations[i].Messages);
+            this.contentControl.Content = _i;
             //Accout_Email.Text = "Compte : " + _user._email + " | twitter : " + _user._isTwitter + " | facebook : " + _user._isFacebook;
         }
 
@@ -145,7 +146,7 @@ namespace MizyBureau
 
         private Linking _l;
         private Profile _p;
-        private Conversation _c;
+        public Conversation _c;
         private InstantMessagery _i;
         private EditProfil _e;
         private EditContact _editContact;

@@ -11,15 +11,32 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <ScrollViewer CanContentScroll="True" VerticalScrollBarVisibility="Auto" Margin="10,10,0,244" Grid.RowSpan="2">
-            <StackPanel x:Name="Message_view">
-                <TextBox x:Name ="messFirst" Text="Conversation Mizy" Background="#FF050B0F" Foreground="AntiqueWhite"/>
-            </StackPanel>
-        </ScrollViewer>
-        <TextBox x:Name="My_message" AcceptsReturn="True" TextWrapping="Wrap" SpellCheck.IsEnabled="True" Language="fr" Margin="10,561,55,10" Background="#FF050B0F" Foreground="AntiqueWhite" Grid.Row="1"/>
+        <ListBox Name="ListMessage" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" Canvas.Top="134" Background="{x:Null}" Foreground="#FF40A491" Canvas.Left="36" Margin="41,34,87,235" Grid.RowSpan="2">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock x:Name="txtContent" TextWrapping="Wrap" Text="{Binding Content}" Foreground="#40A491" FontSize="20" Height="30"  Width="60"/>
+                        <TextBlock Grid.Column="1" x:Name="txtDate" TextWrapping="Wrap" Text="{Binding Date}" Foreground="#40A491" FontSize="20" Height="30" Width="60"/>
+                        <TextBlock Grid.Column="2" x:Name="txtSender" TextWrapping="Wrap" Text="{Binding Sender}" Foreground="#40A491" FontSize="20" Height="30" Width="60"/>
+                        <TextBlock Grid.Column="3" x:Name="txtService" TextWrapping="Wrap" Text="{Binding Service}" Foreground="#40A491" FontSize="20" Height="30" Width="60"/>
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <TextBox x:Name="My_message" AcceptsReturn="True" TextWrapping="Wrap" SpellCheck.IsEnabled="True" Language="fr" Margin="10,561,116,10" Background="#FF050B0F" Foreground="AntiqueWhite" Grid.Row="1"/>
         <Button x:Name="btnSend" Margin="750,561,10,10" Content="Send" Background="#FF050B0F" Foreground="AntiqueWhite" Click="Send_message" Grid.Row="1"/>
-        <Image x:Name="imgFbLogo" HorizontalAlignment="Right"  Source="{StaticResource MyImageFacebook}" Canvas.Top="477" Canvas.Left="56" RenderTransformOrigin="0.83,0.029" Margin="0,34,0,0" Width="47" Grid.RowSpan="2" VerticalAlignment="Top" />
-        <Image x:Name="imgHangoutLogo" HorizontalAlignment="Right" Height="53" Width="52" VerticalAlignment="Top" Source="{StaticResource MyImageTwitter}" RenderTransformOrigin="7.024,0.933" Canvas.Left="184" Canvas.Top="499" Margin="0,81,0,0" Grid.RowSpan="2"/>
-        <Image x:Name="imgSmsLogo" HorizontalAlignment="Right" Height="44" Width="50" VerticalAlignment="Top" Source="{StaticResource MyImageSMS}" RenderTransformOrigin="0.911,0.609" Canvas.Left="838" Canvas.Top="107" Margin="0,134,0,0" Grid.Row="1"/>
+        <Image x:Name="imgFbLogo" HorizontalAlignment="Right"  Source="{StaticResource MyImageFacebook}" Canvas.Top="477" Canvas.Left="56" RenderTransformOrigin="0.83,0.029" Margin="0,34,13,0" Width="47" Grid.RowSpan="2" VerticalAlignment="Top" />
+        <Image x:Name="imgFbLogo2" HorizontalAlignment="Right"  Source="{StaticResource MyImageFacebook}" Canvas.Top="477" Canvas.Left="56" RenderTransformOrigin="0.83,0.029" Margin="0,509,122,0" Width="47" Grid.RowSpan="2" VerticalAlignment="Top" />
+        <Image x:Name="imgHangoutLogo" HorizontalAlignment="Right" Height="53" Width="52" VerticalAlignment="Top" Source="{StaticResource MyImageTwitter}" RenderTransformOrigin="7.024,0.933" Canvas.Left="184" Canvas.Top="499" Margin="0,86,8,0" Grid.RowSpan="2"/>
+        <Image x:Name="imgHangoutLogo2" HorizontalAlignment="Right" Height="53" Width="52" VerticalAlignment="Top" Source="{StaticResource MyImageTwitter}" RenderTransformOrigin="7.024,0.933" Canvas.Left="184" Canvas.Top="499" Margin="0,512,65,0" Grid.RowSpan="2"/>
+        <Image x:Name="imgSlack" HorizontalAlignment="Right" Height="44" Width="50" VerticalAlignment="Top" Source="{StaticResource MyImageSlack}" RenderTransformOrigin="0.911,0.609" Canvas.Left="838" Canvas.Top="107" Margin="0,139,10,0" Grid.Row="1"/>
+        <Image x:Name="imgSlack2" HorizontalAlignment="Right" Height="44" Width="50" VerticalAlignment="Top" Source="{StaticResource MyImageSlack}" RenderTransformOrigin="0.911,0.609" Canvas.Left="838" Canvas.Top="107" Margin="0,512,10,0" Grid.Row="1"/>
+        <Image x:Name="imgFile" HorizontalAlignment="Right" Height="44" Width="50" VerticalAlignment="Top" Source="{StaticResource MyImageMail}" RenderTransformOrigin="0.911,0.609" Canvas.Left="838" Canvas.Top="107" Margin="0,509,174,0" Grid.Row="1"/>
     </Grid>
 </UserControl>
