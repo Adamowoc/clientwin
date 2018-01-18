@@ -27,6 +27,8 @@
 	<editprofile>
 		<firstname>Prénom</firstname>
 		<lastname>Nom</lastname>
+    <lighttheme>Thème clair</lighttheme>
+    <darktheme>Thème foncé</darktheme>
 	</editprofile>
 	
 	<conversations>

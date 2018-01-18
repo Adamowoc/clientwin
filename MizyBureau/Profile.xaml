@@ -12,7 +12,7 @@
             <RowDefinition Height="0*" />
         </Grid.RowDefinitions>
 
-        <Canvas x:Name="Page_Profile" Background="#FF050B0F" Margin="0,0,0,3">
+        <Canvas x:Name="Page_Profil" Background="#FF050B0F" Margin="0,0,0,3">
             <Image x:Name="imgProfile" Source="{StaticResource MyImagePhoto}" Width="304" Canvas.Left="54" Canvas.Top="39" Height="378" />
             <TextBlock x:Name="txtName" TextWrapping="Wrap" Text="John Doe" Foreground="#abcdea" FontSize="38" FontWeight="Bold" Width="741" Canvas.Left="410" Canvas.Top="39"/>
             <TextBlock x:Name="txtAccounts" Text ="Comptes liés" TextWrapping="Wrap" Foreground="#abcdea" FontSize="38" TextDecorations="{x:Null}" FontWeight="Bold" Canvas.Left="56" Canvas.Top="427"/>

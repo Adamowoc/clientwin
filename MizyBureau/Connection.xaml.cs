@@ -34,7 +34,7 @@ namespace MizyBureau
                 var brush = (Brush)converter.ConvertFromString(node.InnerText);
                 txtConnexion.Foreground = ckboxResterCo.Foreground = connexion.Foreground = inscription.Foreground = brush;
             }
-            if ((node = doc.DocumentElement.SelectSingleNode("/ui/button/color")) != null)
+            if ((node = doc.DocumentElement.SelectSingleNode("/ui/box/color")) != null)
             {
                 var converter = new System.Windows.Media.BrushConverter();
                 var brush = (Brush)converter.ConvertFromString(node.InnerText);

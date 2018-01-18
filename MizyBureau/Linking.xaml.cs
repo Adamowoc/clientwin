@@ -3,6 +3,7 @@ using System.Windows.Controls;
 using System.Windows.Navigation;
 using System.Diagnostics;
 using System.Xml;
+using System.Windows.Media;
 
 namespace MizyBureau
 {
@@ -18,6 +19,40 @@ namespace MizyBureau
             InitializeComponent();
             _user = user;
             Set_Texts();
+            Set_UI();
+        }
+        private void Set_UI()
+        {
+            XmlDocument doc = new XmlDocument();
+            doc.Load(@"..\..\" + UI.Get_Theme() + ".xml");
+            XmlNode node = doc.DocumentElement.SelectSingleNode("/ui/bgcolor");
+            if (node != null)
+            {
+                Color color = (Color)ColorConverter.ConvertFromString(node.InnerText);
+                Page_Linking.Background = new SolidColorBrush(color);
+            }
+            if ((node = doc.DocumentElement.SelectSingleNode("/ui/text/color")) != null)
+            {
+                var converter = new System.Windows.Media.BrushConverter();
+                var brush = (Brush)converter.ConvertFromString(node.InnerText);
+                txtExpliTwi.Foreground = getLinkTwi.Foreground = validateTwi.Foreground =
+                    coFb.Foreground = coDisc.Foreground = coSlack.Foreground = brush;
+            }
+            if ((node = doc.DocumentElement.SelectSingleNode("/ui/title/color")) != null)
+            {
+                var converter = new System.Windows.Media.BrushConverter();
+                var brush = (Brush)converter.ConvertFromString(node.InnerText);
+                txtTw.Foreground = txtFb.Foreground = txtDisc.Foreground = txtSlack.Foreground =
+                    txtName.Foreground = brush;
+            }
+            if ((node = doc.DocumentElement.SelectSingleNode("/ui/box/color")) != null)
+            {
+                var converter = new System.Windows.Media.BrushConverter();
+                var brush = (Brush)converter.ConvertFromString(node.InnerText);
+                boxPINTwi.Foreground = boxIdFB.Foreground = pboxPwdFb.Foreground =
+                    boxIdDisc.Foreground = pboxPwdDisc.Foreground =
+                    boxIdSlack.Foreground = pboxPwdSlack.Foreground = brush;
+            }
         }
         private void Set_Texts()
         {

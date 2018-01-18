@@ -18,9 +18,33 @@ namespace MizyBureau
         {
             InitializeComponent();
             Set_Texts();
+            Set_UI();
             //_stringslqconnection = s;
             //_userid = i;
             //Construct_message_view();
+        }
+        private void Set_UI()
+        {
+            XmlDocument doc = new XmlDocument();
+            doc.Load(@"..\..\" + UI.Get_Theme() + ".xml");
+            XmlNode node = doc.DocumentElement.SelectSingleNode("/ui/bgcolor");
+            if (node != null)
+            {
+                Color color = (Color)ColorConverter.ConvertFromString(node.InnerText);
+                messGrid.Background = My_message.Background = btnSend.Background = messFirst.Background = new SolidColorBrush(color);
+            }
+            if ((node = doc.DocumentElement.SelectSingleNode("/ui/text/color")) != null)
+            {
+                var converter = new System.Windows.Media.BrushConverter();
+                var brush = (Brush)converter.ConvertFromString(node.InnerText);
+                btnSend.Foreground = My_message.Foreground = btnSend.Foreground = brush;
+            }
+            if ((node = doc.DocumentElement.SelectSingleNode("/ui/title/color")) != null)
+            {
+                var converter = new System.Windows.Media.BrushConverter();
+                var brush = (Brush)converter.ConvertFromString(node.InnerText);
+                messFirst.Foreground = brush;
+            }
         }
         private void Set_Texts()
         {
@@ -65,9 +89,24 @@ namespace MizyBureau
             private void Send_message(object sender, RoutedEventArgs e)
             {
             Sounds.Sound1();
+            if (My_message.Text == "")
+                return;
             TextBlock new_message = new TextBlock();
-            new_message.Background = new SolidColorBrush(Color.FromArgb(0xFF, 0x05, 0x0B, 0x0F));
-            new_message.Foreground = Brushes.AntiqueWhite;
+
+            XmlDocument doc = new XmlDocument();
+            doc.Load(@"..\..\" + UI.Get_Theme() + ".xml");
+            XmlNode node = doc.DocumentElement.SelectSingleNode("/ui/bgcolor");
+            if (node != null)
+            {
+                Color color = (Color)ColorConverter.ConvertFromString(node.InnerText);
+                new_message.Background = My_message.Background = btnSend.Background = messFirst.Background = new SolidColorBrush(color);
+            }
+            if ((node = doc.DocumentElement.SelectSingleNode("/ui/text/color")) != null)
+            {
+                var converter = new System.Windows.Media.BrushConverter();
+                var brush = (Brush)converter.ConvertFromString(node.InnerText);
+                new_message.Foreground = brush;
+            }
             new_message.Text = DateTime.Now + " \n" + My_message.Text + " \n" + "sent from Mizy\n";
             FindLinks(new_message);
 
@@ -109,10 +148,8 @@ namespace MizyBureau
             Uri uriResult;
             string txt = textBlock1.Text;
             textBlock1.Text = "";
-            Debug.Write("  begining  " + txt);
             foreach (string word in txt.Split(' '))
             {
-                Debug.Write(" split=" + word);
                 Run run = new Run(word); Debug.Write("result : " + Uri.TryCreate(word, UriKind.Absolute, out uriResult));
                 if (Uri.TryCreate(word, UriKind.Absolute, out uriResult))
                 {
@@ -120,7 +157,7 @@ namespace MizyBureau
                     Hyperlink hyperlink = new Hyperlink(run)
                     {
                         NavigateUri = new Uri(word)
-                    }; Debug.Write(" .hyperlink. ");
+                    };
                     hyperlink.RequestNavigate += new System.Windows.Navigation.RequestNavigateEventHandler(HandleRequestNavigate);
                     textBlock1.Inlines.Add(hyperlink);
                 }

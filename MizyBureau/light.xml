@@ -2,16 +2,15 @@
 
 <ui>
 	<bgcolor>#f7f7f7</bgcolor>
+  <menucolor>#d3eae6</menucolor>
+  <secondarycolor>#2d9980</secondarycolor>
 	<title>
-		<color>#019384</color>
-		<size>38</size>
+		<color>#00a8b5</color>
 	</title>
 	<text>
 		<color>#FF050B0F</color>
-		<size></size>
 	</text>
-	<button>
+	<box>
 		<color>#12876f</color>
-		<textsize></textsize>
-	</button>
+	</box>
 </ui>

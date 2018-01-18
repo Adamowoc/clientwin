@@ -30,7 +30,7 @@ namespace MizyBureau
         {
             XmlDocument doc = new XmlDocument();
             doc.Load(@"..\..\" + UI.Get_Theme() + ".xml");
-            XmlNode node = doc.DocumentElement.SelectSingleNode("/ui/bgcolor");
+            XmlNode node = doc.DocumentElement.SelectSingleNode("/ui/menucolor");
             if (node != null)
             {
                 Color color = (Color)ColorConverter.ConvertFromString(node.InnerText);

@@ -8,6 +8,7 @@ using System.Net;
 using System.Windows;
 using System.IO;
 using System.Media;
+using System.Diagnostics;
 
 namespace MizyBureau
 {
@@ -53,12 +54,20 @@ namespace MizyBureau
     }
     public class UI
     {
-        private static string Theme;
+        private static string Theme = "light";
         public static string Get_Theme()
         {
-            Theme = "light";
             return Theme;
         }
+        public static void Set_Theme(string txt)
+        {
+            if (txt == "light" || txt == "dark")
+            {
+                Theme = txt;
+            }
+            return;
+        }
+
     }
         //    public static class Constants
         //    {

@@ -4,15 +4,14 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:MizyBureau"
-             mc:Ignorable="d" 
-             d:DesignHeight="800" d:DesignWidth="1200">
-    <Grid>
+             mc:Ignorable="d" d:DesignWidth="1200" Height="761.6">
+    <Grid x:Name="convGrid">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" MinHeight="868.8" />
             <RowDefinition Height="0*" />
         </Grid.RowDefinitions>
 
-        <Canvas x:Name="Page_Profile" Background="#FF050B0F" RenderTransformOrigin="0.646,0.559">
+        <Canvas x:Name="Page_Profile" Background="#FF050B0F" RenderTransformOrigin="0.646,0.559" Margin="0,0,0,110.8">
             <TextBlock x:Name="txtNameTitle" Text ="Filtrer par nom" TextWrapping="Wrap" Foreground="#abcdea" FontSize="28" Height="44" Width="267" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="132" Canvas.Top="37"><Span Foreground="Black" FontSize="12.6666666666667" FontFamily="Consolas"><Run Text="Filtrer par nom"/></Span></TextBlock>
             <TextBox x:Name="boxName" HorizontalAlignment="Center" Height="44" TextWrapping="Wrap" VerticalAlignment="Center" Width="631" Background="{x:Null}" Foreground="#FF40A491" Grid.RowSpan="9" FontSize="24" Text="" SelectionBrush="#FF40A491" Canvas.Left="399" Canvas.Top="41" />
 
@@ -22,10 +21,10 @@
             <Image x:Name="imgSlack" HorizontalAlignment="Left" Height="50" Width="55" VerticalAlignment="Top" Source="{StaticResource MyImageSlack}" RenderTransformOrigin="0.531,0.698" Canvas.Left="1024" Canvas.Top="159" Panel.ZIndex="3"/>
             <Button x:Name="btnShow" Content="Ouvrir" HorizontalAlignment="Center" VerticalAlignment="Center" Width="162" Background="{x:Null}" Foreground="#FF40A491" FontSize="16" Click="GoToMessagerie" Canvas.Left="589" Canvas.Top="140" Panel.ZIndex="3" Height="69"/>
             <Button x:Name="btnEdit" Content="Editer" HorizontalAlignment="Center" VerticalAlignment="Center" Width="162" Background="{x:Null}" Foreground="#FF40A491" FontSize="16" Click="GoToEditContact" Canvas.Left="815" Canvas.Top="140" Panel.ZIndex="3" Height="69"/>
-            <Rectangle Fill="#2F3640" Height="100"  Width="1194" Panel.ZIndex="2" Canvas.Left="6" Canvas.Top="122"/>
+            <Rectangle x:Name="recFirst" Fill="#2F3640" Height="100"  Width="1194" Panel.ZIndex="2" Canvas.Left="6" Canvas.Top="122"/>
             <TextBlock x:Name="txtUser" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Ellena Almart" VerticalAlignment="Center" Foreground="#40A491" FontSize="40" Height="58" Canvas.Left="132" Canvas.Top="138" Panel.ZIndex="3" Width="381"/>
 
-            <Button x:Name="btnAdd" Content="Ajouter" HorizontalAlignment="Center" VerticalAlignment="Center" Width="208" Background="{x:Null}" Foreground="#FF40A491" FontSize="16" Click="addConv" Canvas.Left="953" Canvas.Top="701" Panel.ZIndex="3" Height="70"/>
+            <Button x:Name="btnAdd" Content="Ajouter" HorizontalAlignment="Center" VerticalAlignment="Center" Width="208" Background="{x:Null}" Foreground="#FF40A491" FontSize="16" Click="addConv" Canvas.Left="953" Canvas.Top="526" Panel.ZIndex="3" Height="70"/>
 
         </Canvas>
     </Grid>
