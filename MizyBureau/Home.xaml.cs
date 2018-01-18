@@ -27,7 +27,19 @@ namespace MizyBureau
             Set_UI();
         }
 
-            public void SetHomeWithUser()
+        private void Set_UI()
+        {
+            XmlDocument doc = new XmlDocument();
+            doc.Load(@"..\..\" + UI.Get_Theme() + ".xml");
+            XmlNode node = doc.DocumentElement.SelectSingleNode("/ui/menucolor");
+            if (node != null)
+            {
+                Color color = (Color)ColorConverter.ConvertFromString(node.InnerText);
+                Menu.Background = new SolidColorBrush(color);
+            }
+        }
+
+        public void SetHomeWithUser()
         {
             _user = Script.UserManager.instance.ActualUser;
             // load userform (pages)
@@ -36,6 +48,7 @@ namespace MizyBureau
             _l = new Linking(ref _user);
             _i = new InstantMessagery();
             _e = new EditProfil();
+            _editContact = new EditContact();
 
             if (_user._isFacebook == false || _user._isTwitter == false)
                 Go_To_Blank();
@@ -44,7 +57,31 @@ namespace MizyBureau
             //Accout_Email.Text = "Compte : " + _user._email + " | twitter : " + _user._isTwitter + " | facebook : " + _user._isFacebook;
         }
 
-        private void Go_To_Conversation(object sender, RoutedEventArgs e)
+        int _tmp;
+
+        public void EditContact(C_Conversation c, int i = 0)
+        {
+            _tmp = i;
+            contentControl.Content = _editContact;
+            if (c == null)
+                _editContact.OnContact(string.Empty);
+            else
+                _editContact.OnContact(c.Name, c);
+        }
+
+        public void AddConversation(C_Conversation c)
+        {
+            _c.Add_Conversation(c);
+            Go_To_Conversation();
+        }
+
+        public void EditConversation(C_Conversation c)
+        {
+            _c.Delete_and_Add(c, _tmp);
+            Go_To_Conversation();
+        }
+
+        private void Go_To_Conversation(object sender = null, RoutedEventArgs e = null)
         {
             Sounds.Sound1();
             contentControl.Content = _c;
@@ -85,17 +122,6 @@ namespace MizyBureau
             _e.OnLoadEditProfil();
             //Accout_Email.Text = "Compte : " + _user._email + " | twitter : " + _user._isTwitter + " | facebook : " + _user._isFacebook;
         }
-        public void Set_UI()
-        {
-            XmlDocument doc = new XmlDocument();
-            doc.Load(@"..\..\" + UI.Get_Theme() + ".xml");
-            XmlNode node = doc.DocumentElement.SelectSingleNode("/ui/menucolor");
-            if (node != null)
-            {
-                Color color = (Color)ColorConverter.ConvertFromString(node.InnerText);
-                Menu.Background = new SolidColorBrush(color);
-            }
-        }
    
          public void Reload_UI()
          {
@@ -105,11 +131,14 @@ namespace MizyBureau
            _i.Set_UI();
            _e.Set_UI();
         }
+
         private Linking _l;
         private Profile _p;
         private Conversation _c;
         private InstantMessagery _i;
         private EditProfil _e;
- }
+        private EditContact _editContact;
+    }
+
 }
 

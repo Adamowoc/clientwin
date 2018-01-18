@@ -15,7 +15,48 @@ namespace MizyBureau
             Set_Texts();
             Set_UI();
         }
-        public void Set_UI()
+
+        C_Conversation Conversation;
+
+        private void Validate_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            if (boxMizyPseudo.Text == string.Empty)
+            {
+                txtError.Text = "Nom invalide";
+                return;
+            }
+
+            txtError.Text = "";
+
+            if (txtTitre.Text == string.Empty)
+            {
+                C_Conversation c = new C_Conversation(boxMizyPseudo.Text, boxFbPseudo.Text == string.Empty ? false : true, boxTwiPseudo.Text == string.Empty ? false : true, boxSlaPseudo.Text == string.Empty ? false : true);
+                Home.instance.AddConversation(c);
+            }
+            else
+            {
+                Conversation.Name = boxMizyPseudo.Text;
+                Conversation.Facebook = boxFbPseudo.Text == string.Empty ? "Hidden" : "Visible";
+                Conversation.Twitter = boxTwiPseudo.Text == string.Empty ? "Hidden" : "Visible";
+                Conversation.Slack = boxSlaPseudo.Text == string.Empty ? "Hidden" : "Visible";
+                Home.instance.EditConversation(Conversation);
+            }
+        }
+
+        public void OnContact(string name, C_Conversation c = null)
+        {
+            txtTitre.Text = name;
+            if (c != null)
+            {
+                Conversation = c;
+                boxMizyPseudo.Text = c.Name;
+                boxFbPseudo.Text = c.Facebook == "Visible" ? "ok" : string.Empty;
+                boxTwiPseudo.Text = c.Twitter == "Visible" ? "ok" : string.Empty;
+                boxSlaPseudo.Text = c.Slack == "Visible" ? "ok" : string.Empty;
+            }
+        }
+
+        private void Set_UI()
         {
             XmlDocument doc = new XmlDocument();
             doc.Load(@"..\..\" + UI.Get_Theme() + ".xml");
@@ -29,9 +70,9 @@ namespace MizyBureau
             {
                 var converter = new System.Windows.Media.BrushConverter();
                 var brush = (Brush)converter.ConvertFromString(node.InnerText);
-                txtMizyPseudo.Foreground = txtFbPseudo.Foreground = txtTwiPseudo.Foreground = 
+                txtMizyPseudo.Foreground = txtFbPseudo.Foreground = txtTwiPseudo.Foreground =
                     txtDiscPseudo.Foreground = txtSlaPseudo.Foreground = buttonValidate.Foreground =
-                    buttonSlaDel.Foreground = buttonFbDel.Foreground = buttonTwiDel.Foreground = 
+                    buttonSlaDel.Foreground = buttonFbDel.Foreground = buttonTwiDel.Foreground =
                     buttonDiscDel.Foreground = buttonMizyDel.Foreground = brush;
             }
             if ((node = doc.DocumentElement.SelectSingleNode("/ui/title/color")) != null)
@@ -44,7 +85,7 @@ namespace MizyBureau
             {
                 var converter = new System.Windows.Media.BrushConverter();
                 var brush = (Brush)converter.ConvertFromString(node.InnerText);
-                boxMizyPseudo.Foreground = boxFbPseudo.Foreground = boxTwiPseudo.Foreground = 
+                boxMizyPseudo.Foreground = boxFbPseudo.Foreground = boxTwiPseudo.Foreground =
                     boxSlaPseudo.Foreground = boxDiscPseudo.Foreground = brush;
             }
         }
@@ -64,9 +105,35 @@ namespace MizyBureau
             if ((node = doc.DocumentElement.SelectSingleNode("/mizy/editcontact/slack")) != null)
                 txtSlaPseudo.Text = node.InnerText;
         }
-        private void boxMizyPseudo_TextChanged(object sender, TextChangedEventArgs e)
-        {
 
+        private void buttonMizyDel_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            boxMizyPseudo.Text = "";
+        }
+
+        private void buttonFbDel_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            boxFbPseudo.Text = "";
+        }
+
+        private void buttonTwiDel_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            boxTwiPseudo.Text = "";
+        }
+
+        private void buttonDiscDel_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            boxDiscPseudo.Text = "";
+        }
+
+        private void buttonSlaDel_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            boxSlaPseudo.Text = "";
+        }
+
+        private void boxMizyPseudo_PreviewKeyDown(object sender, System.Windows.Input.KeyEventArgs e)
+        {
+            if (char.IsLetter((char)e.Key)) e.Handled = true;
         }
     }
 }

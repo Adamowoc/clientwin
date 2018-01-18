@@ -77,9 +77,9 @@ namespace MizyBureau
 
             User toto = new User(boxIdentifiant.Text, true, true, pboxPwd.Password);
 
-            //Script.UserManager.instance.ActualUser = toto;
-            //Script.PageManager.instance.HomePage.SetHomeWithUser();
-            //Script.PageManager.instance.ChangePage(Script.PageManager.ListPage.HOME);
+            Script.UserManager.instance.ActualUser = toto;
+            Script.PageManager.instance.HomePage.SetHomeWithUser();
+            Script.PageManager.instance.ChangePage(Script.PageManager.ListPage.HOME);
 
             string response = await Script.OverHttpClient.instance.CreateSendItemAsync(new Script.SendUser(toto));
 
@@ -95,7 +95,6 @@ namespace MizyBureau
             toto._token = test.auth.token;
             toto._lastname = test.user.lastname;
             toto._firstname = test.user.firstname;
-
 
             Script.UserManager.instance.ActualUser = toto;
             Script.PageManager.instance.HomePage.SetHomeWithUser();
