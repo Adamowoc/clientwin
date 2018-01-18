@@ -7,6 +7,7 @@
         <BitmapImage x:Key="MyImageParameter" UriSource="Images/parametre-icon.png"/>
         <BitmapImage x:Key="MyImageMizy" UriSource="Images/logo.png"/>
         <BitmapImage x:Key="MyImageMizyNotif" UriSource="Images/logonotif.png"/>
+        <BitmapImage x:Key="MyImageNotif" UriSource="Images/reddot.png"/>
         <BitmapImage x:Key="MyImageAnniversary" UriSource="Images/anniversary-icon.png"/>
         <BitmapImage x:Key="MyImageConv" UriSource="Images/conv-logo.png"/>
         <BitmapImage x:Key="MyImageFacebook" UriSource="Images/facebook-logo.png"/>

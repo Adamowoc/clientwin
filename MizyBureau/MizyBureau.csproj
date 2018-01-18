@@ -249,6 +249,8 @@
     <Resource Include="user.xml" />
     <Resource Include="dark.xml" />
     <Resource Include="light.xml" />
+    <Resource Include="Images\logonotif.png" />
+    <Resource Include="Images\reddot.png" />
     <Content Include="sound\clic.wav" />
     <Content Include="sound\connect.wav" />
     <Content Include="sound\disco.wav" />
